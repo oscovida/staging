@@ -1,11 +1,11 @@
-name: Update Webpages
+name: Generate Webpage for PR
 
 on:
   repository_dispatch:
     types: [oscovida-pr]
 
 jobs:
-  webpage-gen-pr-${{ github.event.client_payload.pr_no }}:
+  webpage-gen-pr:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Python 3.8
