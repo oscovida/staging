@@ -46,7 +46,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add ${{ github.event.client_payload.pr_no }} --all
-          git commit -m "Generated preview for PR ${{ github.event.client_payload.pr_no } on $(date)" -a
+          git commit -m "Generated preview for PR ${{ github.event.client_payload.pr_no }} on $(date)" -a
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
