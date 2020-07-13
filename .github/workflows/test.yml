@@ -11,7 +11,7 @@ jobs:
         run: |
           echo Hello world
           echo ${{ github.event.client_payload }}
-          echo ${{ github.event.client_payload.type }}
+          echo ${{ github.event.client_payload.event_type }}
           echo ${{ github.event.client_payload.repository }}
           echo ${{ github.event.client_payload.branch }}
           echo ${{ github.event.client_payload.pr_no }}
