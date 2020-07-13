@@ -5,7 +5,7 @@ on:
     types: [oscovida-pr]
 
 jobs:
-  pr-webpage-gen:
+  webpage-gen-pr-${{ github.event.client_payload.pr_no }}:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Python 3.8
@@ -23,9 +23,10 @@ jobs:
           repository: ${{ github.event.client_payload.repository }}
           ref: ${{ github.event.client_payload.branch }}
           path: oscovida
-      - name: Set up oscovida
+      - name: Set up oscovida and webgen
         run: |
           pip install ./oscovida
+          pip install .
       - name: Generate new reports
         run: |
           cp -r ./base ${{ github.event.client_payload.pr_no }}
