@@ -2,7 +2,7 @@ name: Update Webpages
 
 on:
   repository_dispatch:
-    types: [oscovida_pr]
+    types: [oscovida-pr]
 
 jobs:
   pr-webpage-gen:
@@ -30,8 +30,10 @@ jobs:
         run: |
           cp -r ./base ${{ github.event.client_payload.pr_no }}
           export WWWROOT=$(readlink -f ${{ github.event.client_payload.pr_no }})
+          echo $WWWROOT
           cd ./oscovida/tools/
           ln -s $WWWROOT ./wwwroot
+          ls ./wwwroot
           python3 -m report_generators.cli --debug --regions=all --workers=max --log-level=INFO --log-file=./wwwroot/report-gen.log
       - name: Generate individual plots
         run: |
@@ -45,8 +47,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add ${{ github.event.client_payload.pr_no } --all
-          git commit -m "Generated preview for PR ${{ github.event.client_payload.pr_no } on $(date)" -a
+          git add ${{ github.event.client_payload.pr_no }} --all
+          git commit -m "Generated preview for PR ${{ github.event.client_payload.pr_no }} on $(date)" -a
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:

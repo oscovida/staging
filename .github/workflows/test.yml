@@ -6,11 +6,12 @@ on:
 jobs:
   test-dispatch:
     runs-on: ubuntu-latest
-      steps:
-        - name: Echo Dispatch
-          run: |
-            echo ${{ github.event.client_payload }}
-            echo ${{ github.event.client_payload.type }}
-            echo ${{ github.event.client_payload.repository }}
-            echo ${{ github.event.client_payload.branch }}
-            echo ${{ github.event.client_payload.pr_no }}
+    steps:
+      - name: Echo Dispatch
+        run: |
+          echo Hello world
+          echo ${{ github.event.client_payload }}
+          echo ${{ github.event.client_payload.event_type }}
+          echo ${{ github.event.client_payload.repository }}
+          echo ${{ github.event.client_payload.branch }}
+          echo ${{ github.event.client_payload.pr_no }}
