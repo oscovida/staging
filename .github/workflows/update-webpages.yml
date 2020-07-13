@@ -26,7 +26,7 @@ jobs:
       - name: Set up oscovida and webgen
         run: |
           pip install ./oscovida
-          pip install .
+          pip install -r ./base/requirements.txt
       - name: Generate new reports
         run: |
           cp -r ./base ${{ github.event.client_payload.pr_no }}
