@@ -30,8 +30,10 @@ jobs:
         run: |
           cp -r ./base ${{ github.event.client_payload.pr_no }}
           export WWWROOT=$(readlink -f ${{ github.event.client_payload.pr_no }})
+          echo $WWWROOT
           cd ./oscovida/tools/
           ln -s $WWWROOT ./wwwroot
+          ls ./wwwroot
           python3 -m report_generators.cli --debug --regions=all --workers=max --log-level=INFO --log-file=./wwwroot/report-gen.log
       - name: Generate individual plots
         run: |
