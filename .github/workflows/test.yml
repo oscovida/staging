@@ -9,6 +9,7 @@ jobs:
     steps:
       - name: Echo Dispatch
         run: |
+          echo Hello world
           echo ${{ github.event.client_payload }}
           echo ${{ github.event.client_payload.type }}
           echo ${{ github.event.client_payload.repository }}
