@@ -25,7 +25,12 @@
     <script type="text/javascript" class="init">
       $(document).ready(function() {
           $('#data_table').DataTable( {
-              "order": [[ 3, "desc" ]]
+              "order": [[ 3, "desc" ]],
+              "pageLength": 100,
+              "columnDefs": [
+                { "type": "string", "targets": 0 },
+                { "type": "num-fmt", "targets": "_all" }
+              ]
           } );
       } );
     </script>
@@ -207,7 +212,7 @@
           <div class="col-md-3">
   <div class="well">
 
-    <p><abbr title="2020-08-21T16:44:00+02:00"><i class="fa fa-calendar"></i> Fri 21 August 2020</abbr></p>
+    <p><abbr title="2020-08-21T22:49:00+02:00"><i class="fa fa-calendar"></i> Fri 21 August 2020</abbr></p>
 
 
     <hr/>
