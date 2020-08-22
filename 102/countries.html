@@ -25,11 +25,18 @@
     <script type="text/javascript" class="init">
       $(document).ready(function() {
           $('#data_table').DataTable( {
+              "rowCallback": function( row, data, index ) {
+                  if ( data[4] == "True" ) // 4th column is a flag to set the colour red
+                  {
+                      $('td', row).css('background-color', 'LightPink');
+                  }
+              },
               "order": [[ 3, "desc" ]],
               "pageLength": 100,
               "columnDefs": [
                 { "type": "string", "targets": 0 },
-                { "type": "num-fmt", "targets": "_all" }
+                { "type": "num-fmt", "targets": "_all" },
+                { "visible": false,  "targets": [ 4 ] } // hide flag column
               ]
           } );
       } );
@@ -138,6 +145,7 @@
 <th align="left">Total cases</th>
 <th align="left">Total deaths</th>
 <th align="left">New cases last week</th>
+<th align="left">FLAG</th>
 </tr>
 </thead>
 <tbody>
@@ -146,60 +154,70 @@
 <td align="left">1,024</td>
 <td align="left">53</td>
 <td align="left">43</td>
+<td align="left">False</td>
 </tr>
 <tr>
 <td align="left"><a href="html/Australia.html">Australia</a></td>
 <td align="left">24,407</td>
 <td align="left">472</td>
 <td align="left">1,665</td>
+<td align="left">False</td>
 </tr>
 <tr>
 <td align="left"><a href="html/Angola.html">Angola</a></td>
 <td align="left">2,044</td>
 <td align="left">93</td>
 <td align="left">229</td>
+<td align="left">False</td>
 </tr>
 <tr>
 <td align="left"><a href="html/Algeria.html">Algeria</a></td>
 <td align="left">40,258</td>
 <td align="left">1,411</td>
 <td align="left">3,071</td>
+<td align="left">False</td>
 </tr>
 <tr>
 <td align="left"><a href="html/Antigua-and-Barbuda.html">Antigua and Barbuda</a></td>
 <td align="left">94</td>
 <td align="left">3</td>
 <td align="left">2</td>
+<td align="left">False</td>
 </tr>
 <tr>
 <td align="left"><a href="html/Armenia.html">Armenia</a></td>
 <td align="left">42,319</td>
 <td align="left">836</td>
 <td align="left">1,296</td>
+<td align="left">False</td>
 </tr>
 <tr>
 <td align="left"><a href="html/Austria.html">Austria</a></td>
 <td align="left">24,431</td>
 <td align="left">729</td>
 <td align="left">1,837</td>
+<td align="left">False</td>
 </tr>
 <tr>
 <td align="left"><a href="html/Albania.html">Albania</a></td>
 <td align="left">7,967</td>
 <td align="left">238</td>
 <td align="left">996</td>
+<td align="left">False</td>
 </tr>
 <tr>
 <td align="left"><a href="html/Argentina.html">Argentina</a></td>
 <td align="left">320,884</td>
 <td align="left">6,517</td>
 <td align="left">44,812</td>
+<td align="left">False</td>
 </tr>
 <tr>
 <td align="left"><a href="html/Afghanistan.html">Afghanistan</a></td>
 <td align="left">37,856</td>
 <td align="left">1,385</td>
 <td align="left">432</td>
+<td align="left">False</td>
 </tr>
 </tbody>
 </table>
@@ -212,7 +230,7 @@
           <div class="col-md-3">
   <div class="well">
 
-    <p><abbr title="2020-08-21T23:05:00+02:00"><i class="fa fa-calendar"></i> Fri 21 August 2020</abbr></p>
+    <p><abbr title="2020-08-21T23:58:00+02:00"><i class="fa fa-calendar"></i> Fri 21 August 2020</abbr></p>
 
 
     <hr/>

@@ -25,11 +25,18 @@
     <script type="text/javascript" class="init">
       $(document).ready(function() {
           $('#data_table').DataTable( {
+              "rowCallback": function( row, data, index ) {
+                  if ( data[4] == "True" ) // 4th column is a flag to set the colour red
+                  {
+                      $('td', row).css('background-color', 'LightPink');
+                  }
+              },
               "order": [[ 3, "desc" ]],
               "pageLength": 100,
               "columnDefs": [
                 { "type": "string", "targets": 0 },
-                { "type": "num-fmt", "targets": "_all" }
+                { "type": "num-fmt", "targets": "_all" },
+                { "visible": false,  "targets": [ 4 ] } // hide flag column
               ]
           } );
       } );
@@ -1280,10 +1287,10 @@ h6:hover .anchor-link {
 
 
 
-<div id="e606b364-6ce1-4405-8744-c9c6ffe5324e"></div>
+<div id="e44c62ec-8421-4c6b-88b9-05747d5c1826"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e606b364-6ce1-4405-8744-c9c6ffe5324e');
+var element = $('#e44c62ec-8421-4c6b-88b9-05747d5c1826');
 
 console.log('Starting front end url_querystring_target comm target');
 const comm = Jupyter.notebook.kernel.comm_manager.new_comm('url_querystring_target', {'init': 1});
