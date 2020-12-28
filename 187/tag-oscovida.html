@@ -25,7 +25,20 @@
     <script type="text/javascript" class="init">
       $(document).ready(function() {
           $('#data_table').DataTable( {
-              "order": [[ 3, "desc" ]]
+              "rowCallback": function( row, data, index ) {
+                  if ( data[4] == "True" ) // 4th column is a flag to set the colour red
+                  {
+                      $('td', row).css('background-color', 'LightPink');
+                  }
+              },
+              "order": [[ 3, "desc" ]],
+              "lengthMenu": [[10, 25, 50, 500, -1], [10, 25, 50, 500, "All"]],
+              "pageLength": -1,
+              "columnDefs": [
+                { "type": "string", "targets": 0 },
+                { "type": "num-fmt", "targets": "_all" },
+                { "visible": false,  "targets": [ 4 ] } // hide flag column
+              ]
           } );
       } );
     </script>
@@ -124,7 +137,23 @@
 
         <div class=" col-md-12 " id="content" role="main">
   <dl class="dl-horizontal">
-      <dt><abbr class="published" title="2020-07-05T00:00:00+02:00">Sun 05 July 2020</abbr></dt>
+      <dt>Fri 13 November 2020</dt>
+      <dd><a href="./2020-compare-germany-data-sources.html">Compare data for Germany from RKI and JHU (Part 2)</a></dd>
+      <dt>Sun 01 November 2020</dt>
+      <dd><a href="./compare-rki-and-jhu-data.html">Compare data for Germany from RKI and JHU</a></dd>
+      <dt>Fri 30 October 2020</dt>
+      <dd><a href="./tutorial-observables.html">Tutorial: Observables computed in OSCOVIDA</a></dd>
+      <dt>Tue 27 October 2020</dt>
+      <dd><a href="./tutorial-accessing-population-data.nbdata.html">Tutorial: Accessing population data</a></dd>
+      <dt>Tue 27 October 2020</dt>
+      <dd><a href="./tutorial-overview-graph.html">Tutorial: Functions to create overview plot</a></dd>
+      <dt>Tue 27 October 2020</dt>
+      <dd><a href="./tutorial-overview-plot_daily_change.html">Tutorial: Function to plot daily changes in numbers of cases and deaths</a></dd>
+      <dt>Tue 27 October 2020</dt>
+      <dd><a href="./tutorial-overview-plot_time_step.html">Tutorial: Function to plot total cumulative numbers of cases and deaths</a></dd>
+      <dt>Sun 02 August 2020</dt>
+      <dd><a href="./tutorial-accessing-cases-and-deaths.nbdata.html">Tutorial: Accessing cases and deaths for countries and regions</a></dd>
+      <dt>Sun 05 July 2020</dt>
       <dd><a href="./tutorial-installing-oscovida.html">Tutorial: Installing OSCOVIDA</a></dd>
   </dl>
         </div>
