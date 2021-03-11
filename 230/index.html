@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Home | OSCOVIDA: Open Science COVID Analysis</title>
+
+    <meta name="author" content="OSCOVIDA team"/>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="./theme/css/jquery.mglass.css"/>
+    <link rel="stylesheet" href="./theme/css/pygment-solarized-dark.css"/>
+    <!-- <link rel="stylesheet" href="./theme/css/style.css"/> -->
+    <link rel="stylesheet" href="./theme/css/minimalist-style.css"/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript" class="init">
+      $(document).ready(function() {
+          $('#data_table').DataTable( {
+              "rowCallback": function( row, data, index ) {
+                  if ( data[4] == "True" ) // 4th column is a flag to set the colour red
+                  {
+                      $('td', row).css('background-color', 'LightPink');
+                  }
+              },
+              "order": [[ 3, "desc" ]],
+              "lengthMenu": [[10, 25, 50, 500, -1], [10, 25, 50, 500, "All"]],
+              "pageLength": -1,
+              "columnDefs": [
+                { "type": "string", "targets": 0 },
+                { "type": "num-fmt", "targets": "_all" },
+                { "visible": false,  "targets": [ 4 ] } // hide flag column
+              ]
+          } );
+      } );
+    </script>
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+    <link href='https://fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css'/>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'/>
+
+
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+
+    <!-- Feeds -->
+      <link href="https://oscovida.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="OSCOVIDA: Open Science COVID Analysis - All posts - Atom Feed"/>
+
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1><a href=".">OSCOVIDA: Open Science COVID Analysis</a> <small></small></h1>
+      </div>
+
+      <nav class="navbar navbar-default">
+
+        <!-- Hamburger menu for mobile -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#plumage-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="." title="">OSCOVIDA: Open Science COVID Analysis</a>
+        </div>
+
+        <!-- Menus and search forms -->
+        <div class="collapse navbar-collapse" id="plumage-navbar-collapse-1">
+
+          <ul class="nav navbar-nav">
+<li >
+                <a href="index.html">Home</a>
+              </li>
+<li >
+                <a href="all-regions.html">All regions</a>
+              </li>
+<li >
+                <a href="countries.html">Countries</a>
+              </li>
+<li >
+                <a href="germany.html">Germany</a>
+              </li>
+<li >
+                <a href="us.html">US</a>
+              </li>
+<li >
+                <a href="hungary.html">Hungary</a>
+              </li>
+<li >
+                <a href="category-all.html">Articles</a>
+              </li>
+<li >
+                <a href="tag-analysis">Analysis</a>
+              </li>
+<li >
+                <a href="tag-about.html">About</a>
+              </li>
+          </ul>
+
+
+
+        </div>
+
+      </nav>
+
+    </div>
+
+
+    <div class="container main">
+
+
+      <div class="row">
+        <div class=" col-md-12  ">
+        </div>
+      </div>
+
+      <div class="row">
+
+
+        <div class=" col-md-12 " id="content" role="main">
+
+    <h2>Articles</h2>
+
+    <article>
+      <header>
+        <h2><a href="./all-regions.html" rel="bookmark" title="Permalink to Tracking plots: All regions and countries">Tracking plots:  All regions and countries</a></h2>
+      </header>
+      <div><table>
+<thead>
+<tr>
+<th align="left">Location</th>
+<th align="left">Total cases</th>
+<th align="left">Total deaths</th>
+<th align="left">New cases last week</th>
+<th align="left">FLAG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="html/Hungary-Hajdú-Bihar.html">Hungary: Hajdú-Bihar</a></td>
+<td align="left">26,432</td>
+<td align="left">missing</td>
+<td align="left">2,098</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Hungary-Bács-Kiskun.html">Hungary: Bács-Kiskun</a></td>
+<td align="left">22,069</td>
+<td align="left">missing</td>
+<td align="left">1,716</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Afghanistan.html">Afghanistan</a></td>
+<td align="left">55,894</td>
+<td align="left">2,451</td>
+<td align="left">124</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Hungary-Heves.html">Hungary: Heves</a></td>
+<td align="left">12,475</td>
+<td align="left">missing</td>
+<td align="left">804</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Austria.html">Austria</a></td>
+<td align="left">481,919</td>
+<td align="left">8,776</td>
+<td align="left">16,597</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Antigua-and-Barbuda.html">Antigua and …</a></td></tr></tbody></table></div>
+      <div><a class="btn btn-primary" href="./all-regions.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./hungary.html" rel="bookmark" title="Permalink to Tracking plots: Hungary">Tracking plots:  Hungary</a></h2>
+      </header>
+      <div><table>
+<thead>
+<tr>
+<th align="left">Location</th>
+<th align="left">Total cases</th>
+<th align="left">Total deaths</th>
+<th align="left">New cases last week</th>
+<th align="left">FLAG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="html/Hungary-Hajdú-Bihar.html">Hungary: Hajdú-Bihar</a></td>
+<td align="left">26,432</td>
+<td align="left">missing</td>
+<td align="left">2,098</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Hungary-Bács-Kiskun.html">Hungary: Bács-Kiskun</a></td>
+<td align="left">22,069</td>
+<td align="left">missing</td>
+<td align="left">1,716</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Hungary-Heves.html">Hungary: Heves</a></td>
+<td align="left">12,475</td>
+<td align="left">missing</td>
+<td align="left">804</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Hungary-Borsod-Abaúj-Zemplén.html">Hungary: Borsod-Abaúj-Zemplén</a></td>
+<td align="left">27,279</td>
+<td align="left">missing</td>
+<td align="left">2,186</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Hungary-Békés.html">Hungary: Békés</a></td>
+<td align="left">14,145</td>
+<td align="left">missing</td>
+<td align="left">630</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Hungary-Győr-Moson-Sopron.html">Hungary: Győr-Moson-Sopron …</a></td></tr></tbody></table></div>
+      <div><a class="btn btn-primary" href="./hungary.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./us.html" rel="bookmark" title="Permalink to Tracking plots: United States">Tracking plots:  United States</a></h2>
+      </header>
+      <div><table>
+<thead>
+<tr>
+<th align="left">Location</th>
+<th align="left">Total cases</th>
+<th align="left">Total deaths</th>
+<th align="left">New cases last week</th>
+<th align="left">FLAG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="html/US-American-Samoa.html">US: American Samoa</a></td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/US-California.html">US: California</a></td>
+<td align="left">3,611,295</td>
+<td align="left">54,890</td>
+<td align="left">28,975</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/US-Delaware.html">US: Delaware</a></td>
+<td align="left">88,891</td>
+<td align="left">1,492</td>
+<td align="left">1,466</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/US-Arkansas.html">US: Arkansas</a></td>
+<td align="left">325,700</td>
+<td align="left">5,382</td>
+<td align="left">2,347</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/US-Arizona.html">US: Arizona</a></td>
+<td align="left">828,630</td>
+<td align="left">16 …</td></tr></tbody></table></div>
+      <div><a class="btn btn-primary" href="./us.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./germany.html" rel="bookmark" title="Permalink to Tracking plots: Germany">Tracking plots:  Germany</a></h2>
+      </header>
+      <div><p>A list of districts (Landkreise) for Germany ordered according to <a href="germany-incidence-rate.html">7-day incidence is available</a>.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Location</th>
+<th align="left">Total cases</th>
+<th align="right">Total deaths</th>
+<th align="right">New cases last week</th>
+<th align="left">FLAG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="html/Germany-Baden-Württemberg-LK-Böblingen.html">Germany: Baden-Württemberg : LK Böblingen</a></td>
+<td align="left">11,545</td>
+<td align="right">229</td>
+<td align="right">163</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Germany-Baden-Württemberg-LK-Bodenseekreis.html">Germany: Baden-Württemberg : LK Bodenseekreis</a></td>
+<td align="left">5,072</td>
+<td align="right">137</td>
+<td align="right">112</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Germany-Baden-Württemberg-LK-Breisgau-Hochschwarzwald.html">Germany: Baden-Württemberg : LK Breisgau-Hochschwarzwald</a></td>
+<td align="left">6,413</td>
+<td align="right">157</td>
+<td align="right">194 …</td></tr></tbody></table></div>
+      <div><a class="btn btn-primary" href="./germany.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./germany-incidence-rate-7day-50cases.html" rel="bookmark" title="Permalink to 7 Day Incidence Rates: Districts (Landkreise) in Germany">7 Day Incidence Rates:  Districts (Landkreise) in Germany</a></h2>
+      </header>
+      <div><p>The searchable table below shows 7-day incidence
+rate per 100,000. (<a href="./14-day-incidence-rate.html">An explanation of the calculation is
+available</a>), entries with this incidence rate
+greater than 50 are highlighted.</p>
+<p>Two of these pages are provided:</p>
+<ul>
+<li>
+<p><a href="./germany-incidence-rate-7day-50cases.html">German region incidence rates</a></p>
+</li>
+<li>
+<p><a href="./countries-incidence-rate-7day-50cases.html">Worldwide incidence rates</a></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Location</th>
+<th align="left">Population</th>
+<th align="left">Cases in last 7 days</th>
+<th align="right">7 Day …</th></tr></thead></table></div>
+      <div><a class="btn btn-primary" href="./germany-incidence-rate-7day-50cases.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./countries.html" rel="bookmark" title="Permalink to Tracking plots: Countries of the world">Tracking plots:  Countries of the world</a></h2>
+      </header>
+      <div><p>A list of countries ordered according to <a href="countries-incidence-rate.html">7-day incidence is available</a>.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Location</th>
+<th align="left">Total cases</th>
+<th align="left">Total deaths</th>
+<th align="left">New cases last week</th>
+<th align="left">FLAG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="html/Afghanistan.html">Afghanistan</a></td>
+<td align="left">55,894</td>
+<td align="left">2,451</td>
+<td align="left">124</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Austria.html">Austria</a></td>
+<td align="left">481,919</td>
+<td align="left">8,776</td>
+<td align="left">16,597</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Antigua-and-Barbuda.html">Antigua and Barbuda</a></td>
+<td align="left">882</td>
+<td align="left">23</td>
+<td align="left">113</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Algeria.html">Algeria</a></td>
+<td align="left">114,681</td>
+<td align="left">3,026</td>
+<td align="left">1,088 …</td></tr></tbody></table></div>
+      <div><a class="btn btn-primary" href="./countries.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./countries-incidence-rate-7day-50cases.html" rel="bookmark" title="Permalink to 7 Day Incidence Rates: Countries of the world">7 Day Incidence Rates:  Countries of the world</a></h2>
+      </header>
+      <div><p>The searchable table below shows 7-day incidence
+rate per 100,000. (<a href="./14-day-incidence-rate.html">An explanation of the calculation is
+available</a>), entries with this incidence rate
+greater than 50 are highlighted.</p>
+<p>Two of these pages are provided:</p>
+<ul>
+<li>
+<p><a href="./germany-incidence-rate-7day-50cases.html">German region incidence rates</a></p>
+</li>
+<li>
+<p><a href="./countries-incidence-rate-7day-50cases.html">Worldwide incidence rates</a></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Location</th>
+<th align="left">Population</th>
+<th align="left">Cases in last 7 days</th>
+<th align="right">7 Day …</th></tr></thead></table></div>
+      <div><a class="btn btn-primary" href="./countries-incidence-rate-7day-50cases.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./2020-germany-reporting-delay-meldeverzug.html" rel="bookmark" title="Permalink to Reporting delay (Meldeverzug) in data sources for Germany (RKI and JHU)">Reporting delay (Meldeverzug) in data sources for Germany (RKI and JHU)</a></h2>
+      </header>
+      <div><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Apparent-reporting-delay-(Meldeverzug)-in-data-sources-for-Germany-(JHU-and-RKI)">Apparent reporting delay (Meldeverzug) in data sources for Germany (JHU and RKI)<a class="anchor-link" href="#Apparent-reporting-delay-(Meldeverzug)-in-data-sources-for-Germany-(JHU-and-RKI)">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>See <a href="compare-rki-and-jhu-data.html">this earlier post</a> for an introduction. Here we continue the comparison of RKI and JHU with some additional plots.</p>
+<p>In particular, we note an apparent delay in the provision of numbers of deaths in the RKI data ("Meldeverzug"). It is known that it takes some time for infectionts and deaths to be reported to the Robert Koch Institute (RKI). Here we investigate how long by taking one snapshot of data for cases and infections (on 14 Nov 2020) and comparing this with the same data downloaded more recently (04 Jan 2021).</p></div>
+      <div><a class="btn btn-primary" href="./2020-germany-reporting-delay-meldeverzug.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./2020-thanksgiving-us.html" rel="bookmark" title="Permalink to Impact of Thanksgiving in the US 2020">Impact of Thanksgiving in the US 2020</a></h2>
+      </header>
+      <div><p>Exploring impact of Thanksgiving on time development of infections and deaths in the US</p></div>
+      <div><a class="btn btn-primary" href="./2020-thanksgiving-us.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./tutorial-exponential-growth-example.html" rel="bookmark" title="Permalink to Tutorial: Example data for pure exponential growth">Tutorial: Example data for pure exponential growth</a></h2>
+      </header>
+      <div><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Tutorial-exponential-grow-(synthetic-data)">Tutorial exponential grow (synthetic data)<a class="anchor-link" href="#Tutorial-exponential-grow-(synthetic-data)">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this example, we create a synthenic (i.e. invented) data set, for which we assume pure exponential growth.</p>
+<p>In more detail, for the number of daily new cases $n_d(t)$ as a function of day index $t$, we compute</p>
+$$ n_d(t) = n_0 R^{t/\tau} $$<p>with $n_0$ being the initial number of infections, $R$ the reproduction number and $\tau$ the serial interval.</p></div>
+      <div><a class="btn btn-primary" href="./tutorial-exponential-growth-example.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./tutorial-overview-plot_reproduction_number.html" rel="bookmark" title="Permalink to Tutorial: Function to plot the R-value and the growth factor of cases and deaths">Tutorial: Function to plot the R-value and the growth factor of cases and deaths</a></h2>
+      </header>
+      <div><div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+      <div><a class="btn btn-primary" href="./tutorial-overview-plot_reproduction_number.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./compare-rki-and-jhu-data.html" rel="bookmark" title="Permalink to Compare data for Germany from RKI and JHU">Compare data for Germany from RKI and JHU</a></h2>
+      </header>
+      <div><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Compare-Johns-Hopkins-and-RKI-data-for-Germany">Compare Johns Hopkins and RKI data for Germany<a class="anchor-link" href="#Compare-Johns-Hopkins-and-RKI-data-for-Germany">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+      <div><a class="btn btn-primary" href="./compare-rki-and-jhu-data.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./tutorial-observables.html" rel="bookmark" title="Permalink to Tutorial: Observables computed in OSCOVIDA">Tutorial: Observables computed in OSCOVIDA</a></h2>
+      </header>
+      <div><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Observables">Observables<a class="anchor-link" href="#Observables">&#182;</a></h1><p>We describe a number of observables that are computed by the <a href="https://pypi.org/project/oscovida/"><code>oscovida</code></a> python package and presented on the <a href="https://oscovida.github.io">OSCOVIDA</a> webpages.</p>
+<p>The discussion below refers to one region, such as a country, state or district.</p>
+<p>The discussion below is focused on cases as a function of time, but the same observables can be computed for deaths as a fuction of time to gain additional insights.</p></div>
+      <div><a class="btn btn-primary" href="./tutorial-observables.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./tutorial-accessing-population-data.nbdata.html" rel="bookmark" title="Permalink to Tutorial: Accessing population data">Tutorial: Accessing population data</a></h2>
+      </header>
+      <div><div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+      <div><a class="btn btn-primary" href="./tutorial-accessing-population-data.nbdata.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./tutorial-overview-graph.html" rel="bookmark" title="Permalink to Tutorial: Functions to create overview plot">Tutorial: Functions to create overview plot</a></h2>
+      </header>
+      <div><div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+      <div><a class="btn btn-primary" href="./tutorial-overview-graph.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./tutorial-overview-plot_daily_change.html" rel="bookmark" title="Permalink to Tutorial: Function to plot daily changes in numbers of cases and deaths">Tutorial: Function to plot daily changes in numbers of cases and deaths</a></h2>
+      </header>
+      <div><div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+      <div><a class="btn btn-primary" href="./tutorial-overview-plot_daily_change.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./tutorial-overview-plot_time_step.html" rel="bookmark" title="Permalink to Tutorial: Function to plot total cumulative numbers of cases and deaths">Tutorial: Function to plot total cumulative numbers of cases and deaths</a></h2>
+      </header>
+      <div><div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+      <div><a class="btn btn-primary" href="./tutorial-overview-plot_time_step.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./2020-are-summer-holidays-contributing-to-increasing-infections.html" rel="bookmark" title="Permalink to Are the summer holidays in Germany contributing to an increase in infections?">Are the summer holidays in Germany contributing to an increase in infections?</a></h2>
+      </header>
+      <div><p>Exploring correlation between increased daily infections and R-value for states in Germany</p></div>
+      <div><a class="btn btn-primary" href="./2020-are-summer-holidays-contributing-to-increasing-infections.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./14-day-incidence-rate-germany.html" rel="bookmark" title="Permalink to The 14-day incidence per 100000 for districts (Landkreise) in Germany with detailed calculation">The 14-day incidence per 100000 for districts (Landkreise) in Germany with detailed calculation</a></h2>
+      </header>
+      <div><p>Table of 14-day incidene rate for all districts (Landkreise) in Germany. Ordered by district name and incidence. Explanation of calculation for Hamburg.</p></div>
+      <div><a class="btn btn-primary" href="./14-day-incidence-rate-germany.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./14-day-incidence-rate.html" rel="bookmark" title="Permalink to The 14-day incidence per 100000 with detailed calculation">The 14-day incidence per 100000 with detailed calculation</a></h2>
+      </header>
+      <div><p>Table of 14-day incidene rate for all countries, order by country name and incidence. Explanation of calculation.</p></div>
+      <div><a class="btn btn-primary" href="./14-day-incidence-rate.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./tutorial-accessing-cases-and-deaths.nbdata.html" rel="bookmark" title="Permalink to Tutorial: Accessing cases and deaths for countries and regions">Tutorial: Accessing cases and deaths for countries and regions</a></h2>
+      </header>
+      <div><div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+      <div><a class="btn btn-primary" href="./tutorial-accessing-cases-and-deaths.nbdata.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./r-value.html" rel="bookmark" title="Permalink to The R value - introduction, numerical exploration, and algorithm used in OSCOVIDA">The R value - introduction, numerical exploration, and algorithm used in OSCOVIDA</a></h2>
+      </header>
+      <div><p>Introduction, numerical exploration, and algorithm used in OSCOVIDA</p></div>
+      <div><a class="btn btn-primary" href="./r-value.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./tutorial-installing-oscovida.html" rel="bookmark" title="Permalink to Tutorial: Installing OSCOVIDA">Tutorial: Installing OSCOVIDA</a></h2>
+      </header>
+      <div><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="OSCOVIDA-Tutorial:-installation">OSCOVIDA Tutorial: installation<a class="anchor-link" href="#OSCOVIDA-Tutorial:-installation">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Use-OSCOVIDA-in-the-cloud">Use OSCOVIDA in the cloud<a class="anchor-link" href="#Use-OSCOVIDA-in-the-cloud">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To use OSCOVIDA in the cloud, you can go to <a href="https://mybinder.org/v2/gh/oscovida/binder/master?filepath=ipynb">this link</a>, 
+and can see all available Notebooks (most of which analyses one region, but you can also find the tutorial notebooks that start with the name <code>tutorial</code>). Or you can create your own notebook at that point.</p></div>
+      <div><a class="btn btn-primary" href="./tutorial-installing-oscovida.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./oscovida-in-the-news.html" rel="bookmark" title="Permalink to OSCOVIDA in the news">OSCOVIDA in the news</a></h2>
+      </header>
+      <div><ul>
+<li><a href="https://cordis.europa.eu/article/id/421539-hungarian-contribution-to-panosc-oscovida-allows-following-covid-19-pandemic-in-the-country-a">6 July 2020, Data from Hungary in OSCOVIDA</a></li>
+<li><a href="https://www.dpg-physik.de/veroeffentlichungen/publikationen/physikkonkret/physikkonkret-46">30 June 2020, Update from Germany Physics Society on COVID19 research</a></li>
+<li><a href="https://www.xfel.eu/news_and_events/news/index_eng.html?openDirectAnchor=1788&amp;two_columns=0">15 June 2020, European XFEL News item (english version,</a>
+  <a href="https://www.xfel.eu/aktuelles/news/index_ger.html?openDirectAnchor=1788&amp;two_columns=0">deutsche
+  Version)</a></li>
+<li><a href="http://digitum-um.blogspot.com/2020/06/descubra-oscovida-open-science-covid.html">3 June 2020 Digitum, University Murcia, Spain (in spanish)</a></li>
+<li><a href="https://cordis.europa.eu/article/id/418274-discover-oscovida-the-panosc-open-science-covid-analysis-platform-tracking-data-about-covid19"> 27 May 2020 CORDIS website</a></li>
+<li><a href="https://www.panosc.eu/news/panosc-open-science-covid-analysis-platform-now-online/"> 27 May 2020 PaNOSC website </a></li>
+<li><a href="https://www.youtube.com/watch?v=1_oDc_vptBQ"> 27 …</a></li></ul></div>
+      <div><a class="btn btn-primary" href="./oscovida-in-the-news.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./related-resources.html" rel="bookmark" title="Permalink to Related resources">Related resources</a></h2>
+      </header>
+      <div><h1>Somewhat random collection of related links</h1>
+<ul>
+<li>
+<p><a href="https://www.covid19dataportal.org">Covid19 data portal, covid19dataportal.org</a></p>
+</li>
+<li>
+<p><a href="https://lejournal.cnrs.fr/articles/visualiser-la-recherche-sur-le-coronavirus-en-un-coup-doeil">Overview of COVID 19 medical research (french)</a></p>
+</li>
+<li>
+<p><a href="https://www.infmed.uni-kiel.de/de/epidemiologie/covid-19">COVID19 tracking in Schleswig Holstein (Germany)</a></p>
+</li>
+<li>
+<p><a href="http://corona-in-zahlen.de">Corona in Zahlen (in german)</a></p>
+</li>
+</ul></div>
+      <div><a class="btn btn-primary" href="./related-resources.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./team.html" rel="bookmark" title="Permalink to Team">Team</a></h2>
+      </header>
+      <div><p>Following early work by <a href="http://fangohr.github.io">Hans Fangohr</a>, members of the
+European research project <a href="http://panosc.eu">Photon and Neutron Open Science Cloud
+(PANOSC)</a> and the Data Analysis Group of <a href="https://xfel.eu">European
+XFEL</a> contribute to the project here, including Robert Rosca,
+<a href="https://github.com/kirienko/">Yury Kirienko</a>, <a href="https://github.com/tmichela">Thomas
+Michelat</a>, <a href="https://git.elnota.space/daviddoji/">David Doblas
+Jiménez</a>, <a href="https://github.com/ebadkamil">Ebad
+Kamil</a>, and Jacek Generowicz, and others.</p></div>
+      <div><a class="btn btn-primary" href="./team.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./2020-05-10-notebook-Weekly-fluctuations-in-data-from-Germany.html" rel="bookmark" title="Permalink to Weekly fluctuations in data from Germany">Weekly fluctuations in data from Germany</a></h2>
+      </header>
+      <div><p>Weekly fluctuations in data from Germany</p></div>
+      <div><a class="btn btn-primary" href="./2020-05-10-notebook-Weekly-fluctuations-in-data-from-Germany.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./plots.html" rel="bookmark" title="Permalink to Explanation of plots">Explanation of plots</a></h2>
+      </header>
+      <div><p>We discuss the plots from the top (number 1) to the bottom (number 7)
+that are available for <a class="reference external" href="all-regions.html">all regions</a>.</p>
+<div class="section" id="plot-1-accumulated-cases-and-deaths-as-function-of-time">
+<h2>Plot 1: accumulated cases and deaths as function of time</h2>
+<img src="./fig-south-korea1.svg" alt="South Korea data"><ul class="simple">
+<li>Shows how many people have been confirmed to be infected (blue) or
+have died (red) as a function of time …</li></ul></div></div>
+      <div><a class="btn btn-primary" href="./plots.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./reproduction-number.html" rel="bookmark" title="Permalink to Reproduction number">Reproduction number</a></h2>
+      </header>
+      <div><p>A much more <a class="reference external" href="r-value.html">detailed discussion is available here</a>.</p>
+<div class="section" id="reproduction-number-r">
+<h2>Reproduction number R</h2>
+<ul class="simple">
+<li>The <a class="reference external" href="https://en.wikipedia.org/wiki/Basic_reproduction_number">Reproduction number R (Wikipedia)</a> [1] expresses how
+many people are infected from one person with COVID19.</li>
+</ul>
+<div class="section" id="computation-of-r-from-measured-data">
+<h3>Computation of R from measured data</h3>
+<p>The bulletin from the Robert Koch institute [2] reports that an average
+infectious period of $tau …</p></div></div></div>
+      <div><a class="btn btn-primary" href="./reproduction-number.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./2020-04-30-news-report-germanys-daily-cases-increasing.html" rel="bookmark" title="Permalink to BBC news reports &#34;Germany&#39;s daily cases increasing&#34;">BBC news reports "Germany's daily cases increasing"</a></h2>
+      </header>
+      <div><h2>The news article</h2>
+<p>Today, a report from <a href="https://www.bbc.com/news/live/world-52481788/page/2">BBC live news
+coverage</a> of COVID19 was
+featuring the headline: "<em>Germany's daily cases keep rising</em>" and then explained that</p>
+<blockquote>
+<p>Germany has recorded 1,478 new cases for the past 24 hours, marking the fourth
+day that new infections have gone up.</p>
+</blockquote>
+<p>And ends …</p></div>
+      <div><a class="btn btn-primary" href="./2020-04-30-news-report-germanys-daily-cases-increasing.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./2020-04-30-bbc-germany-increasing-notebook.html" rel="bookmark" title="Permalink to BBC news reports &#34;Germany&#39;s daily cases increasing&#34; (Supplementary notebook)">BBC news reports "Germany's daily cases increasing" (Supplementary notebook)</a></h2>
+      </header>
+      <div><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Supplementary-notebook:">Supplementary notebook:<a class="anchor-link" href="#Supplementary-notebook:">&#182;</a></h1><p>Code to provide images shown in
+<a href="http://oscovida.github.io/2020-04-30-news-report-germanys-daily-cases-increasing.html">http://oscovida.github.io/2020-04-30-news-report-germanys-daily-cases-increasing.html</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input"></div>
+      <div><a class="btn btn-primary" href="./2020-04-30-bbc-germany-increasing-notebook.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./open-science.html" rel="bookmark" title="Permalink to Open Science">Open Science</a></h2>
+      </header>
+      <div><p>To use the analysis provided here, some Python knowledge is required, ideally
+additional experience (or willingness to learn) about the Pandas data science
+library and the Jupyter Notebook.</p>
+<h2>Source code</h2>
+<p>All the computational steps and code are available
+<a href="https://github.com/oscovida/oscovida/tree/master/oscovida">here</a>.</p>
+<h2>Ways to use and execute the source code</h2>
+<ul>
+<li>
+<p>If you know …</p></li></ul></div>
+      <div><a class="btn btn-primary" href="./open-science.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./license.html" rel="bookmark" title="Permalink to License">License</a></h2>
+      </header>
+      <div><p>The materials available from the <a href="https://oscovida.github.io">Open Science COVID19 Analysis</a> project are licensed as follows:</p>
+<ul>
+<li>
+<p>The <a href="http://github.com/oscovida/oscovida">software</a> is <a href="https://github.com/oscovida/oscovida/blob/master/LICENSE">licensed under
+  the BSD 3-Clause New license</a>.</p>
+</li>
+<li>
+<p>Other material, including plots, are licensed under the 
+<a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+</li>
+</ul>
+<p>Informally, this means that (i) everything is provided as-is, without any …</p></div>
+      <div><a class="btn btn-primary" href="./license.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./motivation.html" rel="bookmark" title="Permalink to Our motivation">Our motivation</a></h2>
+      </header>
+      <div><h2>Motivation</h2>
+<p>Here we explain our motivation for putting together the Open Science COVID Analysis (OSCOVIDA) framework.</p>
+<h3>1. Understanding the pandemic</h3>
+<p>The reporting in the media on the COVID19 situation is not always providing
+sufficient context to interpret the numbers: we hear many news reports about how
+many people have been …</p></div>
+      <div><a class="btn btn-primary" href="./motivation.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./data-sources.html" rel="bookmark" title="Permalink to Data sources">Data sources</a></h2>
+      </header>
+      <div><ul>
+<li>We use data
+  from the <a href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data">Johns Hopkins university</a>
+  for countries:<ul>
+<li>global confirmed COVID <a href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv">cases dataset</a>;</li>
+<li>global COVID <a href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv">deaths dataset</a>;</li>
+<li>USA confirmed <a href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv">cases dataset</a>;</li>
+<li>USA <a href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv">deaths dataset</a>;</li>
+<li>JHU global <a href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/UID_ISO_FIPS_LookUp_Table.csv">population dataset</a>
+  which is in turn compiled from different sources, see <a href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data#uid-lookup-table-logic">here</a>;</li>
+</ul>
+</li>
+<li>and data from the <a href="https://npgeo-corona-npgeo-de.hub.arcgis.com/">German Robert Koch Insitute (RKI)</a>:<ul>
+<li><a href="https://www.arcgis.com/sharing/rest/content/items/f10774f1c63e40168479a1feb6c7ca74/data">cases …</a></li></ul></li></ul></div>
+      <div><a class="btn btn-primary" href="./data-sources.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./contribute.html" rel="bookmark" title="Permalink to Contributions welcome!">Contributions welcome!</a></h2>
+      </header>
+      <div><ul>
+<li>
+<p>Bugs and ideas can be reported as a
+  <a href="https://github.com/oscovida/oscovida/issues">"New issue"</a> in the OSCOVIDA Issue tracker. A <a href="http://github.com">github</a> account is necessary.</p>
+</li>
+<li>
+<p>For those with programming and software engineering skills, there is a
+  document
+  <a href="https://github.com/oscovida/oscovida/blob/master/info.md">info.md</a>
+  with more details about the project. </p>
+</li>
+<li>
+<p>Issues to work on can be taken from the 
+  <a href="https://github.com/oscovida/oscovida/issues">OSCOVIDA …</a></p></li></ul></div>
+      <div><a class="btn btn-primary" href="./contribute.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+    <article>
+      <header>
+        <h2><a href="./faq.html" rel="bookmark" title="Permalink to Frequently Asked Questions (FAQ)">Frequently Asked Questions (FAQ)</a></h2>
+      </header>
+      <div><h1>What about errors in the data?</h1>
+<ul>
+<li>The data we have available is likely to be inaccurate:</li>
+<li>Infections can only be confirmed if they are being tested: the more testing
+    takes place, the more infected people can be found. Asymptomatic individuals
+    may not be tested if tests are prioritised for severely …</li></ul></div>
+      <div><a class="btn btn-primary" href="./faq.html"><strong>➟ Read more</strong></a></div>
+    </article>
+    <hr/>
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+    <!-- TODO: make footer sticky -->
+    <footer class="container-fluid">
+      <div class="container">
+        <div class="row">
+
+            <div class="col-md-2">
+                <h5>Social</h5>
+                <ul class="list-unstyled">
+                  <li>  <a href="https://twitter.com/OSCOVIDAproject">
+      <i class="fa fa-twitter"></i>
+    Open Science COVID Analysis
+  </a></li>
+                  <li>  <a href="https://twitter.com/Panosc_eu">
+      <i class="fa fa-twitter"></i>
+    PaNOSC
+  </a></li>
+                  <li>  <a href="https://twitter.com/ProfCompMod">
+      <i class="fa fa-twitter"></i>
+    ProfCompMod
+  </a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <h5>Links</h5>
+                <ul class="list-unstyled">
+                  <li>  <a href="http://oscovida.github.io">
+      <i class="fa fa-external-link"></i>
+    OSCOVIDA project
+  </a></li>
+                  <li>  <a href="http://www.panosc.eu">
+      <i class="fa fa-external-link"></i>
+    PaNOSC project
+  </a></li>
+                  <li>  <a href="mailto:oscovidaproject@gmail.com">
+      <i class="fa fa-envelope"></i>
+    OSCOVIDA
+  </a></li>
+                </ul>
+            </div>
+
+          <div class="col-md-2">
+            <h5>Browse content by</h5>
+            <ul class="list-unstyled">
+                <li><a href="./archives-index.html"><i class="fa fa-calendar"></i> Dates</a></li>
+                <li><a href="./tags-index.html"><i class="fa fa-tag"></i> Tags</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 text-muted">
+            <h5>Copyright notice</h5>
+            <p>© Copyright 2020-2021 OSCOVIDA team.</p>
+              <p>Unless contrary mentioned, the content of this site is published under a <a rel='license'
+href='https://creativecommons.org/licenses/by/4.0/'>Creative Commons
+Attribution 4.0 International license</a>. See <a href="http://oscovida.github.io/license.html">license</a> for details.</p>
+          </div>
+
+          <div class="col-md-2 text-muted">
+            <h5>Disclaimer</h5>
+              <p>Plots, data and software here are provided <a href="https://github.com/oscovida/oscovida/blob/master/LICENSE#L20">as-is without any warranties</a> by volunteers. Use the material at your own risk. See <a href="http://oscovida.github.io/license.html">license</a> for details.</p>
+          </div>
+
+          <div class="col-md-2">
+              <h5>Feeds</h5>
+              <ul class="list-unstyled">
+                  <li><small><a href="https://oscovida.github.io/feeds/all.atom.xml"><i class="fa fa-rss"></i> All posts (Atom)</a></small></li>
+              </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <h5 class="text-right"><a href="#"><i class="fa fa-arrow-up"></i> Back to top</a></h5>
+
+      <div class="container">
+        <div class="row col-md-12 text-muted text-center">
+          Site generated by <a href="https://getpelican.com"> Pelican</a>.<br/>
+          <a href="https://github.com/kdeldycke/plumage"> Plumage</a> theme by <a href="https://kevin.deldycke.com">Kevin Deldycke</a>.
+        </div>
+      </div>
+
+    </footer>
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-163845056-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
+    <script src="./theme/js/jquery.mglass.js"></script>
+    <script src="./theme/js/application.js"></script>
+
+    <script>
+      document.getElementsByTagName("table")[0].setAttribute("id", "data_table");
+    </script>
+
+  </body>
+</html>
