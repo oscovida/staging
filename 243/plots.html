@@ -365,12 +365,48 @@ value was 548. We could manually correct this.]</li>
 </div>
 <div class="section" id="the-role-of-dashed-lines">
 <h2><a class="toc-backref" href="#id12">The role of dashed lines</a></h2>
-<p>We use a dashed line to indicate where the line cannot be trusted. We should mention this somewhere.</p>
-<a href="https://oscovida.github.io/html/Germany-Hamburg-SK-Hamburg.html"> test
-     <img src="./plots-dashed-line-example.png" alt="Plot from Germany, Hamburg, RKI data">
-</a><p>Examples:</p>
-<p>deaths in RKI-data sets, such as Hamburg: <a class="reference external" href="https://oscovida.github.io/html/Germany-Hamburg-SK-Hamburg.html">https://oscovida.github.io/html/Germany-Hamburg-SK-Hamburg.html</a> because of the issue explained in <a class="reference external" href="https://oscovida.github.io/2020-germany-reporting-delay-meldeverzug.html">https://oscovida.github.io/2020-germany-reporting-delay-meldeverzug.html</a></p>
-<p>computation of rolling averages and incidences for the most current 7 days, where normally we use a centred rolling average, but not for the last week. (Is that right?)</p>
+<p>We use a dashed line to indicate where the data is inaccurate (for some reason).</p>
+<ol class="arabic">
+<li><p class="first">Example 1: Last days in incidence, deaths and cases:</p>
+<a href="https://oscovida.github.io/html/United-Kingdom.html"> United Kingdom
+     <img src="./plots-dashed-line-example-uk.png" alt="Plot from UK, JHU data">
+</a><p>The most recent 7 days in incidence, and new cases and new deaths are shown as a dashed line.</p>
+<p>See the bitmap above as an example. Here the dashed line is chosen because we
+need a 7-day rolling average over the raw data to average out weekly
+fluctuations. (Some additional Gaussian smoothing is applied to help the eye
+which needs another 3 days). See function <tt class="docutils literal">compute_daily_change</tt> in
+<a class="reference external" href="https://github.com/oscovida/oscovida/blob/master/oscovida/oscovida.py">https://github.com/oscovida/oscovida/blob/master/oscovida/oscovida.py</a> if you
+care for the details).</p>
+<p>In more detail: For the 7-day average for today, we need to sum the reported new cases from
+the last 3 days, today, and the next 3 days and divide this by 7 (and we need
+another 3 days in either direction for visual smoothing). For the most recent
+7 days, we cannot do this (because we don't know the data from the future
+yet). Instead, we compute a rolling average using the 7 previous(!) days.
+Using this method, we can compute the averaged data up to day with the last
+known data point.</p>
+<p>However, the computation is different (and at times it might be possible to
+note a step in the data as the line [and/or its slope] as it changes from
+solid to dashed). This is highlighted through using a dashed line.</p>
+</li>
+<li><p class="first">Example 2: Deaths in German districts</p>
+<a href="https://oscovida.github.io/html/Germany-Nordrhein-Westfalen-SK-Köln.html">
+     <img src="./plots-dashed-line-example-german-district.png" alt="Plot from Germany, Hamburg, RKI data">
+</a><p>For the data on deaths for districts within Germany that is reported by the
+RKI, we dash the most recent 6 weeks. The reason here is that the RKI reports
+deaths with the date at which the infection took place, not the date on which
+the person died. Before vaccinations were available, it was reasonable to
+assume that COVID-related deaths would die within 6 weeks of the infection
+taking place.</p>
+<p>We have a detailed investigation of this phenomenon at <a class="reference external" href="https://oscovida.github.io/2020-germany-reporting-delay-meldeverzug.html">https://oscovida.github.io/2020-germany-reporting-delay-meldeverzug.html</a> .</p>
+<p>We thought it is important to understand this when interpreting the data, and
+have thus dashed the line in the plots for deaths in Germany for the most
+recent 6 weeks.</p>
+<p>[This six week period should be reviewed as the larger fraction of vaccinated
+and older people changes this: younger and healthier patients may stay
+significantly longer in medical and intensive care before they die from
+COVID.]</p>
+</li>
+</ol>
 </div>
 
   </div>
@@ -390,19 +426,19 @@ value was 548. We could manually correct this.]</li>
       <p>
               <a href="./category-all.html" rel="tag"
                   data-toggle="tooltip" class="label label-info"
-                  title="37 articles in this category">All</a>
+                  title="19 articles in this category">All</a>
             <a href="/tag-data.html" data-toggle="tooltip"
       class="label label-default"
-      title="22 articles with this tag">data</a>
+      title="13 articles with this tag">data</a>
             <a href="/tag-about.html" data-toggle="tooltip"
       class="label label-default"
-      title="11 articles with this tag">about</a>
-            <a href="/tag-tutorial.html" data-toggle="tooltip"
-      class="label label-default"
-      title="10 articles with this tag">tutorial</a>
+      title="10 articles with this tag">about</a>
             <a href="/tag-plots.html" data-toggle="tooltip"
       class="label label-default"
       title="9 articles with this tag">plots</a>
+            <a href="/tag-tutorial.html" data-toggle="tooltip"
+      class="label label-default"
+      title="1 article with this tag">tutorial</a>
       </p>
       <hr/>
 
