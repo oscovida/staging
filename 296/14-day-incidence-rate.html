@@ -1283,9 +1283,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;max_rows&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;display.max_rows&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">oscovida</span> <span class="kn">import</span> <span class="n">get_incidence_rates_countries</span>
 </pre></div>
 
@@ -1310,6 +1309,25 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Downloaded data: last data point 2/17/22 from https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv
+Downloaded data: last data point 2/17/22 from https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -1369,1131 +1387,1191 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <tbody>
     <tr>
       <th>Afghanistan</th>
-      <td>563.0</td>
-      <td>3.892834e+07</td>
-      <td>1.446247</td>
+      <td>6946</td>
+      <td>38928341</td>
+      <td>17.8</td>
     </tr>
     <tr>
       <th>Albania</th>
-      <td>1881.0</td>
-      <td>2.877800e+06</td>
-      <td>65.362430</td>
+      <td>8061</td>
+      <td>2877800</td>
+      <td>280.1</td>
     </tr>
     <tr>
       <th>Algeria</th>
-      <td>5121.0</td>
-      <td>4.385104e+07</td>
-      <td>11.678171</td>
+      <td>7533</td>
+      <td>43851043</td>
+      <td>17.2</td>
     </tr>
     <tr>
       <th>Andorra</th>
-      <td>119.0</td>
-      <td>7.726500e+04</td>
-      <td>154.015402</td>
+      <td>1052</td>
+      <td>77265</td>
+      <td>1361.5</td>
     </tr>
     <tr>
       <th>Angola</th>
-      <td>689.0</td>
-      <td>3.286627e+07</td>
-      <td>2.096374</td>
+      <td>266</td>
+      <td>32866268</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <th>Antarctica</th>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>Antigua and Barbuda</th>
-      <td>1.0</td>
-      <td>9.792800e+04</td>
-      <td>1.021158</td>
+      <td>663</td>
+      <td>97928</td>
+      <td>677.0</td>
     </tr>
     <tr>
       <th>Argentina</th>
-      <td>109300.0</td>
-      <td>4.519578e+07</td>
-      <td>241.836754</td>
+      <td>284573</td>
+      <td>45195777</td>
+      <td>629.6</td>
     </tr>
     <tr>
       <th>Armenia</th>
-      <td>2049.0</td>
-      <td>2.963234e+06</td>
-      <td>69.147425</td>
+      <td>32612</td>
+      <td>2963234</td>
+      <td>1100.6</td>
     </tr>
     <tr>
       <th>Australia</th>
-      <td>1973.0</td>
-      <td>2.545970e+07</td>
-      <td>7.749502</td>
+      <td>313106</td>
+      <td>25459700</td>
+      <td>1229.8</td>
     </tr>
     <tr>
       <th>Austria</th>
-      <td>3632.0</td>
-      <td>9.006400e+06</td>
-      <td>40.326879</td>
+      <td>434559</td>
+      <td>9006400</td>
+      <td>4825.0</td>
     </tr>
     <tr>
       <th>Azerbaijan</th>
-      <td>1966.0</td>
-      <td>1.013918e+07</td>
-      <td>19.390138</td>
+      <td>87776</td>
+      <td>10139175</td>
+      <td>865.7</td>
     </tr>
     <tr>
       <th>Bahamas</th>
-      <td>838.0</td>
-      <td>3.932480e+05</td>
-      <td>213.097079</td>
+      <td>325</td>
+      <td>393248</td>
+      <td>82.6</td>
     </tr>
     <tr>
       <th>Bahrain</th>
-      <td>4389.0</td>
-      <td>1.701583e+06</td>
-      <td>257.936286</td>
+      <td>82847</td>
+      <td>1701583</td>
+      <td>4868.8</td>
     </tr>
     <tr>
       <th>Bangladesh</th>
-      <td>31678.0</td>
-      <td>1.646894e+08</td>
-      <td>19.234998</td>
+      <td>90794</td>
+      <td>164689383</td>
+      <td>55.1</td>
     </tr>
     <tr>
       <th>Barbados</th>
-      <td>21.0</td>
-      <td>2.873710e+05</td>
-      <td>7.307627</td>
+      <td>6403</td>
+      <td>287371</td>
+      <td>2228.1</td>
     </tr>
     <tr>
       <th>Belarus</th>
-      <td>2098.0</td>
-      <td>9.449321e+06</td>
-      <td>22.202654</td>
+      <td>106389</td>
+      <td>9449321</td>
+      <td>1125.9</td>
     </tr>
     <tr>
       <th>Belgium</th>
-      <td>6508.0</td>
-      <td>1.158962e+07</td>
-      <td>56.153716</td>
+      <td>216862</td>
+      <td>11492641</td>
+      <td>1887.0</td>
     </tr>
     <tr>
       <th>Belize</th>
-      <td>518.0</td>
-      <td>3.976210e+05</td>
-      <td>130.274809</td>
+      <td>2777</td>
+      <td>397621</td>
+      <td>698.4</td>
     </tr>
     <tr>
       <th>Benin</th>
-      <td>82.0</td>
-      <td>1.212320e+07</td>
-      <td>0.676389</td>
+      <td>69</td>
+      <td>12123198</td>
+      <td>0.6</td>
     </tr>
     <tr>
       <th>Bhutan</th>
-      <td>83.0</td>
-      <td>7.716120e+05</td>
-      <td>10.756702</td>
+      <td>3151</td>
+      <td>771612</td>
+      <td>408.4</td>
     </tr>
     <tr>
       <th>Bolivia</th>
-      <td>14745.0</td>
-      <td>1.167303e+07</td>
-      <td>126.316828</td>
+      <td>20018</td>
+      <td>11673029</td>
+      <td>171.5</td>
     </tr>
     <tr>
       <th>Bosnia and Herzegovina</th>
-      <td>3682.0</td>
-      <td>3.280815e+06</td>
-      <td>112.228212</td>
+      <td>13888</td>
+      <td>3280815</td>
+      <td>423.3</td>
     </tr>
     <tr>
       <th>Botswana</th>
-      <td>325.0</td>
-      <td>2.351625e+06</td>
-      <td>13.820231</td>
+      <td>5872</td>
+      <td>2351625</td>
+      <td>249.7</td>
     </tr>
     <tr>
       <th>Brazil</th>
-      <td>502741.0</td>
-      <td>2.125594e+08</td>
-      <td>236.517876</td>
+      <td>1832225</td>
+      <td>212559409</td>
+      <td>862.0</td>
     </tr>
     <tr>
       <th>Brunei</th>
-      <td>2.0</td>
-      <td>4.374830e+05</td>
-      <td>0.457161</td>
+      <td>10908</td>
+      <td>437483</td>
+      <td>2493.4</td>
     </tr>
     <tr>
       <th>Bulgaria</th>
-      <td>1690.0</td>
-      <td>6.948445e+06</td>
-      <td>24.321989</td>
+      <td>78790</td>
+      <td>6948445</td>
+      <td>1133.9</td>
     </tr>
     <tr>
       <th>Burkina Faso</th>
-      <td>77.0</td>
-      <td>2.090328e+07</td>
-      <td>0.368363</td>
+      <td>79</td>
+      <td>20903278</td>
+      <td>0.4</td>
     </tr>
     <tr>
       <th>Burma</th>
-      <td>399.0</td>
-      <td>5.440979e+07</td>
-      <td>0.733324</td>
+      <td>19352</td>
+      <td>54409794</td>
+      <td>35.6</td>
     </tr>
     <tr>
       <th>Burundi</th>
-      <td>32.0</td>
-      <td>1.189078e+07</td>
-      <td>0.269116</td>
+      <td>385</td>
+      <td>11890781</td>
+      <td>3.2</td>
     </tr>
     <tr>
       <th>Cabo Verde</th>
-      <td>649.0</td>
-      <td>5.559880e+05</td>
-      <td>116.729138</td>
+      <td>102</td>
+      <td>555988</td>
+      <td>18.3</td>
     </tr>
     <tr>
       <th>Cambodia</th>
-      <td>0.0</td>
-      <td>1.671897e+07</td>
-      <td>0.000000</td>
+      <td>3303</td>
+      <td>16718971</td>
+      <td>19.8</td>
     </tr>
     <tr>
       <th>Cameroon</th>
-      <td>560.0</td>
-      <td>2.654586e+07</td>
-      <td>2.109557</td>
+      <td>2389</td>
+      <td>26545864</td>
+      <td>9.0</td>
     </tr>
     <tr>
       <th>Canada</th>
-      <td>5670.0</td>
-      <td>3.785570e+07</td>
-      <td>14.977929</td>
+      <td>128585</td>
+      <td>38246108</td>
+      <td>336.2</td>
     </tr>
     <tr>
       <th>Central African Republic</th>
-      <td>33.0</td>
-      <td>4.829764e+06</td>
-      <td>0.683263</td>
+      <td>164</td>
+      <td>4829764</td>
+      <td>3.4</td>
     </tr>
     <tr>
       <th>Chad</th>
-      <td>53.0</td>
-      <td>1.642586e+07</td>
-      <td>0.322662</td>
+      <td>59</td>
+      <td>16425859</td>
+      <td>0.4</td>
     </tr>
     <tr>
       <th>Chile</th>
-      <td>22472.0</td>
-      <td>1.911621e+07</td>
-      <td>117.554689</td>
+      <td>489547</td>
+      <td>19116209</td>
+      <td>2560.9</td>
     </tr>
     <tr>
       <th>China</th>
-      <td>454.0</td>
-      <td>1.404676e+09</td>
-      <td>0.032321</td>
+      <td>7434</td>
+      <td>1411778724</td>
+      <td>0.5</td>
     </tr>
     <tr>
       <th>Colombia</th>
-      <td>131244.0</td>
-      <td>5.088288e+07</td>
-      <td>257.933493</td>
+      <td>104750</td>
+      <td>50882884</td>
+      <td>205.9</td>
     </tr>
     <tr>
       <th>Comoros</th>
-      <td>18.0</td>
-      <td>8.695950e+05</td>
-      <td>2.069929</td>
+      <td>142</td>
+      <td>869595</td>
+      <td>16.3</td>
     </tr>
     <tr>
       <th>Congo (Brazzaville)</th>
-      <td>148.0</td>
-      <td>5.518092e+06</td>
-      <td>2.682086</td>
+      <td>169</td>
+      <td>5518092</td>
+      <td>3.1</td>
     </tr>
     <tr>
       <th>Congo (Kinshasa)</th>
-      <td>339.0</td>
-      <td>8.956140e+07</td>
-      <td>0.378511</td>
+      <td>324</td>
+      <td>89561404</td>
+      <td>0.4</td>
     </tr>
     <tr>
       <th>Costa Rica</th>
-      <td>10615.0</td>
-      <td>5.094114e+06</td>
-      <td>208.377747</td>
+      <td>63574</td>
+      <td>5094114</td>
+      <td>1248.0</td>
     </tr>
     <tr>
       <th>Cote d'Ivoire</th>
-      <td>841.0</td>
-      <td>2.637828e+07</td>
-      <td>3.188230</td>
+      <td>499</td>
+      <td>26378275</td>
+      <td>1.9</td>
     </tr>
     <tr>
       <th>Croatia</th>
-      <td>3467.0</td>
-      <td>4.105268e+06</td>
-      <td>84.452464</td>
+      <td>68663</td>
+      <td>4105268</td>
+      <td>1672.6</td>
     </tr>
     <tr>
       <th>Cuba</th>
-      <td>609.0</td>
-      <td>1.132662e+07</td>
-      <td>5.376716</td>
+      <td>14075</td>
+      <td>11326616</td>
+      <td>124.3</td>
     </tr>
     <tr>
       <th>Cyprus</th>
-      <td>136.0</td>
-      <td>1.207361e+06</td>
-      <td>11.264237</td>
+      <td>34490</td>
+      <td>1207361</td>
+      <td>2856.6</td>
     </tr>
     <tr>
       <th>Czechia</th>
-      <td>4165.0</td>
-      <td>1.070898e+07</td>
-      <td>38.892586</td>
+      <td>324452</td>
+      <td>10708982</td>
+      <td>3029.7</td>
     </tr>
     <tr>
       <th>Denmark</th>
-      <td>1189.0</td>
-      <td>5.792203e+06</td>
-      <td>20.527595</td>
+      <td>605974</td>
+      <td>5837213</td>
+      <td>10381.2</td>
     </tr>
     <tr>
       <th>Diamond Princess</th>
-      <td>0.0</td>
-      <td>0.000000e+00</td>
+      <td>0</td>
+      <td>0</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>Djibouti</th>
-      <td>13.0</td>
-      <td>9.880020e+05</td>
-      <td>1.315787</td>
+      <td>43</td>
+      <td>988002</td>
+      <td>4.4</td>
     </tr>
     <tr>
       <th>Dominica</th>
-      <td>2.0</td>
-      <td>7.199100e+04</td>
-      <td>2.778125</td>
+      <td>1250</td>
+      <td>71991</td>
+      <td>1736.3</td>
     </tr>
     <tr>
       <th>Dominican Republic</th>
-      <td>7504.0</td>
-      <td>1.084790e+07</td>
-      <td>69.174653</td>
+      <td>11953</td>
+      <td>10847904</td>
+      <td>110.2</td>
     </tr>
     <tr>
       <th>Ecuador</th>
-      <td>11897.0</td>
-      <td>1.764306e+07</td>
-      <td>67.431613</td>
+      <td>56290</td>
+      <td>17643060</td>
+      <td>319.0</td>
     </tr>
     <tr>
       <th>Egypt</th>
-      <td>2137.0</td>
-      <td>1.023344e+08</td>
-      <td>2.088252</td>
+      <td>30609</td>
+      <td>102334403</td>
+      <td>29.9</td>
     </tr>
     <tr>
       <th>El Salvador</th>
-      <td>2442.0</td>
-      <td>6.486201e+06</td>
-      <td>37.649157</td>
+      <td>12677</td>
+      <td>6486201</td>
+      <td>195.4</td>
     </tr>
     <tr>
       <th>Equatorial Guinea</th>
-      <td>120.0</td>
-      <td>1.402985e+06</td>
-      <td>8.553192</td>
+      <td>42</td>
+      <td>1402985</td>
+      <td>3.0</td>
     </tr>
     <tr>
       <th>Eritrea</th>
-      <td>33.0</td>
-      <td>3.546427e+06</td>
-      <td>0.930514</td>
+      <td>80</td>
+      <td>3546427</td>
+      <td>2.3</td>
     </tr>
     <tr>
       <th>Estonia</th>
-      <td>181.0</td>
-      <td>1.326539e+06</td>
-      <td>13.644529</td>
+      <td>83854</td>
+      <td>1326539</td>
+      <td>6321.3</td>
     </tr>
     <tr>
       <th>Eswatini</th>
-      <td>667.0</td>
-      <td>1.160164e+06</td>
-      <td>57.491872</td>
+      <td>420</td>
+      <td>1160164</td>
+      <td>36.2</td>
     </tr>
     <tr>
       <th>Ethiopia</th>
-      <td>19786.0</td>
-      <td>1.149636e+08</td>
-      <td>17.210667</td>
+      <td>1849</td>
+      <td>114963583</td>
+      <td>1.6</td>
     </tr>
     <tr>
       <th>Fiji</th>
-      <td>0.0</td>
-      <td>8.964440e+05</td>
-      <td>0.000000</td>
+      <td>396</td>
+      <td>896444</td>
+      <td>44.2</td>
     </tr>
     <tr>
       <th>Finland</th>
-      <td>325.0</td>
-      <td>5.540718e+06</td>
-      <td>5.865666</td>
+      <td>92778</td>
+      <td>5540718</td>
+      <td>1674.5</td>
     </tr>
     <tr>
       <th>France</th>
-      <td>59280.0</td>
-      <td>6.527351e+07</td>
-      <td>90.817850</td>
+      <td>1949172</td>
+      <td>65249843</td>
+      <td>2987.2</td>
     </tr>
     <tr>
       <th>Gabon</th>
-      <td>235.0</td>
-      <td>2.225728e+06</td>
-      <td>10.558343</td>
+      <td>319</td>
+      <td>2225728</td>
+      <td>14.3</td>
     </tr>
     <tr>
       <th>Gambia</th>
-      <td>1091.0</td>
-      <td>2.416664e+06</td>
-      <td>45.144877</td>
+      <td>61</td>
+      <td>2416664</td>
+      <td>2.5</td>
     </tr>
     <tr>
       <th>Georgia</th>
-      <td>128.0</td>
-      <td>3.989175e+06</td>
-      <td>3.208683</td>
+      <td>261692</td>
+      <td>3989175</td>
+      <td>6560.1</td>
     </tr>
     <tr>
       <th>Germany</th>
-      <td>16605.0</td>
-      <td>8.378394e+07</td>
-      <td>19.818833</td>
+      <td>2585396</td>
+      <td>83155031</td>
+      <td>3109.1</td>
     </tr>
     <tr>
       <th>Ghana</th>
-      <td>1552.0</td>
-      <td>3.107294e+07</td>
-      <td>4.994699</td>
+      <td>1000</td>
+      <td>31072945</td>
+      <td>3.2</td>
     </tr>
     <tr>
       <th>Greece</th>
-      <td>2912.0</td>
-      <td>1.042306e+07</td>
-      <td>27.938063</td>
+      <td>253215</td>
+      <td>10423056</td>
+      <td>2429.4</td>
     </tr>
     <tr>
       <th>Grenada</th>
-      <td>0.0</td>
-      <td>1.125190e+05</td>
-      <td>0.000000</td>
+      <td>754</td>
+      <td>112519</td>
+      <td>670.1</td>
     </tr>
     <tr>
       <th>Guatemala</th>
-      <td>10968.0</td>
-      <td>1.791557e+07</td>
-      <td>61.220502</td>
+      <td>46947</td>
+      <td>17915567</td>
+      <td>262.0</td>
     </tr>
     <tr>
       <th>Guinea</th>
-      <td>751.0</td>
-      <td>1.313279e+07</td>
-      <td>5.718510</td>
+      <td>148</td>
+      <td>13132792</td>
+      <td>1.1</td>
     </tr>
     <tr>
       <th>Guinea-Bissau</th>
-      <td>88.0</td>
-      <td>1.967998e+06</td>
-      <td>4.471549</td>
+      <td>165</td>
+      <td>1967998</td>
+      <td>8.4</td>
     </tr>
     <tr>
       <th>Guyana</th>
-      <td>525.0</td>
-      <td>7.865590e+05</td>
-      <td>66.746423</td>
+      <td>1861</td>
+      <td>786559</td>
+      <td>236.6</td>
     </tr>
     <tr>
       <th>Haiti</th>
-      <td>312.0</td>
-      <td>1.140253e+07</td>
-      <td>2.736234</td>
+      <td>839</td>
+      <td>11402533</td>
+      <td>7.4</td>
     </tr>
     <tr>
       <th>Holy See</th>
+      <td>0</td>
+      <td>809</td>
       <td>0.0</td>
-      <td>8.090000e+02</td>
-      <td>0.000000</td>
     </tr>
     <tr>
       <th>Honduras</th>
-      <td>9179.0</td>
-      <td>9.904608e+06</td>
-      <td>92.674036</td>
+      <td>12890</td>
+      <td>9904608</td>
+      <td>130.1</td>
     </tr>
     <tr>
       <th>Hungary</th>
-      <td>1015.0</td>
-      <td>9.660350e+06</td>
-      <td>10.506866</td>
+      <td>138533</td>
+      <td>9660350</td>
+      <td>1434.0</td>
     </tr>
     <tr>
       <th>Iceland</th>
-      <td>91.0</td>
-      <td>3.412500e+05</td>
-      <td>26.666667</td>
+      <td>27628</td>
+      <td>341250</td>
+      <td>8096.1</td>
     </tr>
     <tr>
       <th>India</th>
-      <td>918564.0</td>
-      <td>1.380004e+09</td>
-      <td>66.562397</td>
+      <td>827523</td>
+      <td>1380004385</td>
+      <td>60.0</td>
     </tr>
     <tr>
       <th>Indonesia</th>
-      <td>30683.0</td>
-      <td>2.735236e+08</td>
-      <td>11.217678</td>
+      <td>551563</td>
+      <td>273523621</td>
+      <td>201.7</td>
     </tr>
     <tr>
       <th>Iran</th>
-      <td>28120.0</td>
-      <td>8.399295e+07</td>
-      <td>33.478999</td>
+      <td>410311</td>
+      <td>83992953</td>
+      <td>488.5</td>
     </tr>
     <tr>
       <th>Iraq</th>
-      <td>51044.0</td>
-      <td>4.022250e+07</td>
-      <td>126.904087</td>
+      <td>52726</td>
+      <td>40222503</td>
+      <td>131.1</td>
     </tr>
     <tr>
       <th>Ireland</th>
-      <td>1447.0</td>
-      <td>4.937796e+06</td>
-      <td>29.304572</td>
+      <td>61112</td>
+      <td>4937796</td>
+      <td>1237.6</td>
     </tr>
     <tr>
       <th>Israel</th>
-      <td>19269.0</td>
-      <td>8.655541e+06</td>
-      <td>222.620400</td>
+      <td>416056</td>
+      <td>8655541</td>
+      <td>4806.8</td>
     </tr>
     <tr>
       <th>Italy</th>
-      <td>13983.0</td>
-      <td>6.046183e+07</td>
-      <td>23.126988</td>
+      <td>974697</td>
+      <td>60461828</td>
+      <td>1612.1</td>
     </tr>
     <tr>
       <th>Jamaica</th>
-      <td>1228.0</td>
-      <td>2.961161e+06</td>
-      <td>41.470221</td>
+      <td>2127</td>
+      <td>2961161</td>
+      <td>71.8</td>
     </tr>
     <tr>
       <th>Japan</th>
-      <td>11241.0</td>
-      <td>1.264765e+08</td>
-      <td>8.887820</td>
+      <td>1230973</td>
+      <td>126476458</td>
+      <td>973.3</td>
     </tr>
     <tr>
       <th>Jordan</th>
-      <td>568.0</td>
-      <td>1.020314e+07</td>
-      <td>5.566914</td>
+      <td>261273</td>
+      <td>10203140</td>
+      <td>2560.7</td>
     </tr>
     <tr>
       <th>Kazakhstan</th>
-      <td>2495.0</td>
-      <td>1.877671e+07</td>
-      <td>13.287740</td>
+      <td>37134</td>
+      <td>18776707</td>
+      <td>197.8</td>
     </tr>
     <tr>
       <th>Kenya</th>
-      <td>3692.0</td>
-      <td>5.377130e+07</td>
-      <td>6.866116</td>
+      <td>850</td>
+      <td>53771300</td>
+      <td>1.6</td>
+    </tr>
+    <tr>
+      <th>Kiribati</th>
+      <td>1844</td>
+      <td>117606</td>
+      <td>1567.9</td>
     </tr>
     <tr>
       <th>Korea, South</th>
-      <td>4186.0</td>
-      <td>5.126918e+07</td>
-      <td>8.164749</td>
+      <td>821150</td>
+      <td>51269183</td>
+      <td>1601.6</td>
     </tr>
     <tr>
       <th>Kosovo</th>
-      <td>1408.0</td>
-      <td>1.810366e+06</td>
-      <td>77.774329</td>
+      <td>11809</td>
+      <td>1810366</td>
+      <td>652.3</td>
     </tr>
     <tr>
       <th>Kuwait</th>
-      <td>7809.0</td>
-      <td>4.270563e+06</td>
-      <td>182.856452</td>
+      <td>44718</td>
+      <td>4270563</td>
+      <td>1047.1</td>
     </tr>
     <tr>
       <th>Kyrgyzstan</th>
-      <td>1829.0</td>
-      <td>6.524191e+06</td>
-      <td>28.034127</td>
+      <td>1050</td>
+      <td>6524191</td>
+      <td>16.1</td>
     </tr>
     <tr>
       <th>Laos</th>
-      <td>0.0</td>
-      <td>7.275556e+06</td>
-      <td>0.000000</td>
+      <td>5052</td>
+      <td>7275556</td>
+      <td>69.4</td>
     </tr>
     <tr>
       <th>Latvia</th>
-      <td>70.0</td>
-      <td>1.886202e+06</td>
-      <td>3.711161</td>
+      <td>134658</td>
+      <td>1886202</td>
+      <td>7139.1</td>
     </tr>
     <tr>
       <th>Lebanon</th>
-      <td>7533.0</td>
-      <td>6.825442e+06</td>
-      <td>110.366479</td>
+      <td>86481</td>
+      <td>6825442</td>
+      <td>1267.0</td>
     </tr>
     <tr>
       <th>Lesotho</th>
-      <td>139.0</td>
-      <td>2.142252e+06</td>
-      <td>6.488499</td>
+      <td>176</td>
+      <td>2142252</td>
+      <td>8.2</td>
     </tr>
     <tr>
       <th>Liberia</th>
-      <td>27.0</td>
-      <td>5.057677e+06</td>
-      <td>0.533842</td>
+      <td>88</td>
+      <td>5057677</td>
+      <td>1.7</td>
     </tr>
     <tr>
       <th>Libya</th>
-      <td>4844.0</td>
-      <td>6.871287e+06</td>
-      <td>70.496255</td>
+      <td>38986</td>
+      <td>6871287</td>
+      <td>567.4</td>
     </tr>
     <tr>
       <th>Liechtenstein</th>
-      <td>13.0</td>
-      <td>3.813700e+04</td>
-      <td>34.087631</td>
+      <td>1603</td>
+      <td>38137</td>
+      <td>4203.3</td>
     </tr>
     <tr>
       <th>Lithuania</th>
-      <td>438.0</td>
-      <td>2.722291e+06</td>
-      <td>16.089389</td>
+      <td>128069</td>
+      <td>2722291</td>
+      <td>4704.5</td>
     </tr>
     <tr>
       <th>Luxembourg</th>
-      <td>-844.0</td>
-      <td>6.259760e+05</td>
-      <td>-134.829450</td>
+      <td>12756</td>
+      <td>625976</td>
+      <td>2037.8</td>
     </tr>
     <tr>
       <th>MS Zaandam</th>
-      <td>0.0</td>
-      <td>0.000000e+00</td>
+      <td>0</td>
+      <td>0</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>Madagascar</th>
-      <td>957.0</td>
-      <td>2.769102e+07</td>
-      <td>3.455994</td>
+      <td>3525</td>
+      <td>27691019</td>
+      <td>12.7</td>
     </tr>
     <tr>
       <th>Malawi</th>
-      <td>411.0</td>
-      <td>1.912996e+07</td>
-      <td>2.148463</td>
+      <td>441</td>
+      <td>19129955</td>
+      <td>2.3</td>
     </tr>
     <tr>
       <th>Malaysia</th>
-      <td>122.0</td>
-      <td>3.236600e+07</td>
-      <td>0.376939</td>
+      <td>250435</td>
+      <td>32365998</td>
+      <td>773.8</td>
     </tr>
     <tr>
       <th>Maldives</th>
-      <td>1758.0</td>
-      <td>5.405420e+05</td>
-      <td>325.229122</td>
+      <td>17938</td>
+      <td>540542</td>
+      <td>3318.5</td>
     </tr>
     <tr>
       <th>Mali</th>
-      <td>133.0</td>
-      <td>2.025083e+07</td>
-      <td>0.656763</td>
+      <td>173</td>
+      <td>20250834</td>
+      <td>0.9</td>
     </tr>
     <tr>
       <th>Malta</th>
-      <td>487.0</td>
-      <td>4.415390e+05</td>
-      <td>110.296033</td>
+      <td>2004</td>
+      <td>441539</td>
+      <td>453.9</td>
+    </tr>
+    <tr>
+      <th>Marshall Islands</th>
+      <td>0</td>
+      <td>58413</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>Mauritania</th>
-      <td>254.0</td>
-      <td>4.649660e+06</td>
-      <td>5.462765</td>
+      <td>212</td>
+      <td>4649660</td>
+      <td>4.6</td>
     </tr>
     <tr>
       <th>Mauritius</th>
-      <td>9.0</td>
-      <td>1.271767e+06</td>
-      <td>0.707677</td>
+      <td>0</td>
+      <td>1271767</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>Mexico</th>
-      <td>70108.0</td>
-      <td>1.277923e+08</td>
-      <td>54.860901</td>
+      <td>338535</td>
+      <td>127792286</td>
+      <td>264.9</td>
+    </tr>
+    <tr>
+      <th>Micronesia</th>
+      <td>0</td>
+      <td>113815</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>Moldova</th>
-      <td>6323.0</td>
-      <td>4.033963e+06</td>
-      <td>156.744125</td>
+      <td>35656</td>
+      <td>4033963</td>
+      <td>883.9</td>
     </tr>
     <tr>
       <th>Monaco</th>
-      <td>6.0</td>
-      <td>3.924400e+04</td>
-      <td>15.288961</td>
+      <td>945</td>
+      <td>39244</td>
+      <td>2408.0</td>
     </tr>
     <tr>
       <th>Mongolia</th>
-      <td>3.0</td>
-      <td>3.278292e+06</td>
-      <td>0.091511</td>
+      <td>40581</td>
+      <td>3278292</td>
+      <td>1237.9</td>
     </tr>
     <tr>
       <th>Montenegro</th>
-      <td>705.0</td>
-      <td>6.280620e+05</td>
-      <td>112.250064</td>
+      <td>5957</td>
+      <td>628062</td>
+      <td>948.5</td>
     </tr>
     <tr>
       <th>Morocco</th>
-      <td>17841.0</td>
-      <td>3.691056e+07</td>
-      <td>48.335763</td>
+      <td>15929</td>
+      <td>36910558</td>
+      <td>43.2</td>
     </tr>
     <tr>
       <th>Mozambique</th>
-      <td>907.0</td>
-      <td>3.125544e+07</td>
-      <td>2.901895</td>
+      <td>672</td>
+      <td>31255435</td>
+      <td>2.2</td>
     </tr>
     <tr>
       <th>Namibia</th>
-      <td>3021.0</td>
-      <td>2.540916e+06</td>
-      <td>118.894131</td>
+      <td>811</td>
+      <td>2540916</td>
+      <td>31.9</td>
     </tr>
     <tr>
       <th>Nepal</th>
-      <td>11320.0</td>
-      <td>2.913681e+07</td>
-      <td>38.851202</td>
+      <td>12340</td>
+      <td>29136808</td>
+      <td>42.4</td>
     </tr>
     <tr>
       <th>Netherlands</th>
-      <td>7699.0</td>
-      <td>1.713487e+07</td>
-      <td>44.931760</td>
+      <td>1277056</td>
+      <td>17134873</td>
+      <td>7453.0</td>
     </tr>
     <tr>
       <th>New Zealand</th>
-      <td>95.0</td>
-      <td>4.822233e+06</td>
-      <td>1.970042</td>
+      <td>9658</td>
+      <td>4822233</td>
+      <td>200.3</td>
     </tr>
     <tr>
       <th>Nicaragua</th>
-      <td>379.0</td>
-      <td>6.624554e+06</td>
-      <td>5.721140</td>
+      <td>186</td>
+      <td>6624554</td>
+      <td>2.8</td>
     </tr>
     <tr>
       <th>Niger</th>
-      <td>8.0</td>
-      <td>2.420664e+07</td>
-      <td>0.033049</td>
+      <td>72</td>
+      <td>24206636</td>
+      <td>0.3</td>
     </tr>
     <tr>
       <th>Nigeria</th>
-      <td>4380.0</td>
-      <td>2.061396e+08</td>
-      <td>2.124774</td>
+      <td>732</td>
+      <td>206139587</td>
+      <td>0.4</td>
     </tr>
     <tr>
       <th>North Macedonia</th>
-      <td>1490.0</td>
-      <td>2.083380e+06</td>
-      <td>71.518398</td>
+      <td>16771</td>
+      <td>2083380</td>
+      <td>805.0</td>
     </tr>
     <tr>
       <th>Norway</th>
-      <td>583.0</td>
-      <td>5.421242e+06</td>
-      <td>10.753993</td>
+      <td>254567</td>
+      <td>5421242</td>
+      <td>4695.7</td>
     </tr>
     <tr>
       <th>Oman</th>
-      <td>2318.0</td>
-      <td>5.106622e+06</td>
-      <td>45.392042</td>
+      <td>26019</td>
+      <td>5106622</td>
+      <td>509.5</td>
     </tr>
     <tr>
       <th>Pakistan</th>
-      <td>6421.0</td>
-      <td>2.208923e+08</td>
-      <td>2.906846</td>
+      <td>48030</td>
+      <td>220892331</td>
+      <td>21.7</td>
+    </tr>
+    <tr>
+      <th>Palau</th>
+      <td>1310</td>
+      <td>18008</td>
+      <td>7274.5</td>
     </tr>
     <tr>
       <th>Panama</th>
-      <td>9522.0</td>
-      <td>4.314768e+06</td>
-      <td>220.683939</td>
+      <td>30745</td>
+      <td>4314768</td>
+      <td>712.6</td>
     </tr>
     <tr>
       <th>Papua New Guinea</th>
-      <td>126.0</td>
-      <td>8.947027e+06</td>
-      <td>1.408289</td>
+      <td>2190</td>
+      <td>8947027</td>
+      <td>24.5</td>
     </tr>
     <tr>
       <th>Paraguay</th>
-      <td>6970.0</td>
-      <td>7.132530e+06</td>
-      <td>97.721285</td>
+      <td>34274</td>
+      <td>7132530</td>
+      <td>480.5</td>
     </tr>
     <tr>
       <th>Peru</th>
-      <td>103489.0</td>
-      <td>3.297185e+07</td>
-      <td>313.870810</td>
+      <td>166272</td>
+      <td>32971846</td>
+      <td>504.3</td>
     </tr>
     <tr>
       <th>Philippines</th>
-      <td>52922.0</td>
-      <td>1.095811e+08</td>
-      <td>48.294831</td>
+      <td>61332</td>
+      <td>109581085</td>
+      <td>56.0</td>
     </tr>
     <tr>
       <th>Poland</th>
-      <td>9591.0</td>
-      <td>3.784660e+07</td>
-      <td>25.341771</td>
+      <td>424756</td>
+      <td>37846605</td>
+      <td>1122.3</td>
     </tr>
     <tr>
       <th>Portugal</th>
-      <td>3534.0</td>
-      <td>1.019671e+07</td>
-      <td>34.658248</td>
+      <td>352557</td>
+      <td>10196707</td>
+      <td>3457.6</td>
     </tr>
     <tr>
       <th>Qatar</th>
-      <td>3207.0</td>
-      <td>2.881060e+06</td>
-      <td>111.313197</td>
+      <td>10083</td>
+      <td>2881060</td>
+      <td>350.0</td>
     </tr>
     <tr>
       <th>Romania</th>
-      <td>15591.0</td>
-      <td>1.923768e+07</td>
-      <td>81.044068</td>
+      <td>304074</td>
+      <td>19237682</td>
+      <td>1580.6</td>
     </tr>
     <tr>
       <th>Russia</th>
-      <td>61912.0</td>
-      <td>1.459345e+08</td>
-      <td>42.424524</td>
+      <td>2533716</td>
+      <td>145934460</td>
+      <td>1736.2</td>
     </tr>
     <tr>
       <th>Rwanda</th>
-      <td>1480.0</td>
-      <td>1.295221e+07</td>
-      <td>11.426622</td>
+      <td>306</td>
+      <td>12952209</td>
+      <td>2.4</td>
     </tr>
     <tr>
       <th>Saint Kitts and Nevis</th>
-      <td>0.0</td>
-      <td>5.319200e+04</td>
-      <td>0.000000</td>
+      <td>44</td>
+      <td>53192</td>
+      <td>82.7</td>
     </tr>
     <tr>
       <th>Saint Lucia</th>
-      <td>1.0</td>
-      <td>1.836290e+05</td>
-      <td>0.544576</td>
+      <td>1027</td>
+      <td>183629</td>
+      <td>559.3</td>
     </tr>
     <tr>
       <th>Saint Vincent and the Grenadines</th>
-      <td>2.0</td>
-      <td>1.109470e+05</td>
-      <td>1.802663</td>
+      <td>529</td>
+      <td>110947</td>
+      <td>476.8</td>
+    </tr>
+    <tr>
+      <th>Samoa</th>
+      <td>0</td>
+      <td>196130</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>San Marino</th>
-      <td>11.0</td>
-      <td>3.393800e+04</td>
-      <td>32.412045</td>
+      <td>758</td>
+      <td>33938</td>
+      <td>2233.5</td>
     </tr>
     <tr>
       <th>Sao Tome and Principe</th>
-      <td>11.0</td>
-      <td>2.191610e+05</td>
-      <td>5.019141</td>
+      <td>15</td>
+      <td>219161</td>
+      <td>6.8</td>
     </tr>
     <tr>
       <th>Saudi Arabia</th>
-      <td>14907.0</td>
-      <td>3.481387e+07</td>
-      <td>42.819144</td>
+      <td>36889</td>
+      <td>34813867</td>
+      <td>106.0</td>
     </tr>
     <tr>
       <th>Senegal</th>
-      <td>1319.0</td>
-      <td>1.674393e+07</td>
-      <td>7.877482</td>
+      <td>378</td>
+      <td>16743930</td>
+      <td>2.3</td>
     </tr>
     <tr>
       <th>Serbia</th>
-      <td>1583.0</td>
-      <td>8.737370e+06</td>
-      <td>18.117580</td>
+      <td>137350</td>
+      <td>8737370</td>
+      <td>1572.0</td>
     </tr>
     <tr>
       <th>Seychelles</th>
-      <td>9.0</td>
-      <td>9.834000e+04</td>
-      <td>9.151922</td>
+      <td>1145</td>
+      <td>98340</td>
+      <td>1164.3</td>
     </tr>
     <tr>
       <th>Sierra Leone</th>
-      <td>66.0</td>
-      <td>7.976985e+06</td>
-      <td>0.827380</td>
+      <td>36</td>
+      <td>7976985</td>
+      <td>0.5</td>
     </tr>
     <tr>
       <th>Singapore</th>
-      <td>933.0</td>
-      <td>5.850343e+06</td>
-      <td>15.947783</td>
+      <td>166952</td>
+      <td>5850343</td>
+      <td>2853.7</td>
     </tr>
     <tr>
       <th>Slovakia</th>
-      <td>969.0</td>
-      <td>5.459643e+06</td>
-      <td>17.748413</td>
+      <td>303148</td>
+      <td>5459643</td>
+      <td>5552.5</td>
     </tr>
     <tr>
       <th>Slovenia</th>
-      <td>436.0</td>
-      <td>2.078932e+06</td>
-      <td>20.972307</td>
+      <td>105302</td>
+      <td>2078932</td>
+      <td>5065.2</td>
+    </tr>
+    <tr>
+      <th>Solomon Islands</th>
+      <td>3208</td>
+      <td>652858</td>
+      <td>491.4</td>
     </tr>
     <tr>
       <th>Somalia</th>
-      <td>53.0</td>
-      <td>1.589322e+07</td>
-      <td>0.333476</td>
+      <td>193</td>
+      <td>15893219</td>
+      <td>1.2</td>
     </tr>
     <tr>
       <th>South Africa</th>
-      <td>35170.0</td>
-      <td>5.930869e+07</td>
-      <td>59.299910</td>
+      <td>35949</td>
+      <td>59308690</td>
+      <td>60.6</td>
     </tr>
     <tr>
       <th>South Sudan</th>
-      <td>29.0</td>
-      <td>1.119373e+07</td>
-      <td>0.259074</td>
+      <td>83</td>
+      <td>11193729</td>
+      <td>0.7</td>
     </tr>
     <tr>
       <th>Spain</th>
-      <td>80204.0</td>
-      <td>4.675478e+07</td>
-      <td>171.541808</td>
+      <td>578891</td>
+      <td>46754783</td>
+      <td>1238.1</td>
     </tr>
     <tr>
       <th>Sri Lanka</th>
-      <td>112.0</td>
-      <td>2.141325e+07</td>
-      <td>0.523041</td>
+      <td>18392</td>
+      <td>21413250</td>
+      <td>85.9</td>
     </tr>
     <tr>
       <th>Sudan</th>
-      <td>779.0</td>
-      <td>4.384927e+07</td>
-      <td>1.776540</td>
+      <td>1065</td>
+      <td>43849269</td>
+      <td>2.4</td>
+    </tr>
+    <tr>
+      <th>Summer Olympics 2020</th>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>Suriname</th>
-      <td>932.0</td>
-      <td>5.866340e+05</td>
-      <td>158.872483</td>
+      <td>2691</td>
+      <td>586634</td>
+      <td>458.7</td>
     </tr>
     <tr>
       <th>Sweden</th>
-      <td>2300.0</td>
-      <td>1.009927e+07</td>
-      <td>22.773923</td>
+      <td>158904</td>
+      <td>10099270</td>
+      <td>1573.4</td>
     </tr>
     <tr>
       <th>Switzerland</th>
-      <td>3762.0</td>
-      <td>8.654618e+06</td>
-      <td>43.468123</td>
+      <td>296880</td>
+      <td>8654618</td>
+      <td>3430.3</td>
     </tr>
     <tr>
       <th>Syria</th>
-      <td>939.0</td>
-      <td>1.750066e+07</td>
-      <td>5.365513</td>
+      <td>1622</td>
+      <td>17500657</td>
+      <td>9.3</td>
     </tr>
     <tr>
       <th>Taiwan*</th>
-      <td>3.0</td>
-      <td>2.381678e+07</td>
-      <td>0.012596</td>
+      <td>839</td>
+      <td>23816775</td>
+      <td>3.5</td>
     </tr>
     <tr>
       <th>Tajikistan</th>
-      <td>417.0</td>
-      <td>9.537642e+06</td>
-      <td>4.372150</td>
+      <td>54</td>
+      <td>9537642</td>
+      <td>0.6</td>
     </tr>
     <tr>
       <th>Tanzania</th>
-      <td>0.0</td>
-      <td>5.973421e+07</td>
-      <td>0.000000</td>
+      <td>319</td>
+      <td>59734213</td>
+      <td>0.5</td>
     </tr>
     <tr>
       <th>Thailand</th>
-      <td>33.0</td>
-      <td>6.979998e+07</td>
-      <td>0.047278</td>
+      <td>198845</td>
+      <td>69799978</td>
+      <td>284.9</td>
     </tr>
     <tr>
       <th>Timor-Leste</th>
-      <td>2.0</td>
-      <td>1.318442e+06</td>
-      <td>0.151694</td>
+      <td>1961</td>
+      <td>1318442</td>
+      <td>148.7</td>
     </tr>
     <tr>
       <th>Togo</th>
-      <td>242.0</td>
-      <td>8.278737e+06</td>
-      <td>2.923151</td>
+      <td>160</td>
+      <td>8278737</td>
+      <td>1.9</td>
+    </tr>
+    <tr>
+      <th>Tonga</th>
+      <td>204</td>
+      <td>105697</td>
+      <td>193.0</td>
     </tr>
     <tr>
       <th>Trinidad and Tobago</th>
-      <td>1095.0</td>
-      <td>1.399491e+06</td>
-      <td>78.242733</td>
+      <td>8776</td>
+      <td>1399491</td>
+      <td>627.1</td>
     </tr>
     <tr>
       <th>Tunisia</th>
-      <td>1500.0</td>
-      <td>1.181862e+07</td>
-      <td>12.691839</td>
+      <td>44124</td>
+      <td>11818618</td>
+      <td>373.3</td>
     </tr>
     <tr>
       <th>Turkey</th>
-      <td>18004.0</td>
-      <td>8.433907e+07</td>
-      <td>21.347165</td>
+      <td>1325570</td>
+      <td>84339067</td>
+      <td>1571.7</td>
     </tr>
     <tr>
       <th>US</th>
-      <td>558106.0</td>
-      <td>3.294663e+08</td>
-      <td>169.397000</td>
+      <td>2302530</td>
+      <td>329466283</td>
+      <td>698.9</td>
     </tr>
     <tr>
       <th>Uganda</th>
-      <td>1368.0</td>
-      <td>4.574100e+07</td>
-      <td>2.990752</td>
+      <td>883</td>
+      <td>45741000</td>
+      <td>1.9</td>
     </tr>
     <tr>
       <th>Ukraine</th>
-      <td>26923.0</td>
-      <td>4.373376e+07</td>
-      <td>61.561139</td>
+      <td>489585</td>
+      <td>43733759</td>
+      <td>1119.5</td>
     </tr>
     <tr>
       <th>United Arab Emirates</th>
-      <td>5149.0</td>
-      <td>9.890400e+06</td>
-      <td>52.060584</td>
+      <td>20673</td>
+      <td>9890400</td>
+      <td>209.0</td>
     </tr>
     <tr>
       <th>United Kingdom</th>
-      <td>15604.0</td>
-      <td>6.788600e+07</td>
-      <td>22.985592</td>
+      <td>901438</td>
+      <td>67886004</td>
+      <td>1327.9</td>
     </tr>
     <tr>
       <th>Uruguay</th>
-      <td>128.0</td>
-      <td>3.473727e+06</td>
-      <td>3.684803</td>
+      <td>100322</td>
+      <td>3473727</td>
+      <td>2888.0</td>
     </tr>
     <tr>
       <th>Uzbekistan</th>
-      <td>5722.0</td>
-      <td>3.346920e+07</td>
-      <td>17.096316</td>
+      <td>8564</td>
+      <td>33469199</td>
+      <td>25.6</td>
+    </tr>
+    <tr>
+      <th>Vanuatu</th>
+      <td>0</td>
+      <td>292680</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>Venezuela</th>
-      <td>11066.0</td>
-      <td>2.843594e+07</td>
-      <td>38.915537</td>
+      <td>17952</td>
+      <td>28435943</td>
+      <td>63.1</td>
     </tr>
     <tr>
       <th>Vietnam</th>
-      <td>57.0</td>
-      <td>9.733858e+07</td>
-      <td>0.058558</td>
+      <td>338929</td>
+      <td>97338583</td>
+      <td>348.2</td>
     </tr>
     <tr>
       <th>West Bank and Gaza</th>
-      <td>5360.0</td>
-      <td>5.101416e+06</td>
-      <td>105.068867</td>
+      <td>68478</td>
+      <td>5101416</td>
+      <td>1342.3</td>
     </tr>
     <tr>
-      <th>Western Sahara</th>
-      <td>0.0</td>
-      <td>5.973300e+05</td>
-      <td>0.000000</td>
+      <th>Winter Olympics 2022</th>
+      <td>148</td>
+      <td>0</td>
+      <td>inf</td>
     </tr>
     <tr>
       <th>Yemen</th>
-      <td>71.0</td>
-      <td>2.982597e+07</td>
-      <td>0.238048</td>
+      <td>573</td>
+      <td>29825968</td>
+      <td>1.9</td>
     </tr>
     <tr>
       <th>Zambia</th>
-      <td>2186.0</td>
-      <td>1.838396e+07</td>
-      <td>11.890803</td>
+      <td>4127</td>
+      <td>18383956</td>
+      <td>22.4</td>
     </tr>
     <tr>
       <th>Zimbabwe</th>
-      <td>1104.0</td>
-      <td>1.486293e+07</td>
-      <td>7.427877</td>
+      <td>2428</td>
+      <td>14862927</td>
+      <td>16.3</td>
     </tr>
   </tbody>
 </table>
@@ -2567,1131 +2645,1191 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   </thead>
   <tbody>
     <tr>
-      <th>Maldives</th>
-      <td>1758.0</td>
-      <td>5.405420e+05</td>
-      <td>325.229122</td>
-    </tr>
-    <tr>
-      <th>Peru</th>
-      <td>103489.0</td>
-      <td>3.297185e+07</td>
-      <td>313.870810</td>
-    </tr>
-    <tr>
-      <th>Bahrain</th>
-      <td>4389.0</td>
-      <td>1.701583e+06</td>
-      <td>257.936286</td>
-    </tr>
-    <tr>
-      <th>Colombia</th>
-      <td>131244.0</td>
-      <td>5.088288e+07</td>
-      <td>257.933493</td>
-    </tr>
-    <tr>
-      <th>Argentina</th>
-      <td>109300.0</td>
-      <td>4.519578e+07</td>
-      <td>241.836754</td>
-    </tr>
-    <tr>
-      <th>Brazil</th>
-      <td>502741.0</td>
-      <td>2.125594e+08</td>
-      <td>236.517876</td>
-    </tr>
-    <tr>
-      <th>Israel</th>
-      <td>19269.0</td>
-      <td>8.655541e+06</td>
-      <td>222.620400</td>
-    </tr>
-    <tr>
-      <th>Panama</th>
-      <td>9522.0</td>
-      <td>4.314768e+06</td>
-      <td>220.683939</td>
-    </tr>
-    <tr>
-      <th>Bahamas</th>
-      <td>838.0</td>
-      <td>3.932480e+05</td>
-      <td>213.097079</td>
-    </tr>
-    <tr>
-      <th>Costa Rica</th>
-      <td>10615.0</td>
-      <td>5.094114e+06</td>
-      <td>208.377747</td>
-    </tr>
-    <tr>
-      <th>Kuwait</th>
-      <td>7809.0</td>
-      <td>4.270563e+06</td>
-      <td>182.856452</td>
-    </tr>
-    <tr>
-      <th>Spain</th>
-      <td>80204.0</td>
-      <td>4.675478e+07</td>
-      <td>171.541808</td>
-    </tr>
-    <tr>
-      <th>US</th>
-      <td>558106.0</td>
-      <td>3.294663e+08</td>
-      <td>169.397000</td>
-    </tr>
-    <tr>
-      <th>Suriname</th>
-      <td>932.0</td>
-      <td>5.866340e+05</td>
-      <td>158.872483</td>
-    </tr>
-    <tr>
-      <th>Moldova</th>
-      <td>6323.0</td>
-      <td>4.033963e+06</td>
-      <td>156.744125</td>
-    </tr>
-    <tr>
-      <th>Andorra</th>
-      <td>119.0</td>
-      <td>7.726500e+04</td>
-      <td>154.015402</td>
-    </tr>
-    <tr>
-      <th>Belize</th>
-      <td>518.0</td>
-      <td>3.976210e+05</td>
-      <td>130.274809</td>
-    </tr>
-    <tr>
-      <th>Iraq</th>
-      <td>51044.0</td>
-      <td>4.022250e+07</td>
-      <td>126.904087</td>
-    </tr>
-    <tr>
-      <th>Bolivia</th>
-      <td>14745.0</td>
-      <td>1.167303e+07</td>
-      <td>126.316828</td>
-    </tr>
-    <tr>
-      <th>Namibia</th>
-      <td>3021.0</td>
-      <td>2.540916e+06</td>
-      <td>118.894131</td>
-    </tr>
-    <tr>
-      <th>Chile</th>
-      <td>22472.0</td>
-      <td>1.911621e+07</td>
-      <td>117.554689</td>
-    </tr>
-    <tr>
-      <th>Cabo Verde</th>
-      <td>649.0</td>
-      <td>5.559880e+05</td>
-      <td>116.729138</td>
-    </tr>
-    <tr>
-      <th>Montenegro</th>
-      <td>705.0</td>
-      <td>6.280620e+05</td>
-      <td>112.250064</td>
-    </tr>
-    <tr>
-      <th>Bosnia and Herzegovina</th>
-      <td>3682.0</td>
-      <td>3.280815e+06</td>
-      <td>112.228212</td>
-    </tr>
-    <tr>
-      <th>Qatar</th>
-      <td>3207.0</td>
-      <td>2.881060e+06</td>
-      <td>111.313197</td>
-    </tr>
-    <tr>
-      <th>Lebanon</th>
-      <td>7533.0</td>
-      <td>6.825442e+06</td>
-      <td>110.366479</td>
-    </tr>
-    <tr>
-      <th>Malta</th>
-      <td>487.0</td>
-      <td>4.415390e+05</td>
-      <td>110.296033</td>
-    </tr>
-    <tr>
-      <th>West Bank and Gaza</th>
-      <td>5360.0</td>
-      <td>5.101416e+06</td>
-      <td>105.068867</td>
-    </tr>
-    <tr>
-      <th>Paraguay</th>
-      <td>6970.0</td>
-      <td>7.132530e+06</td>
-      <td>97.721285</td>
-    </tr>
-    <tr>
-      <th>Honduras</th>
-      <td>9179.0</td>
-      <td>9.904608e+06</td>
-      <td>92.674036</td>
-    </tr>
-    <tr>
-      <th>France</th>
-      <td>59280.0</td>
-      <td>6.527351e+07</td>
-      <td>90.817850</td>
-    </tr>
-    <tr>
-      <th>Croatia</th>
-      <td>3467.0</td>
-      <td>4.105268e+06</td>
-      <td>84.452464</td>
-    </tr>
-    <tr>
-      <th>Romania</th>
-      <td>15591.0</td>
-      <td>1.923768e+07</td>
-      <td>81.044068</td>
-    </tr>
-    <tr>
-      <th>Trinidad and Tobago</th>
-      <td>1095.0</td>
-      <td>1.399491e+06</td>
-      <td>78.242733</td>
-    </tr>
-    <tr>
-      <th>Kosovo</th>
-      <td>1408.0</td>
-      <td>1.810366e+06</td>
-      <td>77.774329</td>
-    </tr>
-    <tr>
-      <th>North Macedonia</th>
-      <td>1490.0</td>
-      <td>2.083380e+06</td>
-      <td>71.518398</td>
-    </tr>
-    <tr>
-      <th>Libya</th>
-      <td>4844.0</td>
-      <td>6.871287e+06</td>
-      <td>70.496255</td>
-    </tr>
-    <tr>
-      <th>Dominican Republic</th>
-      <td>7504.0</td>
-      <td>1.084790e+07</td>
-      <td>69.174653</td>
-    </tr>
-    <tr>
-      <th>Armenia</th>
-      <td>2049.0</td>
-      <td>2.963234e+06</td>
-      <td>69.147425</td>
-    </tr>
-    <tr>
-      <th>Ecuador</th>
-      <td>11897.0</td>
-      <td>1.764306e+07</td>
-      <td>67.431613</td>
-    </tr>
-    <tr>
-      <th>Guyana</th>
-      <td>525.0</td>
-      <td>7.865590e+05</td>
-      <td>66.746423</td>
-    </tr>
-    <tr>
-      <th>India</th>
-      <td>918564.0</td>
-      <td>1.380004e+09</td>
-      <td>66.562397</td>
-    </tr>
-    <tr>
-      <th>Albania</th>
-      <td>1881.0</td>
-      <td>2.877800e+06</td>
-      <td>65.362430</td>
-    </tr>
-    <tr>
-      <th>Ukraine</th>
-      <td>26923.0</td>
-      <td>4.373376e+07</td>
-      <td>61.561139</td>
-    </tr>
-    <tr>
-      <th>Guatemala</th>
-      <td>10968.0</td>
-      <td>1.791557e+07</td>
-      <td>61.220502</td>
-    </tr>
-    <tr>
-      <th>South Africa</th>
-      <td>35170.0</td>
-      <td>5.930869e+07</td>
-      <td>59.299910</td>
-    </tr>
-    <tr>
-      <th>Eswatini</th>
-      <td>667.0</td>
-      <td>1.160164e+06</td>
-      <td>57.491872</td>
-    </tr>
-    <tr>
-      <th>Belgium</th>
-      <td>6508.0</td>
-      <td>1.158962e+07</td>
-      <td>56.153716</td>
-    </tr>
-    <tr>
-      <th>Mexico</th>
-      <td>70108.0</td>
-      <td>1.277923e+08</td>
-      <td>54.860901</td>
-    </tr>
-    <tr>
-      <th>United Arab Emirates</th>
-      <td>5149.0</td>
-      <td>9.890400e+06</td>
-      <td>52.060584</td>
-    </tr>
-    <tr>
-      <th>Morocco</th>
-      <td>17841.0</td>
-      <td>3.691056e+07</td>
-      <td>48.335763</td>
-    </tr>
-    <tr>
-      <th>Philippines</th>
-      <td>52922.0</td>
-      <td>1.095811e+08</td>
-      <td>48.294831</td>
-    </tr>
-    <tr>
-      <th>Oman</th>
-      <td>2318.0</td>
-      <td>5.106622e+06</td>
-      <td>45.392042</td>
-    </tr>
-    <tr>
-      <th>Gambia</th>
-      <td>1091.0</td>
-      <td>2.416664e+06</td>
-      <td>45.144877</td>
-    </tr>
-    <tr>
-      <th>Netherlands</th>
-      <td>7699.0</td>
-      <td>1.713487e+07</td>
-      <td>44.931760</td>
-    </tr>
-    <tr>
-      <th>Switzerland</th>
-      <td>3762.0</td>
-      <td>8.654618e+06</td>
-      <td>43.468123</td>
-    </tr>
-    <tr>
-      <th>Saudi Arabia</th>
-      <td>14907.0</td>
-      <td>3.481387e+07</td>
-      <td>42.819144</td>
-    </tr>
-    <tr>
-      <th>Russia</th>
-      <td>61912.0</td>
-      <td>1.459345e+08</td>
-      <td>42.424524</td>
-    </tr>
-    <tr>
-      <th>Jamaica</th>
-      <td>1228.0</td>
-      <td>2.961161e+06</td>
-      <td>41.470221</td>
-    </tr>
-    <tr>
-      <th>Austria</th>
-      <td>3632.0</td>
-      <td>9.006400e+06</td>
-      <td>40.326879</td>
-    </tr>
-    <tr>
-      <th>Venezuela</th>
-      <td>11066.0</td>
-      <td>2.843594e+07</td>
-      <td>38.915537</td>
-    </tr>
-    <tr>
-      <th>Czechia</th>
-      <td>4165.0</td>
-      <td>1.070898e+07</td>
-      <td>38.892586</td>
-    </tr>
-    <tr>
-      <th>Nepal</th>
-      <td>11320.0</td>
-      <td>2.913681e+07</td>
-      <td>38.851202</td>
-    </tr>
-    <tr>
-      <th>El Salvador</th>
-      <td>2442.0</td>
-      <td>6.486201e+06</td>
-      <td>37.649157</td>
-    </tr>
-    <tr>
-      <th>Portugal</th>
-      <td>3534.0</td>
-      <td>1.019671e+07</td>
-      <td>34.658248</td>
-    </tr>
-    <tr>
-      <th>Liechtenstein</th>
-      <td>13.0</td>
-      <td>3.813700e+04</td>
-      <td>34.087631</td>
-    </tr>
-    <tr>
-      <th>Iran</th>
-      <td>28120.0</td>
-      <td>8.399295e+07</td>
-      <td>33.478999</td>
-    </tr>
-    <tr>
-      <th>San Marino</th>
-      <td>11.0</td>
-      <td>3.393800e+04</td>
-      <td>32.412045</td>
-    </tr>
-    <tr>
-      <th>Ireland</th>
-      <td>1447.0</td>
-      <td>4.937796e+06</td>
-      <td>29.304572</td>
-    </tr>
-    <tr>
-      <th>Kyrgyzstan</th>
-      <td>1829.0</td>
-      <td>6.524191e+06</td>
-      <td>28.034127</td>
-    </tr>
-    <tr>
-      <th>Greece</th>
-      <td>2912.0</td>
-      <td>1.042306e+07</td>
-      <td>27.938063</td>
-    </tr>
-    <tr>
-      <th>Iceland</th>
-      <td>91.0</td>
-      <td>3.412500e+05</td>
-      <td>26.666667</td>
-    </tr>
-    <tr>
-      <th>Poland</th>
-      <td>9591.0</td>
-      <td>3.784660e+07</td>
-      <td>25.341771</td>
-    </tr>
-    <tr>
-      <th>Bulgaria</th>
-      <td>1690.0</td>
-      <td>6.948445e+06</td>
-      <td>24.321989</td>
-    </tr>
-    <tr>
-      <th>Italy</th>
-      <td>13983.0</td>
-      <td>6.046183e+07</td>
-      <td>23.126988</td>
-    </tr>
-    <tr>
-      <th>United Kingdom</th>
-      <td>15604.0</td>
-      <td>6.788600e+07</td>
-      <td>22.985592</td>
-    </tr>
-    <tr>
-      <th>Sweden</th>
-      <td>2300.0</td>
-      <td>1.009927e+07</td>
-      <td>22.773923</td>
-    </tr>
-    <tr>
-      <th>Belarus</th>
-      <td>2098.0</td>
-      <td>9.449321e+06</td>
-      <td>22.202654</td>
-    </tr>
-    <tr>
-      <th>Turkey</th>
-      <td>18004.0</td>
-      <td>8.433907e+07</td>
-      <td>21.347165</td>
-    </tr>
-    <tr>
-      <th>Slovenia</th>
-      <td>436.0</td>
-      <td>2.078932e+06</td>
-      <td>20.972307</td>
+      <th>Winter Olympics 2022</th>
+      <td>148</td>
+      <td>0</td>
+      <td>inf</td>
     </tr>
     <tr>
       <th>Denmark</th>
-      <td>1189.0</td>
-      <td>5.792203e+06</td>
-      <td>20.527595</td>
+      <td>605974</td>
+      <td>5837213</td>
+      <td>10381.2</td>
     </tr>
     <tr>
-      <th>Germany</th>
-      <td>16605.0</td>
-      <td>8.378394e+07</td>
-      <td>19.818833</td>
+      <th>Iceland</th>
+      <td>27628</td>
+      <td>341250</td>
+      <td>8096.1</td>
     </tr>
     <tr>
-      <th>Azerbaijan</th>
-      <td>1966.0</td>
-      <td>1.013918e+07</td>
-      <td>19.390138</td>
+      <th>Netherlands</th>
+      <td>1277056</td>
+      <td>17134873</td>
+      <td>7453.0</td>
     </tr>
     <tr>
-      <th>Bangladesh</th>
-      <td>31678.0</td>
-      <td>1.646894e+08</td>
-      <td>19.234998</td>
-    </tr>
-    <tr>
-      <th>Serbia</th>
-      <td>1583.0</td>
-      <td>8.737370e+06</td>
-      <td>18.117580</td>
-    </tr>
-    <tr>
-      <th>Slovakia</th>
-      <td>969.0</td>
-      <td>5.459643e+06</td>
-      <td>17.748413</td>
-    </tr>
-    <tr>
-      <th>Ethiopia</th>
-      <td>19786.0</td>
-      <td>1.149636e+08</td>
-      <td>17.210667</td>
-    </tr>
-    <tr>
-      <th>Uzbekistan</th>
-      <td>5722.0</td>
-      <td>3.346920e+07</td>
-      <td>17.096316</td>
-    </tr>
-    <tr>
-      <th>Lithuania</th>
-      <td>438.0</td>
-      <td>2.722291e+06</td>
-      <td>16.089389</td>
-    </tr>
-    <tr>
-      <th>Singapore</th>
-      <td>933.0</td>
-      <td>5.850343e+06</td>
-      <td>15.947783</td>
-    </tr>
-    <tr>
-      <th>Monaco</th>
-      <td>6.0</td>
-      <td>3.924400e+04</td>
-      <td>15.288961</td>
-    </tr>
-    <tr>
-      <th>Canada</th>
-      <td>5670.0</td>
-      <td>3.785570e+07</td>
-      <td>14.977929</td>
-    </tr>
-    <tr>
-      <th>Botswana</th>
-      <td>325.0</td>
-      <td>2.351625e+06</td>
-      <td>13.820231</td>
-    </tr>
-    <tr>
-      <th>Estonia</th>
-      <td>181.0</td>
-      <td>1.326539e+06</td>
-      <td>13.644529</td>
-    </tr>
-    <tr>
-      <th>Kazakhstan</th>
-      <td>2495.0</td>
-      <td>1.877671e+07</td>
-      <td>13.287740</td>
-    </tr>
-    <tr>
-      <th>Tunisia</th>
-      <td>1500.0</td>
-      <td>1.181862e+07</td>
-      <td>12.691839</td>
-    </tr>
-    <tr>
-      <th>Zambia</th>
-      <td>2186.0</td>
-      <td>1.838396e+07</td>
-      <td>11.890803</td>
-    </tr>
-    <tr>
-      <th>Algeria</th>
-      <td>5121.0</td>
-      <td>4.385104e+07</td>
-      <td>11.678171</td>
-    </tr>
-    <tr>
-      <th>Rwanda</th>
-      <td>1480.0</td>
-      <td>1.295221e+07</td>
-      <td>11.426622</td>
-    </tr>
-    <tr>
-      <th>Cyprus</th>
-      <td>136.0</td>
-      <td>1.207361e+06</td>
-      <td>11.264237</td>
-    </tr>
-    <tr>
-      <th>Indonesia</th>
-      <td>30683.0</td>
-      <td>2.735236e+08</td>
-      <td>11.217678</td>
-    </tr>
-    <tr>
-      <th>Bhutan</th>
-      <td>83.0</td>
-      <td>7.716120e+05</td>
-      <td>10.756702</td>
-    </tr>
-    <tr>
-      <th>Norway</th>
-      <td>583.0</td>
-      <td>5.421242e+06</td>
-      <td>10.753993</td>
-    </tr>
-    <tr>
-      <th>Gabon</th>
-      <td>235.0</td>
-      <td>2.225728e+06</td>
-      <td>10.558343</td>
-    </tr>
-    <tr>
-      <th>Hungary</th>
-      <td>1015.0</td>
-      <td>9.660350e+06</td>
-      <td>10.506866</td>
-    </tr>
-    <tr>
-      <th>Seychelles</th>
-      <td>9.0</td>
-      <td>9.834000e+04</td>
-      <td>9.151922</td>
-    </tr>
-    <tr>
-      <th>Japan</th>
-      <td>11241.0</td>
-      <td>1.264765e+08</td>
-      <td>8.887820</td>
-    </tr>
-    <tr>
-      <th>Equatorial Guinea</th>
-      <td>120.0</td>
-      <td>1.402985e+06</td>
-      <td>8.553192</td>
-    </tr>
-    <tr>
-      <th>Korea, South</th>
-      <td>4186.0</td>
-      <td>5.126918e+07</td>
-      <td>8.164749</td>
-    </tr>
-    <tr>
-      <th>Senegal</th>
-      <td>1319.0</td>
-      <td>1.674393e+07</td>
-      <td>7.877482</td>
-    </tr>
-    <tr>
-      <th>Australia</th>
-      <td>1973.0</td>
-      <td>2.545970e+07</td>
-      <td>7.749502</td>
-    </tr>
-    <tr>
-      <th>Zimbabwe</th>
-      <td>1104.0</td>
-      <td>1.486293e+07</td>
-      <td>7.427877</td>
-    </tr>
-    <tr>
-      <th>Barbados</th>
-      <td>21.0</td>
-      <td>2.873710e+05</td>
-      <td>7.307627</td>
-    </tr>
-    <tr>
-      <th>Kenya</th>
-      <td>3692.0</td>
-      <td>5.377130e+07</td>
-      <td>6.866116</td>
-    </tr>
-    <tr>
-      <th>Lesotho</th>
-      <td>139.0</td>
-      <td>2.142252e+06</td>
-      <td>6.488499</td>
-    </tr>
-    <tr>
-      <th>Finland</th>
-      <td>325.0</td>
-      <td>5.540718e+06</td>
-      <td>5.865666</td>
-    </tr>
-    <tr>
-      <th>Nicaragua</th>
-      <td>379.0</td>
-      <td>6.624554e+06</td>
-      <td>5.721140</td>
-    </tr>
-    <tr>
-      <th>Guinea</th>
-      <td>751.0</td>
-      <td>1.313279e+07</td>
-      <td>5.718510</td>
-    </tr>
-    <tr>
-      <th>Jordan</th>
-      <td>568.0</td>
-      <td>1.020314e+07</td>
-      <td>5.566914</td>
-    </tr>
-    <tr>
-      <th>Mauritania</th>
-      <td>254.0</td>
-      <td>4.649660e+06</td>
-      <td>5.462765</td>
-    </tr>
-    <tr>
-      <th>Cuba</th>
-      <td>609.0</td>
-      <td>1.132662e+07</td>
-      <td>5.376716</td>
-    </tr>
-    <tr>
-      <th>Syria</th>
-      <td>939.0</td>
-      <td>1.750066e+07</td>
-      <td>5.365513</td>
-    </tr>
-    <tr>
-      <th>Sao Tome and Principe</th>
-      <td>11.0</td>
-      <td>2.191610e+05</td>
-      <td>5.019141</td>
-    </tr>
-    <tr>
-      <th>Ghana</th>
-      <td>1552.0</td>
-      <td>3.107294e+07</td>
-      <td>4.994699</td>
-    </tr>
-    <tr>
-      <th>Guinea-Bissau</th>
-      <td>88.0</td>
-      <td>1.967998e+06</td>
-      <td>4.471549</td>
-    </tr>
-    <tr>
-      <th>Tajikistan</th>
-      <td>417.0</td>
-      <td>9.537642e+06</td>
-      <td>4.372150</td>
+      <th>Palau</th>
+      <td>1310</td>
+      <td>18008</td>
+      <td>7274.5</td>
     </tr>
     <tr>
       <th>Latvia</th>
-      <td>70.0</td>
-      <td>1.886202e+06</td>
-      <td>3.711161</td>
-    </tr>
-    <tr>
-      <th>Uruguay</th>
-      <td>128.0</td>
-      <td>3.473727e+06</td>
-      <td>3.684803</td>
-    </tr>
-    <tr>
-      <th>Madagascar</th>
-      <td>957.0</td>
-      <td>2.769102e+07</td>
-      <td>3.455994</td>
+      <td>134658</td>
+      <td>1886202</td>
+      <td>7139.1</td>
     </tr>
     <tr>
       <th>Georgia</th>
-      <td>128.0</td>
-      <td>3.989175e+06</td>
-      <td>3.208683</td>
+      <td>261692</td>
+      <td>3989175</td>
+      <td>6560.1</td>
     </tr>
     <tr>
-      <th>Cote d'Ivoire</th>
-      <td>841.0</td>
-      <td>2.637828e+07</td>
-      <td>3.188230</td>
+      <th>Estonia</th>
+      <td>83854</td>
+      <td>1326539</td>
+      <td>6321.3</td>
     </tr>
     <tr>
-      <th>Uganda</th>
-      <td>1368.0</td>
-      <td>4.574100e+07</td>
-      <td>2.990752</td>
+      <th>Slovakia</th>
+      <td>303148</td>
+      <td>5459643</td>
+      <td>5552.5</td>
     </tr>
     <tr>
-      <th>Togo</th>
-      <td>242.0</td>
-      <td>8.278737e+06</td>
-      <td>2.923151</td>
+      <th>Slovenia</th>
+      <td>105302</td>
+      <td>2078932</td>
+      <td>5065.2</td>
     </tr>
     <tr>
-      <th>Pakistan</th>
-      <td>6421.0</td>
-      <td>2.208923e+08</td>
-      <td>2.906846</td>
+      <th>Bahrain</th>
+      <td>82847</td>
+      <td>1701583</td>
+      <td>4868.8</td>
     </tr>
     <tr>
-      <th>Mozambique</th>
-      <td>907.0</td>
-      <td>3.125544e+07</td>
-      <td>2.901895</td>
+      <th>Austria</th>
+      <td>434559</td>
+      <td>9006400</td>
+      <td>4825.0</td>
     </tr>
     <tr>
-      <th>Dominica</th>
-      <td>2.0</td>
-      <td>7.199100e+04</td>
-      <td>2.778125</td>
+      <th>Israel</th>
+      <td>416056</td>
+      <td>8655541</td>
+      <td>4806.8</td>
     </tr>
     <tr>
-      <th>Haiti</th>
-      <td>312.0</td>
-      <td>1.140253e+07</td>
-      <td>2.736234</td>
+      <th>Lithuania</th>
+      <td>128069</td>
+      <td>2722291</td>
+      <td>4704.5</td>
     </tr>
     <tr>
-      <th>Congo (Brazzaville)</th>
-      <td>148.0</td>
-      <td>5.518092e+06</td>
-      <td>2.682086</td>
+      <th>Norway</th>
+      <td>254567</td>
+      <td>5421242</td>
+      <td>4695.7</td>
     </tr>
     <tr>
-      <th>Malawi</th>
-      <td>411.0</td>
-      <td>1.912996e+07</td>
-      <td>2.148463</td>
+      <th>Liechtenstein</th>
+      <td>1603</td>
+      <td>38137</td>
+      <td>4203.3</td>
     </tr>
     <tr>
-      <th>Nigeria</th>
-      <td>4380.0</td>
-      <td>2.061396e+08</td>
-      <td>2.124774</td>
+      <th>Portugal</th>
+      <td>352557</td>
+      <td>10196707</td>
+      <td>3457.6</td>
     </tr>
     <tr>
-      <th>Cameroon</th>
-      <td>560.0</td>
-      <td>2.654586e+07</td>
-      <td>2.109557</td>
+      <th>Switzerland</th>
+      <td>296880</td>
+      <td>8654618</td>
+      <td>3430.3</td>
     </tr>
     <tr>
-      <th>Angola</th>
-      <td>689.0</td>
-      <td>3.286627e+07</td>
-      <td>2.096374</td>
+      <th>Maldives</th>
+      <td>17938</td>
+      <td>540542</td>
+      <td>3318.5</td>
     </tr>
     <tr>
-      <th>Egypt</th>
-      <td>2137.0</td>
-      <td>1.023344e+08</td>
-      <td>2.088252</td>
+      <th>Germany</th>
+      <td>2585396</td>
+      <td>83155031</td>
+      <td>3109.1</td>
     </tr>
     <tr>
-      <th>Comoros</th>
-      <td>18.0</td>
-      <td>8.695950e+05</td>
-      <td>2.069929</td>
+      <th>Czechia</th>
+      <td>324452</td>
+      <td>10708982</td>
+      <td>3029.7</td>
     </tr>
     <tr>
-      <th>New Zealand</th>
-      <td>95.0</td>
-      <td>4.822233e+06</td>
-      <td>1.970042</td>
+      <th>France</th>
+      <td>1949172</td>
+      <td>65249843</td>
+      <td>2987.2</td>
     </tr>
     <tr>
-      <th>Saint Vincent and the Grenadines</th>
-      <td>2.0</td>
-      <td>1.109470e+05</td>
-      <td>1.802663</td>
+      <th>Uruguay</th>
+      <td>100322</td>
+      <td>3473727</td>
+      <td>2888.0</td>
     </tr>
     <tr>
-      <th>Sudan</th>
-      <td>779.0</td>
-      <td>4.384927e+07</td>
-      <td>1.776540</td>
+      <th>Cyprus</th>
+      <td>34490</td>
+      <td>1207361</td>
+      <td>2856.6</td>
     </tr>
     <tr>
-      <th>Afghanistan</th>
-      <td>563.0</td>
-      <td>3.892834e+07</td>
-      <td>1.446247</td>
+      <th>Singapore</th>
+      <td>166952</td>
+      <td>5850343</td>
+      <td>2853.7</td>
     </tr>
     <tr>
-      <th>Papua New Guinea</th>
-      <td>126.0</td>
-      <td>8.947027e+06</td>
-      <td>1.408289</td>
+      <th>Chile</th>
+      <td>489547</td>
+      <td>19116209</td>
+      <td>2560.9</td>
     </tr>
     <tr>
-      <th>Djibouti</th>
-      <td>13.0</td>
-      <td>9.880020e+05</td>
-      <td>1.315787</td>
-    </tr>
-    <tr>
-      <th>Antigua and Barbuda</th>
-      <td>1.0</td>
-      <td>9.792800e+04</td>
-      <td>1.021158</td>
-    </tr>
-    <tr>
-      <th>Eritrea</th>
-      <td>33.0</td>
-      <td>3.546427e+06</td>
-      <td>0.930514</td>
-    </tr>
-    <tr>
-      <th>Sierra Leone</th>
-      <td>66.0</td>
-      <td>7.976985e+06</td>
-      <td>0.827380</td>
-    </tr>
-    <tr>
-      <th>Burma</th>
-      <td>399.0</td>
-      <td>5.440979e+07</td>
-      <td>0.733324</td>
-    </tr>
-    <tr>
-      <th>Mauritius</th>
-      <td>9.0</td>
-      <td>1.271767e+06</td>
-      <td>0.707677</td>
-    </tr>
-    <tr>
-      <th>Central African Republic</th>
-      <td>33.0</td>
-      <td>4.829764e+06</td>
-      <td>0.683263</td>
-    </tr>
-    <tr>
-      <th>Benin</th>
-      <td>82.0</td>
-      <td>1.212320e+07</td>
-      <td>0.676389</td>
-    </tr>
-    <tr>
-      <th>Mali</th>
-      <td>133.0</td>
-      <td>2.025083e+07</td>
-      <td>0.656763</td>
-    </tr>
-    <tr>
-      <th>Saint Lucia</th>
-      <td>1.0</td>
-      <td>1.836290e+05</td>
-      <td>0.544576</td>
-    </tr>
-    <tr>
-      <th>Liberia</th>
-      <td>27.0</td>
-      <td>5.057677e+06</td>
-      <td>0.533842</td>
-    </tr>
-    <tr>
-      <th>Sri Lanka</th>
-      <td>112.0</td>
-      <td>2.141325e+07</td>
-      <td>0.523041</td>
+      <th>Jordan</th>
+      <td>261273</td>
+      <td>10203140</td>
+      <td>2560.7</td>
     </tr>
     <tr>
       <th>Brunei</th>
-      <td>2.0</td>
-      <td>4.374830e+05</td>
-      <td>0.457161</td>
+      <td>10908</td>
+      <td>437483</td>
+      <td>2493.4</td>
     </tr>
     <tr>
-      <th>Congo (Kinshasa)</th>
-      <td>339.0</td>
-      <td>8.956140e+07</td>
-      <td>0.378511</td>
+      <th>Greece</th>
+      <td>253215</td>
+      <td>10423056</td>
+      <td>2429.4</td>
     </tr>
     <tr>
-      <th>Malaysia</th>
-      <td>122.0</td>
-      <td>3.236600e+07</td>
-      <td>0.376939</td>
+      <th>Monaco</th>
+      <td>945</td>
+      <td>39244</td>
+      <td>2408.0</td>
     </tr>
     <tr>
-      <th>Burkina Faso</th>
-      <td>77.0</td>
-      <td>2.090328e+07</td>
-      <td>0.368363</td>
+      <th>San Marino</th>
+      <td>758</td>
+      <td>33938</td>
+      <td>2233.5</td>
     </tr>
     <tr>
-      <th>Somalia</th>
-      <td>53.0</td>
-      <td>1.589322e+07</td>
-      <td>0.333476</td>
-    </tr>
-    <tr>
-      <th>Chad</th>
-      <td>53.0</td>
-      <td>1.642586e+07</td>
-      <td>0.322662</td>
-    </tr>
-    <tr>
-      <th>Burundi</th>
-      <td>32.0</td>
-      <td>1.189078e+07</td>
-      <td>0.269116</td>
-    </tr>
-    <tr>
-      <th>South Sudan</th>
-      <td>29.0</td>
-      <td>1.119373e+07</td>
-      <td>0.259074</td>
-    </tr>
-    <tr>
-      <th>Yemen</th>
-      <td>71.0</td>
-      <td>2.982597e+07</td>
-      <td>0.238048</td>
-    </tr>
-    <tr>
-      <th>Timor-Leste</th>
-      <td>2.0</td>
-      <td>1.318442e+06</td>
-      <td>0.151694</td>
-    </tr>
-    <tr>
-      <th>Mongolia</th>
-      <td>3.0</td>
-      <td>3.278292e+06</td>
-      <td>0.091511</td>
-    </tr>
-    <tr>
-      <th>Vietnam</th>
-      <td>57.0</td>
-      <td>9.733858e+07</td>
-      <td>0.058558</td>
-    </tr>
-    <tr>
-      <th>Thailand</th>
-      <td>33.0</td>
-      <td>6.979998e+07</td>
-      <td>0.047278</td>
-    </tr>
-    <tr>
-      <th>Niger</th>
-      <td>8.0</td>
-      <td>2.420664e+07</td>
-      <td>0.033049</td>
-    </tr>
-    <tr>
-      <th>China</th>
-      <td>454.0</td>
-      <td>1.404676e+09</td>
-      <td>0.032321</td>
-    </tr>
-    <tr>
-      <th>Taiwan*</th>
-      <td>3.0</td>
-      <td>2.381678e+07</td>
-      <td>0.012596</td>
-    </tr>
-    <tr>
-      <th>Western Sahara</th>
-      <td>0.0</td>
-      <td>5.973300e+05</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>Fiji</th>
-      <td>0.0</td>
-      <td>8.964440e+05</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>Laos</th>
-      <td>0.0</td>
-      <td>7.275556e+06</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>Tanzania</th>
-      <td>0.0</td>
-      <td>5.973421e+07</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>Holy See</th>
-      <td>0.0</td>
-      <td>8.090000e+02</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>Grenada</th>
-      <td>0.0</td>
-      <td>1.125190e+05</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>Saint Kitts and Nevis</th>
-      <td>0.0</td>
-      <td>5.319200e+04</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>Cambodia</th>
-      <td>0.0</td>
-      <td>1.671897e+07</td>
-      <td>0.000000</td>
+      <th>Barbados</th>
+      <td>6403</td>
+      <td>287371</td>
+      <td>2228.1</td>
     </tr>
     <tr>
       <th>Luxembourg</th>
-      <td>-844.0</td>
-      <td>6.259760e+05</td>
-      <td>-134.829450</td>
+      <td>12756</td>
+      <td>625976</td>
+      <td>2037.8</td>
+    </tr>
+    <tr>
+      <th>Belgium</th>
+      <td>216862</td>
+      <td>11492641</td>
+      <td>1887.0</td>
+    </tr>
+    <tr>
+      <th>Dominica</th>
+      <td>1250</td>
+      <td>71991</td>
+      <td>1736.3</td>
+    </tr>
+    <tr>
+      <th>Russia</th>
+      <td>2533716</td>
+      <td>145934460</td>
+      <td>1736.2</td>
+    </tr>
+    <tr>
+      <th>Finland</th>
+      <td>92778</td>
+      <td>5540718</td>
+      <td>1674.5</td>
+    </tr>
+    <tr>
+      <th>Croatia</th>
+      <td>68663</td>
+      <td>4105268</td>
+      <td>1672.6</td>
+    </tr>
+    <tr>
+      <th>Italy</th>
+      <td>974697</td>
+      <td>60461828</td>
+      <td>1612.1</td>
+    </tr>
+    <tr>
+      <th>Korea, South</th>
+      <td>821150</td>
+      <td>51269183</td>
+      <td>1601.6</td>
+    </tr>
+    <tr>
+      <th>Romania</th>
+      <td>304074</td>
+      <td>19237682</td>
+      <td>1580.6</td>
+    </tr>
+    <tr>
+      <th>Sweden</th>
+      <td>158904</td>
+      <td>10099270</td>
+      <td>1573.4</td>
+    </tr>
+    <tr>
+      <th>Serbia</th>
+      <td>137350</td>
+      <td>8737370</td>
+      <td>1572.0</td>
+    </tr>
+    <tr>
+      <th>Turkey</th>
+      <td>1325570</td>
+      <td>84339067</td>
+      <td>1571.7</td>
+    </tr>
+    <tr>
+      <th>Kiribati</th>
+      <td>1844</td>
+      <td>117606</td>
+      <td>1567.9</td>
+    </tr>
+    <tr>
+      <th>Hungary</th>
+      <td>138533</td>
+      <td>9660350</td>
+      <td>1434.0</td>
+    </tr>
+    <tr>
+      <th>Andorra</th>
+      <td>1052</td>
+      <td>77265</td>
+      <td>1361.5</td>
+    </tr>
+    <tr>
+      <th>West Bank and Gaza</th>
+      <td>68478</td>
+      <td>5101416</td>
+      <td>1342.3</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>901438</td>
+      <td>67886004</td>
+      <td>1327.9</td>
+    </tr>
+    <tr>
+      <th>Lebanon</th>
+      <td>86481</td>
+      <td>6825442</td>
+      <td>1267.0</td>
+    </tr>
+    <tr>
+      <th>Costa Rica</th>
+      <td>63574</td>
+      <td>5094114</td>
+      <td>1248.0</td>
+    </tr>
+    <tr>
+      <th>Spain</th>
+      <td>578891</td>
+      <td>46754783</td>
+      <td>1238.1</td>
+    </tr>
+    <tr>
+      <th>Mongolia</th>
+      <td>40581</td>
+      <td>3278292</td>
+      <td>1237.9</td>
+    </tr>
+    <tr>
+      <th>Ireland</th>
+      <td>61112</td>
+      <td>4937796</td>
+      <td>1237.6</td>
+    </tr>
+    <tr>
+      <th>Australia</th>
+      <td>313106</td>
+      <td>25459700</td>
+      <td>1229.8</td>
+    </tr>
+    <tr>
+      <th>Seychelles</th>
+      <td>1145</td>
+      <td>98340</td>
+      <td>1164.3</td>
+    </tr>
+    <tr>
+      <th>Bulgaria</th>
+      <td>78790</td>
+      <td>6948445</td>
+      <td>1133.9</td>
+    </tr>
+    <tr>
+      <th>Belarus</th>
+      <td>106389</td>
+      <td>9449321</td>
+      <td>1125.9</td>
+    </tr>
+    <tr>
+      <th>Poland</th>
+      <td>424756</td>
+      <td>37846605</td>
+      <td>1122.3</td>
+    </tr>
+    <tr>
+      <th>Ukraine</th>
+      <td>489585</td>
+      <td>43733759</td>
+      <td>1119.5</td>
+    </tr>
+    <tr>
+      <th>Armenia</th>
+      <td>32612</td>
+      <td>2963234</td>
+      <td>1100.6</td>
+    </tr>
+    <tr>
+      <th>Kuwait</th>
+      <td>44718</td>
+      <td>4270563</td>
+      <td>1047.1</td>
+    </tr>
+    <tr>
+      <th>Japan</th>
+      <td>1230973</td>
+      <td>126476458</td>
+      <td>973.3</td>
+    </tr>
+    <tr>
+      <th>Montenegro</th>
+      <td>5957</td>
+      <td>628062</td>
+      <td>948.5</td>
+    </tr>
+    <tr>
+      <th>Moldova</th>
+      <td>35656</td>
+      <td>4033963</td>
+      <td>883.9</td>
+    </tr>
+    <tr>
+      <th>Azerbaijan</th>
+      <td>87776</td>
+      <td>10139175</td>
+      <td>865.7</td>
+    </tr>
+    <tr>
+      <th>Brazil</th>
+      <td>1832225</td>
+      <td>212559409</td>
+      <td>862.0</td>
+    </tr>
+    <tr>
+      <th>North Macedonia</th>
+      <td>16771</td>
+      <td>2083380</td>
+      <td>805.0</td>
+    </tr>
+    <tr>
+      <th>Malaysia</th>
+      <td>250435</td>
+      <td>32365998</td>
+      <td>773.8</td>
+    </tr>
+    <tr>
+      <th>Panama</th>
+      <td>30745</td>
+      <td>4314768</td>
+      <td>712.6</td>
+    </tr>
+    <tr>
+      <th>US</th>
+      <td>2302530</td>
+      <td>329466283</td>
+      <td>698.9</td>
+    </tr>
+    <tr>
+      <th>Belize</th>
+      <td>2777</td>
+      <td>397621</td>
+      <td>698.4</td>
+    </tr>
+    <tr>
+      <th>Antigua and Barbuda</th>
+      <td>663</td>
+      <td>97928</td>
+      <td>677.0</td>
+    </tr>
+    <tr>
+      <th>Grenada</th>
+      <td>754</td>
+      <td>112519</td>
+      <td>670.1</td>
+    </tr>
+    <tr>
+      <th>Kosovo</th>
+      <td>11809</td>
+      <td>1810366</td>
+      <td>652.3</td>
+    </tr>
+    <tr>
+      <th>Argentina</th>
+      <td>284573</td>
+      <td>45195777</td>
+      <td>629.6</td>
+    </tr>
+    <tr>
+      <th>Trinidad and Tobago</th>
+      <td>8776</td>
+      <td>1399491</td>
+      <td>627.1</td>
+    </tr>
+    <tr>
+      <th>Libya</th>
+      <td>38986</td>
+      <td>6871287</td>
+      <td>567.4</td>
+    </tr>
+    <tr>
+      <th>Saint Lucia</th>
+      <td>1027</td>
+      <td>183629</td>
+      <td>559.3</td>
+    </tr>
+    <tr>
+      <th>Oman</th>
+      <td>26019</td>
+      <td>5106622</td>
+      <td>509.5</td>
+    </tr>
+    <tr>
+      <th>Peru</th>
+      <td>166272</td>
+      <td>32971846</td>
+      <td>504.3</td>
+    </tr>
+    <tr>
+      <th>Solomon Islands</th>
+      <td>3208</td>
+      <td>652858</td>
+      <td>491.4</td>
+    </tr>
+    <tr>
+      <th>Iran</th>
+      <td>410311</td>
+      <td>83992953</td>
+      <td>488.5</td>
+    </tr>
+    <tr>
+      <th>Paraguay</th>
+      <td>34274</td>
+      <td>7132530</td>
+      <td>480.5</td>
+    </tr>
+    <tr>
+      <th>Saint Vincent and the Grenadines</th>
+      <td>529</td>
+      <td>110947</td>
+      <td>476.8</td>
+    </tr>
+    <tr>
+      <th>Suriname</th>
+      <td>2691</td>
+      <td>586634</td>
+      <td>458.7</td>
+    </tr>
+    <tr>
+      <th>Malta</th>
+      <td>2004</td>
+      <td>441539</td>
+      <td>453.9</td>
+    </tr>
+    <tr>
+      <th>Bosnia and Herzegovina</th>
+      <td>13888</td>
+      <td>3280815</td>
+      <td>423.3</td>
+    </tr>
+    <tr>
+      <th>Bhutan</th>
+      <td>3151</td>
+      <td>771612</td>
+      <td>408.4</td>
+    </tr>
+    <tr>
+      <th>Tunisia</th>
+      <td>44124</td>
+      <td>11818618</td>
+      <td>373.3</td>
+    </tr>
+    <tr>
+      <th>Qatar</th>
+      <td>10083</td>
+      <td>2881060</td>
+      <td>350.0</td>
+    </tr>
+    <tr>
+      <th>Vietnam</th>
+      <td>338929</td>
+      <td>97338583</td>
+      <td>348.2</td>
+    </tr>
+    <tr>
+      <th>Canada</th>
+      <td>128585</td>
+      <td>38246108</td>
+      <td>336.2</td>
+    </tr>
+    <tr>
+      <th>Ecuador</th>
+      <td>56290</td>
+      <td>17643060</td>
+      <td>319.0</td>
+    </tr>
+    <tr>
+      <th>Thailand</th>
+      <td>198845</td>
+      <td>69799978</td>
+      <td>284.9</td>
+    </tr>
+    <tr>
+      <th>Albania</th>
+      <td>8061</td>
+      <td>2877800</td>
+      <td>280.1</td>
+    </tr>
+    <tr>
+      <th>Mexico</th>
+      <td>338535</td>
+      <td>127792286</td>
+      <td>264.9</td>
+    </tr>
+    <tr>
+      <th>Guatemala</th>
+      <td>46947</td>
+      <td>17915567</td>
+      <td>262.0</td>
+    </tr>
+    <tr>
+      <th>Botswana</th>
+      <td>5872</td>
+      <td>2351625</td>
+      <td>249.7</td>
+    </tr>
+    <tr>
+      <th>Guyana</th>
+      <td>1861</td>
+      <td>786559</td>
+      <td>236.6</td>
+    </tr>
+    <tr>
+      <th>United Arab Emirates</th>
+      <td>20673</td>
+      <td>9890400</td>
+      <td>209.0</td>
+    </tr>
+    <tr>
+      <th>Colombia</th>
+      <td>104750</td>
+      <td>50882884</td>
+      <td>205.9</td>
+    </tr>
+    <tr>
+      <th>Indonesia</th>
+      <td>551563</td>
+      <td>273523621</td>
+      <td>201.7</td>
+    </tr>
+    <tr>
+      <th>New Zealand</th>
+      <td>9658</td>
+      <td>4822233</td>
+      <td>200.3</td>
+    </tr>
+    <tr>
+      <th>Kazakhstan</th>
+      <td>37134</td>
+      <td>18776707</td>
+      <td>197.8</td>
+    </tr>
+    <tr>
+      <th>El Salvador</th>
+      <td>12677</td>
+      <td>6486201</td>
+      <td>195.4</td>
+    </tr>
+    <tr>
+      <th>Tonga</th>
+      <td>204</td>
+      <td>105697</td>
+      <td>193.0</td>
+    </tr>
+    <tr>
+      <th>Bolivia</th>
+      <td>20018</td>
+      <td>11673029</td>
+      <td>171.5</td>
+    </tr>
+    <tr>
+      <th>Timor-Leste</th>
+      <td>1961</td>
+      <td>1318442</td>
+      <td>148.7</td>
+    </tr>
+    <tr>
+      <th>Iraq</th>
+      <td>52726</td>
+      <td>40222503</td>
+      <td>131.1</td>
+    </tr>
+    <tr>
+      <th>Honduras</th>
+      <td>12890</td>
+      <td>9904608</td>
+      <td>130.1</td>
+    </tr>
+    <tr>
+      <th>Cuba</th>
+      <td>14075</td>
+      <td>11326616</td>
+      <td>124.3</td>
+    </tr>
+    <tr>
+      <th>Dominican Republic</th>
+      <td>11953</td>
+      <td>10847904</td>
+      <td>110.2</td>
+    </tr>
+    <tr>
+      <th>Saudi Arabia</th>
+      <td>36889</td>
+      <td>34813867</td>
+      <td>106.0</td>
+    </tr>
+    <tr>
+      <th>Sri Lanka</th>
+      <td>18392</td>
+      <td>21413250</td>
+      <td>85.9</td>
+    </tr>
+    <tr>
+      <th>Saint Kitts and Nevis</th>
+      <td>44</td>
+      <td>53192</td>
+      <td>82.7</td>
+    </tr>
+    <tr>
+      <th>Bahamas</th>
+      <td>325</td>
+      <td>393248</td>
+      <td>82.6</td>
+    </tr>
+    <tr>
+      <th>Jamaica</th>
+      <td>2127</td>
+      <td>2961161</td>
+      <td>71.8</td>
+    </tr>
+    <tr>
+      <th>Laos</th>
+      <td>5052</td>
+      <td>7275556</td>
+      <td>69.4</td>
+    </tr>
+    <tr>
+      <th>Venezuela</th>
+      <td>17952</td>
+      <td>28435943</td>
+      <td>63.1</td>
+    </tr>
+    <tr>
+      <th>South Africa</th>
+      <td>35949</td>
+      <td>59308690</td>
+      <td>60.6</td>
+    </tr>
+    <tr>
+      <th>India</th>
+      <td>827523</td>
+      <td>1380004385</td>
+      <td>60.0</td>
+    </tr>
+    <tr>
+      <th>Philippines</th>
+      <td>61332</td>
+      <td>109581085</td>
+      <td>56.0</td>
+    </tr>
+    <tr>
+      <th>Bangladesh</th>
+      <td>90794</td>
+      <td>164689383</td>
+      <td>55.1</td>
+    </tr>
+    <tr>
+      <th>Fiji</th>
+      <td>396</td>
+      <td>896444</td>
+      <td>44.2</td>
+    </tr>
+    <tr>
+      <th>Morocco</th>
+      <td>15929</td>
+      <td>36910558</td>
+      <td>43.2</td>
+    </tr>
+    <tr>
+      <th>Nepal</th>
+      <td>12340</td>
+      <td>29136808</td>
+      <td>42.4</td>
+    </tr>
+    <tr>
+      <th>Eswatini</th>
+      <td>420</td>
+      <td>1160164</td>
+      <td>36.2</td>
+    </tr>
+    <tr>
+      <th>Burma</th>
+      <td>19352</td>
+      <td>54409794</td>
+      <td>35.6</td>
+    </tr>
+    <tr>
+      <th>Namibia</th>
+      <td>811</td>
+      <td>2540916</td>
+      <td>31.9</td>
+    </tr>
+    <tr>
+      <th>Egypt</th>
+      <td>30609</td>
+      <td>102334403</td>
+      <td>29.9</td>
+    </tr>
+    <tr>
+      <th>Uzbekistan</th>
+      <td>8564</td>
+      <td>33469199</td>
+      <td>25.6</td>
+    </tr>
+    <tr>
+      <th>Papua New Guinea</th>
+      <td>2190</td>
+      <td>8947027</td>
+      <td>24.5</td>
+    </tr>
+    <tr>
+      <th>Zambia</th>
+      <td>4127</td>
+      <td>18383956</td>
+      <td>22.4</td>
+    </tr>
+    <tr>
+      <th>Pakistan</th>
+      <td>48030</td>
+      <td>220892331</td>
+      <td>21.7</td>
+    </tr>
+    <tr>
+      <th>Cambodia</th>
+      <td>3303</td>
+      <td>16718971</td>
+      <td>19.8</td>
+    </tr>
+    <tr>
+      <th>Cabo Verde</th>
+      <td>102</td>
+      <td>555988</td>
+      <td>18.3</td>
+    </tr>
+    <tr>
+      <th>Afghanistan</th>
+      <td>6946</td>
+      <td>38928341</td>
+      <td>17.8</td>
+    </tr>
+    <tr>
+      <th>Algeria</th>
+      <td>7533</td>
+      <td>43851043</td>
+      <td>17.2</td>
+    </tr>
+    <tr>
+      <th>Zimbabwe</th>
+      <td>2428</td>
+      <td>14862927</td>
+      <td>16.3</td>
+    </tr>
+    <tr>
+      <th>Comoros</th>
+      <td>142</td>
+      <td>869595</td>
+      <td>16.3</td>
+    </tr>
+    <tr>
+      <th>Kyrgyzstan</th>
+      <td>1050</td>
+      <td>6524191</td>
+      <td>16.1</td>
+    </tr>
+    <tr>
+      <th>Gabon</th>
+      <td>319</td>
+      <td>2225728</td>
+      <td>14.3</td>
+    </tr>
+    <tr>
+      <th>Madagascar</th>
+      <td>3525</td>
+      <td>27691019</td>
+      <td>12.7</td>
+    </tr>
+    <tr>
+      <th>Syria</th>
+      <td>1622</td>
+      <td>17500657</td>
+      <td>9.3</td>
+    </tr>
+    <tr>
+      <th>Cameroon</th>
+      <td>2389</td>
+      <td>26545864</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>Guinea-Bissau</th>
+      <td>165</td>
+      <td>1967998</td>
+      <td>8.4</td>
+    </tr>
+    <tr>
+      <th>Lesotho</th>
+      <td>176</td>
+      <td>2142252</td>
+      <td>8.2</td>
+    </tr>
+    <tr>
+      <th>Haiti</th>
+      <td>839</td>
+      <td>11402533</td>
+      <td>7.4</td>
+    </tr>
+    <tr>
+      <th>Sao Tome and Principe</th>
+      <td>15</td>
+      <td>219161</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>Mauritania</th>
+      <td>212</td>
+      <td>4649660</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>Djibouti</th>
+      <td>43</td>
+      <td>988002</td>
+      <td>4.4</td>
+    </tr>
+    <tr>
+      <th>Taiwan*</th>
+      <td>839</td>
+      <td>23816775</td>
+      <td>3.5</td>
+    </tr>
+    <tr>
+      <th>Central African Republic</th>
+      <td>164</td>
+      <td>4829764</td>
+      <td>3.4</td>
+    </tr>
+    <tr>
+      <th>Burundi</th>
+      <td>385</td>
+      <td>11890781</td>
+      <td>3.2</td>
+    </tr>
+    <tr>
+      <th>Ghana</th>
+      <td>1000</td>
+      <td>31072945</td>
+      <td>3.2</td>
+    </tr>
+    <tr>
+      <th>Congo (Brazzaville)</th>
+      <td>169</td>
+      <td>5518092</td>
+      <td>3.1</td>
+    </tr>
+    <tr>
+      <th>Equatorial Guinea</th>
+      <td>42</td>
+      <td>1402985</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>Nicaragua</th>
+      <td>186</td>
+      <td>6624554</td>
+      <td>2.8</td>
+    </tr>
+    <tr>
+      <th>Gambia</th>
+      <td>61</td>
+      <td>2416664</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>Sudan</th>
+      <td>1065</td>
+      <td>43849269</td>
+      <td>2.4</td>
+    </tr>
+    <tr>
+      <th>Rwanda</th>
+      <td>306</td>
+      <td>12952209</td>
+      <td>2.4</td>
+    </tr>
+    <tr>
+      <th>Eritrea</th>
+      <td>80</td>
+      <td>3546427</td>
+      <td>2.3</td>
+    </tr>
+    <tr>
+      <th>Senegal</th>
+      <td>378</td>
+      <td>16743930</td>
+      <td>2.3</td>
+    </tr>
+    <tr>
+      <th>Malawi</th>
+      <td>441</td>
+      <td>19129955</td>
+      <td>2.3</td>
+    </tr>
+    <tr>
+      <th>Mozambique</th>
+      <td>672</td>
+      <td>31255435</td>
+      <td>2.2</td>
+    </tr>
+    <tr>
+      <th>Cote d'Ivoire</th>
+      <td>499</td>
+      <td>26378275</td>
+      <td>1.9</td>
+    </tr>
+    <tr>
+      <th>Yemen</th>
+      <td>573</td>
+      <td>29825968</td>
+      <td>1.9</td>
+    </tr>
+    <tr>
+      <th>Uganda</th>
+      <td>883</td>
+      <td>45741000</td>
+      <td>1.9</td>
+    </tr>
+    <tr>
+      <th>Togo</th>
+      <td>160</td>
+      <td>8278737</td>
+      <td>1.9</td>
+    </tr>
+    <tr>
+      <th>Liberia</th>
+      <td>88</td>
+      <td>5057677</td>
+      <td>1.7</td>
+    </tr>
+    <tr>
+      <th>Kenya</th>
+      <td>850</td>
+      <td>53771300</td>
+      <td>1.6</td>
+    </tr>
+    <tr>
+      <th>Ethiopia</th>
+      <td>1849</td>
+      <td>114963583</td>
+      <td>1.6</td>
+    </tr>
+    <tr>
+      <th>Somalia</th>
+      <td>193</td>
+      <td>15893219</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>Guinea</th>
+      <td>148</td>
+      <td>13132792</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <th>Mali</th>
+      <td>173</td>
+      <td>20250834</td>
+      <td>0.9</td>
+    </tr>
+    <tr>
+      <th>Angola</th>
+      <td>266</td>
+      <td>32866268</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <th>South Sudan</th>
+      <td>83</td>
+      <td>11193729</td>
+      <td>0.7</td>
+    </tr>
+    <tr>
+      <th>Tajikistan</th>
+      <td>54</td>
+      <td>9537642</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <th>Benin</th>
+      <td>69</td>
+      <td>12123198</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <th>Tanzania</th>
+      <td>319</td>
+      <td>59734213</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>Sierra Leone</th>
+      <td>36</td>
+      <td>7976985</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>China</th>
+      <td>7434</td>
+      <td>1411778724</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>Burkina Faso</th>
+      <td>79</td>
+      <td>20903278</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <th>Nigeria</th>
+      <td>732</td>
+      <td>206139587</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <th>Chad</th>
+      <td>59</td>
+      <td>16425859</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <th>Congo (Kinshasa)</th>
+      <td>324</td>
+      <td>89561404</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <th>Niger</th>
+      <td>72</td>
+      <td>24206636</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <th>Vanuatu</th>
+      <td>0</td>
+      <td>292680</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Micronesia</th>
+      <td>0</td>
+      <td>113815</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Marshall Islands</th>
+      <td>0</td>
+      <td>58413</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Samoa</th>
+      <td>0</td>
+      <td>196130</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Holy See</th>
+      <td>0</td>
+      <td>809</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Mauritius</th>
+      <td>0</td>
+      <td>1271767</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Antarctica</th>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>Diamond Princess</th>
-      <td>0.0</td>
-      <td>0.000000e+00</td>
+      <td>0</td>
+      <td>0</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>MS Zaandam</th>
-      <td>0.0</td>
-      <td>0.000000e+00</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Summer Olympics 2020</th>
+      <td>0</td>
+      <td>0</td>
       <td>NaN</td>
     </tr>
   </tbody>
@@ -3778,11 +3916,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>8/26/20    239010.0
-8/27/20    240571.0
-8/28/20    242126.0
-8/29/20    242835.0
-8/30/20    243305.0
+<pre>2/13/22    12454304.0
+2/14/22    12628843.0
+2/15/22    12692053.0
+2/16/22    13093881.0
+2/17/22    13309040.0
 Name: Germany, dtype: float64</pre>
 </div>
 
@@ -3847,20 +3985,20 @@ Name: Germany, dtype: float64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>8/17/20       NaN
-8/18/20    1420.0
-8/19/20    1586.0
-8/20/20    1586.0
-8/21/20    1737.0
-8/22/20     832.0
-8/23/20     633.0
-8/24/20    1628.0
-8/25/20    1461.0
-8/26/20    1427.0
-8/27/20    1561.0
-8/28/20    1555.0
-8/29/20     709.0
-8/30/20     470.0
+<pre>2/4/22          NaN
+2/5/22     127116.0
+2/6/22      82363.0
+2/7/22      51377.0
+2/8/22     380632.0
+2/9/22     252813.0
+2/10/22    236080.0
+2/11/22    206242.0
+2/12/22    116810.0
+2/13/22     62841.0
+2/14/22    174539.0
+2/15/22     63210.0
+2/16/22    401828.0
+2/17/22    215159.0
 Name: Germany, dtype: float64</pre>
 </div>
 
@@ -3894,7 +4032,7 @@ Name: Germany, dtype: float64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f6a151723d0&gt;</pre>
+<pre>&lt;AxesSubplot:&gt;</pre>
 </div>
 
 </div>
@@ -3905,677 +4043,11 @@ Name: Germany, dtype: float64</pre>
 
 
 
-<div class="output_svg output_subarea ">
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
-  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Created with matplotlib (https://matplotlib.org/) -->
-<svg height="250.430707pt" version="1.1" viewBox="0 0 376.2 250.430707" width="376.2pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
- <defs>
-  <style type="text/css">
-*{stroke-linecap:butt;stroke-linejoin:round;}
-  </style>
- </defs>
- <g id="figure_1">
-  <g id="patch_1">
-   <path d="M 0 250.430707 
-L 376.2 250.430707 
-L 376.2 0 
-L 0 0 
-z
-" style="fill:#ffffff;"/>
-  </g>
-  <g id="axes_1">
-   <g id="patch_2">
-    <path d="M 34.2 227.910394 
-L 369 227.910394 
-L 369 10.470394 
-L 34.2 10.470394 
-z
-" style="fill:#e5e5e5;"/>
-   </g>
-   <g id="matplotlib.axis_1">
-    <g id="xtick_1">
-     <g id="line2d_1">
-      <path clip-path="url(#p74344f141c)" d="M 74.781818 227.910394 
-L 74.781818 10.470394 
-" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:0.8;"/>
-     </g>
-     <g id="line2d_2">
-      <defs>
-       <path d="M 0 0 
-L 0 3.5 
-" id="m1860df6044" style="stroke:#555555;stroke-width:0.8;"/>
-      </defs>
-      <g>
-       <use style="fill:#555555;stroke:#555555;stroke-width:0.8;" x="74.781818" xlink:href="#m1860df6044" y="227.910394"/>
-      </g>
-     </g>
-     <g id="text_1">
-      <!-- 8/19/20 -->
-      <defs>
-       <path d="M 25 -1 
-Q 19.09375 -1 14.84375 1.25 
-Q 10.59375 3.5 8.296875 7.296875 
-Q 6 11.09375 6 15.703125 
-Q 6 21.09375 9.390625 25.796875 
-Q 12.796875 30.5 18.5 33.09375 
-Q 14.203125 35.296875 11.59375 39.25 
-Q 9 43.203125 9 47.703125 
-Q 9 54.09375 13.140625 58.59375 
-Q 17.296875 63.09375 25.5 63.09375 
-Q 31.296875 63.09375 34.890625 61.09375 
-Q 38.5 59.09375 40.25 55.75 
-Q 42 52.40625 42 48.296875 
-Q 42 43.796875 39.296875 39.75 
-Q 36.59375 35.703125 32.09375 33.296875 
-Q 37.5 30.796875 40.796875 26.140625 
-Q 44.09375 21.5 44.09375 16.09375 
-Q 44.09375 11.203125 41.75 7.34375 
-Q 39.40625 3.5 35.15625 1.25 
-Q 30.90625 -1 25 -1 
-z
-M 26.703125 35.796875 
-Q 30.40625 37.796875 32.796875 41.1875 
-Q 35.203125 44.59375 35.203125 48.09375 
-Q 35.203125 51.59375 32.75 54.390625 
-Q 30.296875 57.203125 25.296875 57.203125 
-Q 20.40625 57.203125 18.046875 54.5 
-Q 15.703125 51.796875 15.703125 48.40625 
-Q 15.703125 43.796875 18.890625 41.046875 
-Q 22.09375 38.296875 26.703125 35.796875 
-z
-M 25.203125 5.296875 
-Q 31 5.296875 34 8.4375 
-Q 37 11.59375 37 16.09375 
-Q 37 20.703125 33.390625 24.546875 
-Q 29.796875 28.40625 23.703125 30.296875 
-Q 19.203125 28.40625 16.203125 24.65625 
-Q 13.203125 20.90625 13.203125 16.40625 
-Q 13.203125 11.90625 16.34375 8.59375 
-Q 19.5 5.296875 25.203125 5.296875 
-z
-" id="Inconsolata-Regular-56"/>
-       <path d="M 12.296875 -4.203125 
-L 6.40625 -1.296875 
-L 37.703125 66.5 
-L 43.703125 63.40625 
-z
-" id="Inconsolata-Regular-47"/>
-       <path d="M 23 0 
-L 23 53.703125 
-L 10.40625 50 
-L 8.796875 53.90625 
-L 25.09375 62.40625 
-L 30 62.40625 
-L 30 0 
-z
-" id="Inconsolata-Regular-49"/>
-       <path d="M 22.796875 -1 
-Q 13.796875 -1 7.90625 4.703125 
-L 12.203125 9.59375 
-L 12.90625 10.40625 
-L 13.40625 9.90625 
-Q 13.5 9.09375 13.890625 8.4375 
-Q 14.296875 7.796875 15.5 6.703125 
-Q 18.203125 5 22.203125 5 
-Q 27 5 30.140625 8.296875 
-Q 33.296875 11.59375 35 16.84375 
-Q 36.703125 22.09375 37.09375 28.09375 
-Q 34.703125 26 31.796875 24.796875 
-Q 28.90625 23.59375 24.90625 23.59375 
-Q 19.796875 23.59375 15.6875 26 
-Q 11.59375 28.40625 9.1875 32.65625 
-Q 6.796875 36.90625 6.796875 42.40625 
-Q 6.796875 48.296875 9.1875 52.84375 
-Q 11.59375 57.40625 15.6875 60.046875 
-Q 19.796875 62.703125 24.703125 62.703125 
-Q 30.59375 62.703125 34.890625 59.296875 
-Q 39.203125 55.90625 41.546875 49.953125 
-Q 43.90625 44 43.90625 36.296875 
-Q 43.90625 17.5 38.296875 8.34375 
-Q 32.703125 -0.796875 22.796875 -1 
-z
-M 13.59375 42.5 
-Q 13.59375 36.59375 17 33.140625 
-Q 20.40625 29.703125 25 29.703125 
-Q 29.203125 29.703125 32 30.890625 
-Q 34.796875 32.09375 37.203125 34.90625 
-Q 36.5 56.59375 25 56.59375 
-Q 19.90625 56.59375 16.75 52.84375 
-Q 13.59375 49.09375 13.59375 42.5 
-z
-" id="Inconsolata-Regular-57"/>
-       <path d="M 7.296875 5.59375 
-Q 14 12.5 19.390625 17.84375 
-Q 24.796875 23.203125 28.59375 27.640625 
-Q 32.40625 32.09375 34.40625 36.296875 
-Q 36.40625 40.5 36.40625 45.09375 
-Q 36.40625 51.59375 33.296875 54.09375 
-Q 30.203125 56.59375 25.796875 56.59375 
-Q 22.203125 56.59375 19.046875 55.046875 
-Q 15.90625 53.5 13.296875 50.296875 
-Q 12.40625 48.90625 12.203125 48.15625 
-Q 12 47.40625 12.09375 46.59375 
-L 11.703125 46.09375 
-L 10.90625 46.59375 
-L 5.796875 50.59375 
-Q 8.796875 56.40625 14.046875 59.546875 
-Q 19.296875 62.703125 25.703125 62.703125 
-Q 33.59375 62.703125 38.59375 57.953125 
-Q 43.59375 53.203125 43.59375 44.90625 
-Q 43.59375 39.703125 41.296875 35 
-Q 39 30.296875 35.140625 25.6875 
-Q 31.296875 21.09375 26.390625 16.296875 
-Q 21.5 11.5 16.296875 6.09375 
-L 39.5 6.09375 
-Q 41.203125 6.09375 41.890625 6.296875 
-Q 42.59375 6.5 43.203125 7.09375 
-L 43.90625 7.09375 
-L 43.90625 0 
-L 7.296875 0 
-z
-" id="Inconsolata-Regular-50"/>
-       <path d="M 25 -1.09375 
-Q 15.703125 -1.09375 10.703125 7.203125 
-Q 5.703125 15.5 5.703125 30.796875 
-Q 5.703125 45.59375 10.703125 54.140625 
-Q 15.703125 62.703125 25 62.703125 
-Q 34.296875 62.703125 39.296875 54.140625 
-Q 44.296875 45.59375 44.296875 30.796875 
-Q 44.296875 15.5 39.296875 7.203125 
-Q 34.296875 -1.09375 25 -1.09375 
-z
-M 12.90625 30.796875 
-Q 12.90625 24.40625 13.796875 19.40625 
-L 35 46.703125 
-Q 33.5 51.40625 30.953125 54 
-Q 28.40625 56.59375 25 56.59375 
-Q 19.296875 56.59375 16.09375 49.59375 
-Q 12.90625 42.59375 12.90625 30.796875 
-z
-M 25 5 
-Q 30.703125 5 33.890625 11.703125 
-Q 37.09375 18.40625 37.09375 30.796875 
-Q 37.09375 36.296875 36.40625 40.796875 
-L 15.203125 13.90625 
-Q 18.296875 5 25 5 
-z
-" id="Inconsolata-Regular-48"/>
-      </defs>
-      <g style="fill:#555555;" transform="translate(57.281818 241.560394)scale(0.1 -0.1)">
-       <use xlink:href="#Inconsolata-Regular-56"/>
-       <use x="49.999985" xlink:href="#Inconsolata-Regular-47"/>
-       <use x="99.999969" xlink:href="#Inconsolata-Regular-49"/>
-       <use x="149.999954" xlink:href="#Inconsolata-Regular-57"/>
-       <use x="199.999939" xlink:href="#Inconsolata-Regular-47"/>
-       <use x="249.999924" xlink:href="#Inconsolata-Regular-50"/>
-       <use x="299.999908" xlink:href="#Inconsolata-Regular-48"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_2">
-     <g id="line2d_3">
-      <path clip-path="url(#p74344f141c)" d="M 125.509091 227.910394 
-L 125.509091 10.470394 
-" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:0.8;"/>
-     </g>
-     <g id="line2d_4">
-      <g>
-       <use style="fill:#555555;stroke:#555555;stroke-width:0.8;" x="125.509091" xlink:href="#m1860df6044" y="227.910394"/>
-      </g>
-     </g>
-     <g id="text_2">
-      <!-- 8/21/20 -->
-      <g style="fill:#555555;" transform="translate(108.009091 241.560394)scale(0.1 -0.1)">
-       <use xlink:href="#Inconsolata-Regular-56"/>
-       <use x="49.999985" xlink:href="#Inconsolata-Regular-47"/>
-       <use x="99.999969" xlink:href="#Inconsolata-Regular-50"/>
-       <use x="149.999954" xlink:href="#Inconsolata-Regular-49"/>
-       <use x="199.999939" xlink:href="#Inconsolata-Regular-47"/>
-       <use x="249.999924" xlink:href="#Inconsolata-Regular-50"/>
-       <use x="299.999908" xlink:href="#Inconsolata-Regular-48"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_3">
-     <g id="line2d_5">
-      <path clip-path="url(#p74344f141c)" d="M 176.236364 227.910394 
-L 176.236364 10.470394 
-" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:0.8;"/>
-     </g>
-     <g id="line2d_6">
-      <g>
-       <use style="fill:#555555;stroke:#555555;stroke-width:0.8;" x="176.236364" xlink:href="#m1860df6044" y="227.910394"/>
-      </g>
-     </g>
-     <g id="text_3">
-      <!-- 8/23/20 -->
-      <defs>
-       <path d="M 24 -1.09375 
-Q 19.09375 -1.09375 14.59375 0.703125 
-Q 10.09375 2.5 6.90625 6 
-L 11.5 11.5 
-L 12.203125 12.296875 
-L 12.703125 11.796875 
-Q 12.796875 11 13.09375 10.25 
-Q 13.40625 9.5 14.5 8.296875 
-Q 16.203125 6.796875 18.390625 5.84375 
-Q 20.59375 4.90625 23.703125 4.90625 
-Q 29.703125 4.90625 32.59375 8.40625 
-Q 35.5 11.90625 35.5 17.40625 
-Q 35.5 24.5 30.75 27.453125 
-Q 26 30.40625 18 29.59375 
-L 18 35.203125 
-Q 24.5 35.203125 27.796875 36.890625 
-Q 31.09375 38.59375 32.25 41.4375 
-Q 33.40625 44.296875 33.40625 47.5 
-Q 33.40625 51.796875 30.953125 54.25 
-Q 28.5 56.703125 24.5 56.703125 
-Q 21.5 56.703125 18.640625 55.703125 
-Q 15.796875 54.703125 13.09375 52.09375 
-L 8.90625 56.296875 
-Q 12.296875 59.796875 16.34375 61.25 
-Q 20.40625 62.703125 24.40625 62.703125 
-Q 32 62.703125 36.296875 58.390625 
-Q 40.59375 54.09375 40.59375 47.203125 
-Q 40.59375 42.296875 38.1875 38.4375 
-Q 35.796875 34.59375 30.796875 33 
-Q 36.09375 31.296875 39.390625 27.390625 
-Q 42.703125 23.5 42.703125 17.09375 
-Q 42.703125 12.203125 40.546875 8.046875 
-Q 38.40625 3.90625 34.25 1.40625 
-Q 30.09375 -1.09375 24 -1.09375 
-z
-" id="Inconsolata-Regular-51"/>
-      </defs>
-      <g style="fill:#555555;" transform="translate(158.736364 241.560394)scale(0.1 -0.1)">
-       <use xlink:href="#Inconsolata-Regular-56"/>
-       <use x="49.999985" xlink:href="#Inconsolata-Regular-47"/>
-       <use x="99.999969" xlink:href="#Inconsolata-Regular-50"/>
-       <use x="149.999954" xlink:href="#Inconsolata-Regular-51"/>
-       <use x="199.999939" xlink:href="#Inconsolata-Regular-47"/>
-       <use x="249.999924" xlink:href="#Inconsolata-Regular-50"/>
-       <use x="299.999908" xlink:href="#Inconsolata-Regular-48"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_4">
-     <g id="line2d_7">
-      <path clip-path="url(#p74344f141c)" d="M 226.963636 227.910394 
-L 226.963636 10.470394 
-" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:0.8;"/>
-     </g>
-     <g id="line2d_8">
-      <g>
-       <use style="fill:#555555;stroke:#555555;stroke-width:0.8;" x="226.963636" xlink:href="#m1860df6044" y="227.910394"/>
-      </g>
-     </g>
-     <g id="text_4">
-      <!-- 8/25/20 -->
-      <defs>
-       <path d="M 24.90625 -1.09375 
-Q 19.203125 -1.09375 14.34375 1.40625 
-Q 9.5 3.90625 6.40625 8.5 
-L 12.796875 13.296875 
-L 13.203125 12.796875 
-Q 13.09375 12 13.4375 11.296875 
-Q 13.796875 10.59375 14.796875 9.296875 
-Q 16.796875 7.09375 19.25 6.046875 
-Q 21.703125 5 25.296875 5 
-Q 28.5 5 31.25 6.796875 
-Q 34 8.59375 35.703125 11.9375 
-Q 37.40625 15.296875 37.40625 19.90625 
-Q 37.40625 26.90625 33.65625 30.796875 
-Q 29.90625 34.703125 24.59375 34.703125 
-Q 21.40625 34.703125 18.296875 33.140625 
-Q 15.203125 31.59375 12.90625 28.796875 
-L 8.5 30.59375 
-L 10.59375 62.296875 
-L 42.203125 62.296875 
-L 42.203125 56 
-L 16.5 56 
-L 15.5 38.09375 
-Q 20.5 40.5 25.703125 40.5 
-Q 31.09375 40.5 35.34375 37.953125 
-Q 39.59375 35.40625 42.046875 30.703125 
-Q 44.5 26 44.5 19.59375 
-Q 44.5 13.203125 41.890625 8.546875 
-Q 39.296875 3.90625 34.890625 1.40625 
-Q 30.5 -1.09375 24.90625 -1.09375 
-z
-" id="Inconsolata-Regular-53"/>
-      </defs>
-      <g style="fill:#555555;" transform="translate(209.463636 241.560394)scale(0.1 -0.1)">
-       <use xlink:href="#Inconsolata-Regular-56"/>
-       <use x="49.999985" xlink:href="#Inconsolata-Regular-47"/>
-       <use x="99.999969" xlink:href="#Inconsolata-Regular-50"/>
-       <use x="149.999954" xlink:href="#Inconsolata-Regular-53"/>
-       <use x="199.999939" xlink:href="#Inconsolata-Regular-47"/>
-       <use x="249.999924" xlink:href="#Inconsolata-Regular-50"/>
-       <use x="299.999908" xlink:href="#Inconsolata-Regular-48"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_5">
-     <g id="line2d_9">
-      <path clip-path="url(#p74344f141c)" d="M 277.690909 227.910394 
-L 277.690909 10.470394 
-" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:0.8;"/>
-     </g>
-     <g id="line2d_10">
-      <g>
-       <use style="fill:#555555;stroke:#555555;stroke-width:0.8;" x="277.690909" xlink:href="#m1860df6044" y="227.910394"/>
-      </g>
-     </g>
-     <g id="text_5">
-      <!-- 8/27/20 -->
-      <defs>
-       <path d="M 15.5 0 
-Q 19.90625 14.296875 24.59375 28.09375 
-Q 29.296875 41.90625 34.5 55.703125 
-L 7.90625 55.703125 
-L 7.90625 62.296875 
-L 43.203125 62.296875 
-L 43.203125 58.40625 
-Q 37.5 44 32.5 29.5 
-Q 27.5 15 23.40625 0 
-z
-" id="Inconsolata-Regular-55"/>
-      </defs>
-      <g style="fill:#555555;" transform="translate(260.190909 241.560394)scale(0.1 -0.1)">
-       <use xlink:href="#Inconsolata-Regular-56"/>
-       <use x="49.999985" xlink:href="#Inconsolata-Regular-47"/>
-       <use x="99.999969" xlink:href="#Inconsolata-Regular-50"/>
-       <use x="149.999954" xlink:href="#Inconsolata-Regular-55"/>
-       <use x="199.999939" xlink:href="#Inconsolata-Regular-47"/>
-       <use x="249.999924" xlink:href="#Inconsolata-Regular-50"/>
-       <use x="299.999908" xlink:href="#Inconsolata-Regular-48"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_6">
-     <g id="line2d_11">
-      <path clip-path="url(#p74344f141c)" d="M 328.418182 227.910394 
-L 328.418182 10.470394 
-" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:0.8;"/>
-     </g>
-     <g id="line2d_12">
-      <g>
-       <use style="fill:#555555;stroke:#555555;stroke-width:0.8;" x="328.418182" xlink:href="#m1860df6044" y="227.910394"/>
-      </g>
-     </g>
-     <g id="text_6">
-      <!-- 8/29/20 -->
-      <g style="fill:#555555;" transform="translate(310.918182 241.560394)scale(0.1 -0.1)">
-       <use xlink:href="#Inconsolata-Regular-56"/>
-       <use x="49.999985" xlink:href="#Inconsolata-Regular-47"/>
-       <use x="99.999969" xlink:href="#Inconsolata-Regular-50"/>
-       <use x="149.999954" xlink:href="#Inconsolata-Regular-57"/>
-       <use x="199.999939" xlink:href="#Inconsolata-Regular-47"/>
-       <use x="249.999924" xlink:href="#Inconsolata-Regular-50"/>
-       <use x="299.999908" xlink:href="#Inconsolata-Regular-48"/>
-      </g>
-     </g>
-    </g>
-   </g>
-   <g id="matplotlib.axis_2">
-    <g id="ytick_1">
-     <g id="line2d_13">
-      <path clip-path="url(#p74344f141c)" d="M 34.2 197.744631 
-L 369 197.744631 
-" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:0.8;"/>
-     </g>
-     <g id="line2d_14">
-      <defs>
-       <path d="M 0 0 
-L -3.5 0 
-" id="m44351b4172" style="stroke:#555555;stroke-width:0.8;"/>
-      </defs>
-      <g>
-       <use style="fill:#555555;stroke:#555555;stroke-width:0.8;" x="34.2" xlink:href="#m44351b4172" y="197.744631"/>
-      </g>
-     </g>
-     <g id="text_7">
-      <!-- 600 -->
-      <defs>
-       <path d="M 26.09375 -1 
-Q 16.796875 -1 11.75 6.890625 
-Q 6.703125 14.796875 6.703125 28.40625 
-Q 6.703125 45.203125 12.703125 54.09375 
-Q 18.703125 63 28.703125 63 
-Q 36.59375 63 42.40625 57.296875 
-L 38 52.296875 
-L 37.296875 51.5 
-L 36.796875 52 
-Q 36.703125 52.796875 36.34375 53.5 
-Q 36 54.203125 34.703125 55.296875 
-Q 32.5 56.796875 28.90625 56.796875 
-Q 26.90625 56.796875 24.296875 55.84375 
-Q 21.703125 54.90625 19.296875 52.296875 
-Q 16.90625 49.703125 15.296875 44.953125 
-Q 13.703125 40.203125 13.59375 32.703125 
-Q 15.703125 36.203125 19.25 38.203125 
-Q 22.796875 40.203125 26.796875 40.203125 
-Q 31.5 40.203125 35.34375 37.640625 
-Q 39.203125 35.09375 41.546875 30.546875 
-Q 43.90625 26 43.90625 19.796875 
-Q 43.90625 13.59375 41.5 8.890625 
-Q 39.09375 4.203125 35.09375 1.59375 
-Q 31.09375 -1 26.09375 -1 
-z
-M 26.40625 5.203125 
-Q 30.703125 5.203125 33.890625 8.890625 
-Q 37.09375 12.59375 37.09375 19.703125 
-Q 37.09375 24.703125 35.4375 27.890625 
-Q 33.796875 31.09375 31.296875 32.59375 
-Q 28.796875 34.09375 26.203125 34.09375 
-Q 22.59375 34.09375 19.296875 31.640625 
-Q 16 29.203125 14 25.703125 
-Q 13.59375 22.296875 14.25 18.6875 
-Q 14.90625 15.09375 16.546875 12.046875 
-Q 18.203125 9 20.703125 7.09375 
-Q 23.203125 5.203125 26.40625 5.203125 
-z
-" id="Inconsolata-Regular-54"/>
-      </defs>
-      <g style="fill:#555555;" transform="translate(12.2 201.069631)scale(0.1 -0.1)">
-       <use xlink:href="#Inconsolata-Regular-54"/>
-       <use x="49.999985" xlink:href="#Inconsolata-Regular-48"/>
-       <use x="99.999969" xlink:href="#Inconsolata-Regular-48"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_2">
-     <g id="line2d_15">
-      <path clip-path="url(#p74344f141c)" d="M 34.2 166.541359 
-L 369 166.541359 
-" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:0.8;"/>
-     </g>
-     <g id="line2d_16">
-      <g>
-       <use style="fill:#555555;stroke:#555555;stroke-width:0.8;" x="34.2" xlink:href="#m44351b4172" y="166.541359"/>
-      </g>
-     </g>
-     <g id="text_8">
-      <!-- 800 -->
-      <g style="fill:#555555;" transform="translate(12.2 169.866359)scale(0.1 -0.1)">
-       <use xlink:href="#Inconsolata-Regular-56"/>
-       <use x="49.999985" xlink:href="#Inconsolata-Regular-48"/>
-       <use x="99.999969" xlink:href="#Inconsolata-Regular-48"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_3">
-     <g id="line2d_17">
-      <path clip-path="url(#p74344f141c)" d="M 34.2 135.338087 
-L 369 135.338087 
-" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:0.8;"/>
-     </g>
-     <g id="line2d_18">
-      <g>
-       <use style="fill:#555555;stroke:#555555;stroke-width:0.8;" x="34.2" xlink:href="#m44351b4172" y="135.338087"/>
-      </g>
-     </g>
-     <g id="text_9">
-      <!-- 1000 -->
-      <g style="fill:#555555;" transform="translate(7.2 138.663087)scale(0.1 -0.1)">
-       <use xlink:href="#Inconsolata-Regular-49"/>
-       <use x="49.999985" xlink:href="#Inconsolata-Regular-48"/>
-       <use x="99.999969" xlink:href="#Inconsolata-Regular-48"/>
-       <use x="149.999954" xlink:href="#Inconsolata-Regular-48"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_4">
-     <g id="line2d_19">
-      <path clip-path="url(#p74344f141c)" d="M 34.2 104.134816 
-L 369 104.134816 
-" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:0.8;"/>
-     </g>
-     <g id="line2d_20">
-      <g>
-       <use style="fill:#555555;stroke:#555555;stroke-width:0.8;" x="34.2" xlink:href="#m44351b4172" y="104.134816"/>
-      </g>
-     </g>
-     <g id="text_10">
-      <!-- 1200 -->
-      <g style="fill:#555555;" transform="translate(7.2 107.459816)scale(0.1 -0.1)">
-       <use xlink:href="#Inconsolata-Regular-49"/>
-       <use x="49.999985" xlink:href="#Inconsolata-Regular-50"/>
-       <use x="99.999969" xlink:href="#Inconsolata-Regular-48"/>
-       <use x="149.999954" xlink:href="#Inconsolata-Regular-48"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_5">
-     <g id="line2d_21">
-      <path clip-path="url(#p74344f141c)" d="M 34.2 72.931544 
-L 369 72.931544 
-" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:0.8;"/>
-     </g>
-     <g id="line2d_22">
-      <g>
-       <use style="fill:#555555;stroke:#555555;stroke-width:0.8;" x="34.2" xlink:href="#m44351b4172" y="72.931544"/>
-      </g>
-     </g>
-     <g id="text_11">
-      <!-- 1400 -->
-      <defs>
-       <path d="M 31.796875 0 
-L 31.796875 15.296875 
-L 4.796875 15.296875 
-L 4.796875 20.40625 
-L 33.296875 62.40625 
-L 39.203125 62.40625 
-L 39.203125 21.09375 
-L 47.203125 21.09375 
-L 47.203125 15.203125 
-L 39.203125 15.203125 
-L 39.203125 0 
-z
-M 12.90625 21.203125 
-L 31.796875 21.203125 
-L 31.796875 49.796875 
-z
-" id="Inconsolata-Regular-52"/>
-      </defs>
-      <g style="fill:#555555;" transform="translate(7.2 76.256544)scale(0.1 -0.1)">
-       <use xlink:href="#Inconsolata-Regular-49"/>
-       <use x="49.999985" xlink:href="#Inconsolata-Regular-52"/>
-       <use x="99.999969" xlink:href="#Inconsolata-Regular-48"/>
-       <use x="149.999954" xlink:href="#Inconsolata-Regular-48"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_6">
-     <g id="line2d_23">
-      <path clip-path="url(#p74344f141c)" d="M 34.2 41.728272 
-L 369 41.728272 
-" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:0.8;"/>
-     </g>
-     <g id="line2d_24">
-      <g>
-       <use style="fill:#555555;stroke:#555555;stroke-width:0.8;" x="34.2" xlink:href="#m44351b4172" y="41.728272"/>
-      </g>
-     </g>
-     <g id="text_12">
-      <!-- 1600 -->
-      <g style="fill:#555555;" transform="translate(7.2 45.053272)scale(0.1 -0.1)">
-       <use xlink:href="#Inconsolata-Regular-49"/>
-       <use x="49.999985" xlink:href="#Inconsolata-Regular-54"/>
-       <use x="99.999969" xlink:href="#Inconsolata-Regular-48"/>
-       <use x="149.999954" xlink:href="#Inconsolata-Regular-48"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_7">
-     <g id="line2d_25">
-      <path clip-path="url(#p74344f141c)" d="M 34.2 10.525 
-L 369 10.525 
-" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:0.8;"/>
-     </g>
-     <g id="line2d_26">
-      <g>
-       <use style="fill:#555555;stroke:#555555;stroke-width:0.8;" x="34.2" xlink:href="#m44351b4172" y="10.525"/>
-      </g>
-     </g>
-     <g id="text_13">
-      <!-- 1800 -->
-      <g style="fill:#555555;" transform="translate(7.2 13.85)scale(0.1 -0.1)">
-       <use xlink:href="#Inconsolata-Regular-49"/>
-       <use x="49.999985" xlink:href="#Inconsolata-Regular-56"/>
-       <use x="99.999969" xlink:href="#Inconsolata-Regular-48"/>
-       <use x="149.999954" xlink:href="#Inconsolata-Regular-48"/>
-      </g>
-     </g>
-    </g>
-   </g>
-   <g id="line2d_27">
-    <path clip-path="url(#p74344f141c)" d="M 49.418182 69.811217 
-L 74.781818 43.912501 
-L 100.145455 43.912501 
-L 125.509091 20.354031 
-L 150.872727 161.548836 
-L 176.236364 192.596091 
-L 201.6 37.359814 
-L 226.963636 63.414546 
-L 252.327273 68.719102 
-L 277.690909 47.81291 
-L 303.054545 48.749008 
-L 328.418182 180.738848 
-L 353.781818 218.026758 
-" style="fill:none;stroke:#e24a33;stroke-linecap:square;stroke-width:1.5;"/>
-   </g>
-   <g id="patch_3">
-    <path d="M 34.2 227.910394 
-L 34.2 10.470394 
-" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-linejoin:miter;"/>
-   </g>
-   <g id="patch_4">
-    <path d="M 369 227.910394 
-L 369 10.470394 
-" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-linejoin:miter;"/>
-   </g>
-   <g id="patch_5">
-    <path d="M 34.2 227.910394 
-L 369 227.910394 
-" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-linejoin:miter;"/>
-   </g>
-   <g id="patch_6">
-    <path d="M 34.2 10.470394 
-L 369 10.470394 
-" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-linejoin:miter;"/>
-   </g>
-  </g>
- </g>
- <defs>
-  <clipPath id="p74344f141c">
-   <rect height="217.44" width="334.8" x="34.2" y="10.470394"/>
-  </clipPath>
- </defs>
-</svg>
 
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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F4D6+nrWr1/P/v37EULw05/+lPT0dMD7r0uHSaXd7Ha7PHz4sJRSyurqajl37lz53XffSSmlfP311+V//vMfWV9fL3/5y1/Ko0ePSimlPHXqlHQ4HM5rPPHEE7K8vFx+8cUX8vTp01JKKbds2SKXL18upZTy+++/l8ePH5dSSllaWip/9rOfycrKSp+U5aOPPpIrVqyQUkp5+vRpOXv2bHnixAnnNX71q19Jh8MhCwoKZH19vZRSypdfflm+/PLLUkopjxw5IktLS6WUUn7zzTdy1qxZXou9pqZGfvnll3LLli3yhRdeOOfxjzzyiDxw4IDUdV0uWrRI7ty50/m7xse7iv306dPyiy++kFJKWVdXJ3/729+e83hvlqW1WHJycuQ777zT4nvq888/l7quS13X5YoVK+SWLVt8UpZG27dvlytXrpTz588/53ggvS6N57z22mtSSikdDocsLy93/s7br0tHqeamDoiNjSUhIQGAsLAw+vXr59xa9YsvvmDEiBHs3r2bgQMHcskllwAQGRmJphlPd3V1NfX19URFRXH55ZcTGhoKQGJiovM6ffv25aKLLgKMDZuio6M5deqUT8oCxp4hDoeD2tpaTCYT4eHhABw7doyLLroITdO44oorCAoKAiApKcl5nUGDBjk3jBowYAC1tbXU1dV5JfYePXowdOhQZw2uUWt7qDc+3lXsoaGhztqQyWRi0KBB52yS5c2ytBZLQUEBqampLb6nrrzySudOkkOGDPFZWcB4r7333nvccsstF/wukF4XgH//+99MnToVAE3TnJuwgfdfl45SSaKTSkpKOHr0KEOGDOHUqVPOD9CioiKEECxatIgFCxbw9ttvOx/zxRdfNNvckpOTQ0pKygXHCwsLqa+vp3fv3p4sisuypKen06NHD2bNmsXs2bO5+eabnXt+FBQUNBuzq7J8+umnJCQkEBwc7JXYXWlpD3VXj3cVe1VVFZ9//jnDhw/3SVlaikXXdY4fP07//v3POc/Ve6q+vp6PPvqo2dfOW2XZuHEjN9988wUfuoH2ulRVVQHw+uuvs2DBApYvX87JkycB378u7aGSRCecPn2aZcuWcffddxMeHs6ePXuc37wdDgdfffUVc+bM4Q9/+AOfffYZX3zxBXD2G0RTubm5HDlyhB/84AfnHC8rK2P16tX8/Oc/d9ZEvF2WwsJCNE3jueeeY82aNbz77rucOHECwLmTYFNvvvkmQUFBjBs37pzj3333Ha+++io/+9nPvBZ7RzT3eFexOxwO/vKXv3DDDTe4JYl3pizNxXLo0CESExPPOa+l99QLL7zAZZddxmWXXeaTsnz99decOHGCq6666oLfBdrr4nA4KC0t5dJLL+VPf/oTSUlJvPzyy4BvX5f2Ukmig+rr61m2bBnjxo1j9OjRAOzatcv5gRkXF8dll11GVFQUoaGhpKamcvToUcD40B0yZIjzWnv27OGtt97i17/+9Tnfhqqrq1myZAm33XYbSUlJPivLxx9/TEpKCiaTiejoaC699FIOHz7MmTNnqKqqOmfv8a1bt/L5558zd+5cZycwGHuUP/300zz44IP06dPHa7G70tIe6uc/vqXYn3vuOfr06cOUKVN8VpaWYjn/8S29p9544w1OnTrFXXfd5bOyHDx4kCNHjvDggw/yu9/9juPHj/PEE080+3h/f10iIyMJDQ11Jrz09HTnZ4CvXpeOUEmiA6SUPPvss/Tr14+bbrrJeezbb7919kFcccUVfPfdd5w5cwaHw8GXX35J//79+e677+jXr5/zm8LRo0dZt24dv/71r4mOjnbeo76+nqeffpqMjAznaAhflSU+Pp69e/cCxjeqQ4cO0a9fP/bt20dycrLzWgUFBbz99tssWLDA2c8CRrV7yZIl3H777QwdOtSrsbviag/18x/fUuwbN26kurqau+++26dlaSmWvXv3OptbWnpPffjhh+zevZt58+Z1usbambJMnjyZ5557jrVr1/KHP/yBvn378sQTTwTk6yKEYOTIkezfvx8wXovG5iVfvC4dpYbAdsCBAwfIzc1l4MCBPPzwwwCMHj2aSy65xPnt2Ww2M2XKFB599FGEEKSmpnLllVfyzjvvnPMN4pVXXuH06dMsX74cMD6QFyxYQF5eHl9++SUVFRVs3boVgAcffLBNHxjuLsv111/PM888w/z585FSMmHCBC6++GKys7PPeVOvX7+e+vp6nnzyScDoiJ81axbvv/8+xcXFbNq0iU2bNgHwm9/85pyk6KnYwXjeGgcL5Ofn85vf/Ib+/fs3u4f6kSNHznm8q9jr6+t588036devHwsWLHA+T5MmTfJ6WcLCwpqNZdSoUQQHBxMWFgbQ4ntq3bp19OzZk8cee8x57+nTp3u9LOe30TcKxNelf//+zJgxgzVr1vDiiy8SFRXF7NmzOXXqlE9el45Sy3K4yd///nf69OnD1Vdf3eJ5Tz75JP/93/9NbGyslyJrv7aWZcGCBSxatMj747Zb0NbYPfV4d+psLLm5udjtdufoGl9Sr8tZ/vS6tIVKEoqiKIpLqk9CURRFcUklCUVRFMUllSQURVEUl1SSUBRFUVxSSUJRFEVxSSUJRVEUxaX/D6yjlRsoByF2AAAAAElFTkSuQmCC
+"
+>
 </div>
 
 </div>
@@ -4622,7 +4094,7 @@ L 369 10.470394
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>83783945.0</pre>
+<pre>83155031.0</pre>
 </div>
 
 </div>
@@ -4656,7 +4128,7 @@ L 369 10.470394
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>19.818832832471664</pre>
+<pre>2851.312748593648</pre>
 </div>
 
 </div>
