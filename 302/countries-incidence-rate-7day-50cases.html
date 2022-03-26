@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>  7 Day Incidence Rates: Countries of the world
+ | OSCOVIDA: Open Science COVID Analysis</title>
+
+    <meta name="author" content="OSCOVIDA team"/>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="./theme/css/jquery.mglass.css"/>
+    <link rel="stylesheet" href="./theme/css/pygment-solarized-dark.css"/>
+    <!-- <link rel="stylesheet" href="./theme/css/style.css"/> -->
+    <link rel="stylesheet" href="./theme/css/minimalist-style.css"/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript" class="init">
+      $(document).ready(function() {
+          $('#data_table').DataTable( {
+              "rowCallback": function( row, data, index ) {
+                  if ( data[4] == "True" ) // 4th column is a flag to set the colour red
+                  {
+                      $('td', row).css('background-color', 'LightPink');
+                  }
+              },
+              "order": [[ 3, "desc" ]],
+              "lengthMenu": [[10, 25, 50, 500, -1], [10, 25, 50, 500, "All"]],
+              "pageLength": -1,
+              "columnDefs": [
+                { "type": "string", "targets": 0 },
+                { "type": "num-fmt", "targets": "_all" },
+                { "visible": false,  "targets": [ 4 ] } // hide flag column
+              ]
+          } );
+      } );
+    </script>
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+    <link href='https://fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css'/>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'/>
+
+
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+
+    <!-- Feeds -->
+      <link href="https://oscovida.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="OSCOVIDA: Open Science COVID Analysis - All posts - Atom Feed"/>
+
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1><a href=".">OSCOVIDA: Open Science COVID Analysis</a> <small></small></h1>
+      </div>
+
+      <nav class="navbar navbar-default">
+
+        <!-- Hamburger menu for mobile -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#plumage-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="." title="">OSCOVIDA: Open Science COVID Analysis</a>
+        </div>
+
+        <!-- Menus and search forms -->
+        <div class="collapse navbar-collapse" id="plumage-navbar-collapse-1">
+
+          <ul class="nav navbar-nav">
+<li >
+                <a href="index.html">Home</a>
+              </li>
+<li >
+                <a href="all-regions.html">All regions</a>
+              </li>
+<li >
+                <a href="countries.html">Countries</a>
+              </li>
+<li >
+                <a href="germany.html">Germany</a>
+              </li>
+<li >
+                <a href="us.html">US</a>
+              </li>
+<li >
+                <a href="hungary.html">Hungary</a>
+              </li>
+<li >
+                <a href="category-all.html">Articles</a>
+              </li>
+<li >
+                <a href="tag-analysis">Analysis</a>
+              </li>
+<li >
+                <a href="tag-about.html">About</a>
+              </li>
+          </ul>
+
+
+
+        </div>
+
+      </nav>
+
+    </div>
+
+
+    <div class="container main">
+
+
+      <div class="row">
+        <div class=" col-md-9  ">
+  <h1>
+    <a href="./countries-incidence-rate-7day-50cases.html" rel="bookmark" title="Permalink to 7 Day Incidence Rates: Countries of the world">7 Day Incidence Rates:  Countries of the world</a>
+  </h1>
+        </div>
+      </div>
+
+      <div class="row">
+
+
+        <div class=" col-md-9 " id="content" role="main">
+  
+
+  <div>
+    <p>The searchable table below shows 7-day incidence
+rate per 100,000. (<a href="./14-day-incidence-rate.html">An explanation of the calculation is
+available</a>), entries with this incidence rate
+greater than 50 are highlighted.</p>
+<p>Two of these pages are provided:</p>
+<ul>
+<li>
+<p><a href="./germany-incidence-rate-7day-50cases.html">German region incidence rates</a></p>
+</li>
+<li>
+<p><a href="./countries-incidence-rate-7day-50cases.html">Worldwide incidence rates</a></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Location</th>
+<th align="left">Population</th>
+<th align="left">Cases in last 7 days</th>
+<th align="left">7 Day Incidence Rate</th>
+<th align="left">FLAG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="html/Afghanistan.html">Afghanistan</a></td>
+<td align="left">38,928,341</td>
+<td align="left">338</td>
+<td align="left">0.9</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Albania.html">Albania</a></td>
+<td align="left">2,877,800</td>
+<td align="left">357</td>
+<td align="left">12.4</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Algeria.html">Algeria</a></td>
+<td align="left">43,851,043</td>
+<td align="left">88</td>
+<td align="left">0.2</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Andorra.html">Andorra</a></td>
+<td align="left">77,265</td>
+<td align="left">479</td>
+<td align="left">619.9</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Angola.html">Angola</a></td>
+<td align="left">32,866,268</td>
+<td align="left">99</td>
+<td align="left">0.3</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Antarctica.html">Antarctica</a></td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">-1.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Antigua-and-Barbuda.html">Antigua and Barbuda</a></td>
+<td align="left">97,928</td>
+<td align="left">12</td>
+<td align="left">12.3</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Argentina.html">Argentina</a></td>
+<td align="left">45,195,777</td>
+<td align="left">18,983</td>
+<td align="left">42.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Armenia.html">Armenia</a></td>
+<td align="left">2,963,234</td>
+<td align="left">169</td>
+<td align="left">5.7</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left"><a href="html/Australia.html">Australia</a></td>
+<td align="left">25,459,700</td>
+<td align="left">369,177</td>
+<td align="left">1,450.0</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">9,006,400</td>
+<td align="left">277,991</td>
+<td align="left">3,086.6</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">10,139,175</td>
+<td align="left">366</td>
+<td align="left">3.6</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">393,248</td>
+<td align="left">31</td>
+<td align="left">7.9</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">1,701,583</td>
+<td align="left">6,629</td>
+<td align="left">389.6</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">164,689,383</td>
+<td align="left">709</td>
+<td align="left">0.4</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">287,371</td>
+<td align="left">722</td>
+<td align="left">251.2</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">9,449,321</td>
+<td align="left">8,672</td>
+<td align="left">91.8</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">11,492,641</td>
+<td align="left">86,026</td>
+<td align="left">748.5</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">397,621</td>
+<td align="left">88</td>
+<td align="left">22.1</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">12,123,198</td>
+<td align="left">0</td>
+<td align="left">0.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">771,612</td>
+<td align="left">3,006</td>
+<td align="left">389.6</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">11,673,029</td>
+<td align="left">1,321</td>
+<td align="left">11.3</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">3,280,815</td>
+<td align="left">825</td>
+<td align="left">25.1</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">2,351,625</td>
+<td align="left">0</td>
+<td align="left">0.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">212,559,409</td>
+<td align="left">224,969</td>
+<td align="left">105.8</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">437,483</td>
+<td align="left">7,880</td>
+<td align="left">1,801.2</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">6,948,445</td>
+<td align="left">9,603</td>
+<td align="left">138.2</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">20,903,278</td>
+<td align="left">9</td>
+<td align="left">0.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">54,409,794</td>
+<td align="left">2,109</td>
+<td align="left">3.9</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">11,890,781</td>
+<td align="left">132</td>
+<td align="left">1.1</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">555,988</td>
+<td align="left">24</td>
+<td align="left">4.3</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">16,718,971</td>
+<td align="left">572</td>
+<td align="left">3.4</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">26,545,864</td>
+<td align="left">130</td>
+<td align="left">0.5</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">38,246,108</td>
+<td align="left">45,700</td>
+<td align="left">119.5</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">4,829,764</td>
+<td align="left">0</td>
+<td align="left">0.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">16,425,859</td>
+<td align="left">19</td>
+<td align="left">0.1</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">19,116,209</td>
+<td align="left">66,204</td>
+<td align="left">346.3</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">1,411,778,724</td>
+<td align="left">110,085</td>
+<td align="left">7.8</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">50,882,884</td>
+<td align="left">3,047</td>
+<td align="left">6.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">869,595</td>
+<td align="left">5</td>
+<td align="left">0.6</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">5,518,092</td>
+<td align="left">3</td>
+<td align="left">0.1</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">89,561,404</td>
+<td align="left">150</td>
+<td align="left">0.2</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">5,094,114</td>
+<td align="left">5,326</td>
+<td align="left">104.6</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">26,378,275</td>
+<td align="left">47</td>
+<td align="left">0.2</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">4,105,268</td>
+<td align="left">10,175</td>
+<td align="left">247.9</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">11,326,616</td>
+<td align="left">5,551</td>
+<td align="left">49.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">1,207,361</td>
+<td align="left">30,223</td>
+<td align="left">2,503.2</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">10,708,982</td>
+<td align="left">60,164</td>
+<td align="left">561.8</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">5,837,213</td>
+<td align="left">41,356</td>
+<td align="left">708.5</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">-1.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">988,002</td>
+<td align="left">7</td>
+<td align="left">0.7</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">71,991</td>
+<td align="left">113</td>
+<td align="left">157.0</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">10,847,904</td>
+<td align="left">432</td>
+<td align="left">4.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">17,643,060</td>
+<td align="left">7,600</td>
+<td align="left">43.1</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">102,334,403</td>
+<td align="left">5,516</td>
+<td align="left">5.4</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">6,486,201</td>
+<td align="left">110</td>
+<td align="left">1.7</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">1,402,985</td>
+<td align="left">100</td>
+<td align="left">7.1</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">3,546,427</td>
+<td align="left">1</td>
+<td align="left">0.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">1,326,539</td>
+<td align="left">9,609</td>
+<td align="left">724.4</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">1,160,164</td>
+<td align="left">117</td>
+<td align="left">10.1</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">114,963,583</td>
+<td align="left">185</td>
+<td align="left">0.2</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">896,444</td>
+<td align="left">155</td>
+<td align="left">17.3</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">5,540,718</td>
+<td align="left">58,401</td>
+<td align="left">1,054.0</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">65,249,843</td>
+<td align="left">823,370</td>
+<td align="left">1,261.9</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">2,225,728</td>
+<td align="left">14</td>
+<td align="left">0.6</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">2,416,664</td>
+<td align="left">8</td>
+<td align="left">0.3</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">3,989,175</td>
+<td align="left">4,751</td>
+<td align="left">119.1</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">83,155,031</td>
+<td align="left">901,753</td>
+<td align="left">1,084.4</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">31,072,945</td>
+<td align="left">103</td>
+<td align="left">0.3</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">10,423,056</td>
+<td align="left">143,847</td>
+<td align="left">1,380.1</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">112,519</td>
+<td align="left">31</td>
+<td align="left">27.6</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">17,915,567</td>
+<td align="left">9,034</td>
+<td align="left">50.4</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">13,132,792</td>
+<td align="left">24</td>
+<td align="left">0.2</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">1,967,998</td>
+<td align="left">30</td>
+<td align="left">1.5</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">786,559</td>
+<td align="left">48</td>
+<td align="left">6.1</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">11,402,533</td>
+<td align="left">33</td>
+<td align="left">0.3</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">809</td>
+<td align="left">0</td>
+<td align="left">0.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">9,904,608</td>
+<td align="left">2,321</td>
+<td align="left">23.4</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">9,660,350</td>
+<td align="left">15,269</td>
+<td align="left">158.1</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">341,250</td>
+<td align="left">7,579</td>
+<td align="left">2,221.0</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">1,380,004,385</td>
+<td align="left">10,292</td>
+<td align="left">0.7</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">273,523,621</td>
+<td align="left">38,220</td>
+<td align="left">14.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">83,992,953</td>
+<td align="left">9,513</td>
+<td align="left">11.3</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">40,222,503</td>
+<td align="left">1,925</td>
+<td align="left">4.8</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">4,937,796</td>
+<td align="left">57,478</td>
+<td align="left">1,164.0</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">8,655,541</td>
+<td align="left">84,651</td>
+<td align="left">978.0</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">60,461,828</td>
+<td align="left">505,084</td>
+<td align="left">835.4</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">2,961,161</td>
+<td align="left">151</td>
+<td align="left">5.1</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">126,476,458</td>
+<td align="left">269,716</td>
+<td align="left">213.3</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">10,203,140</td>
+<td align="left">9,135</td>
+<td align="left">89.5</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">18,776,707</td>
+<td align="left">209</td>
+<td align="left">1.1</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">53,771,300</td>
+<td align="left">95</td>
+<td align="left">0.2</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">117,606</td>
+<td align="left">20</td>
+<td align="left">17.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">51,269,183</td>
+<td align="left">2,458,773</td>
+<td align="left">4,795.8</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">1,810,366</td>
+<td align="left">239</td>
+<td align="left">13.2</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">4,270,563</td>
+<td align="left">1,137</td>
+<td align="left">26.6</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">6,524,191</td>
+<td align="left">70</td>
+<td align="left">1.1</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">7,275,556</td>
+<td align="left">13,439</td>
+<td align="left">184.7</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">1,886,202</td>
+<td align="left">21,677</td>
+<td align="left">1,149.2</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">6,825,442</td>
+<td align="left">2,821</td>
+<td align="left">41.3</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">2,142,252</td>
+<td align="left">105</td>
+<td align="left">4.9</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">5,057,677</td>
+<td align="left">0</td>
+<td align="left">0.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">6,871,287</td>
+<td align="left">556</td>
+<td align="left">8.1</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">38,137</td>
+<td align="left">846</td>
+<td align="left">2,218.3</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">2,722,291</td>
+<td align="left">24,776</td>
+<td align="left">910.1</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">625,976</td>
+<td align="left">9,021</td>
+<td align="left">1,441.1</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">-1.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">27,691,019</td>
+<td align="left">58</td>
+<td align="left">0.2</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">19,129,955</td>
+<td align="left">52</td>
+<td align="left">0.3</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">32,365,998</td>
+<td align="left">149,403</td>
+<td align="left">461.6</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">540,542</td>
+<td align="left">0</td>
+<td align="left">0.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">20,250,834</td>
+<td align="left">24</td>
+<td align="left">0.1</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">441,539</td>
+<td align="left">2,328</td>
+<td align="left">527.2</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">58,413</td>
+<td align="left">0</td>
+<td align="left">0.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">4,649,660</td>
+<td align="left">4</td>
+<td align="left">0.1</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">1,271,767</td>
+<td align="left">11,642</td>
+<td align="left">915.4</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">127,792,286</td>
+<td align="left">19,009</td>
+<td align="left">14.9</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">113,815</td>
+<td align="left">0</td>
+<td align="left">0.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">4,033,963</td>
+<td align="left">2,213</td>
+<td align="left">54.9</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">39,244</td>
+<td align="left">427</td>
+<td align="left">1,088.1</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">3,278,292</td>
+<td align="left">1,009</td>
+<td align="left">30.8</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">628,062</td>
+<td align="left">588</td>
+<td align="left">93.6</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">36,910,558</td>
+<td align="left">467</td>
+<td align="left">1.3</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">31,255,435</td>
+<td align="left">30</td>
+<td align="left">0.1</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">2,540,916</td>
+<td align="left">73</td>
+<td align="left">2.9</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">29,136,808</td>
+<td align="left">190</td>
+<td align="left">0.7</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">17,134,873</td>
+<td align="left">266,392</td>
+<td align="left">1,554.7</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">4,822,233</td>
+<td align="left">116,823</td>
+<td align="left">2,422.6</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">6,624,554</td>
+<td align="left">75</td>
+<td align="left">1.1</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">24,206,636</td>
+<td align="left">11</td>
+<td align="left">0.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">206,139,587</td>
+<td align="left">141</td>
+<td align="left">0.1</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">2,083,380</td>
+<td align="left">1,781</td>
+<td align="left">85.5</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">5,421,242</td>
+<td align="left">19,317</td>
+<td align="left">356.3</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">5,106,622</td>
+<td align="left">742</td>
+<td align="left">14.5</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">220,892,331</td>
+<td align="left">2,077</td>
+<td align="left">0.9</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">18,008</td>
+<td align="left">42</td>
+<td align="left">233.2</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">4,314,768</td>
+<td align="left">2,021</td>
+<td align="left">46.8</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">8,947,027</td>
+<td align="left">1,543</td>
+<td align="left">17.2</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">7,132,530</td>
+<td align="left">919</td>
+<td align="left">12.9</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">32,971,846</td>
+<td align="left">3,682</td>
+<td align="left">11.2</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">109,581,085</td>
+<td align="left">3,029</td>
+<td align="left">2.8</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">37,846,605</td>
+<td align="left">58,035</td>
+<td align="left">153.3</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">10,196,707</td>
+<td align="left">75,276</td>
+<td align="left">738.2</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">2,881,060</td>
+<td align="left">949</td>
+<td align="left">32.9</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">19,237,682</td>
+<td align="left">25,119</td>
+<td align="left">130.6</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">145,934,460</td>
+<td align="left">193,447</td>
+<td align="left">132.6</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">12,952,209</td>
+<td align="left">71</td>
+<td align="left">0.5</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">53,192</td>
+<td align="left">4</td>
+<td align="left">7.5</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">183,629</td>
+<td align="left">41</td>
+<td align="left">22.3</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">110,947</td>
+<td align="left">6</td>
+<td align="left">5.4</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">196,130</td>
+<td align="left">736</td>
+<td align="left">375.3</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">33,938</td>
+<td align="left">255</td>
+<td align="left">751.4</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">219,161</td>
+<td align="left">6</td>
+<td align="left">2.7</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">34,813,867</td>
+<td align="left">806</td>
+<td align="left">2.3</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">16,743,930</td>
+<td align="left">34</td>
+<td align="left">0.2</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">8,737,370</td>
+<td align="left">14,049</td>
+<td align="left">160.8</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">98,340</td>
+<td align="left">247</td>
+<td align="left">251.2</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">7,976,985</td>
+<td align="left">1</td>
+<td align="left">0.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">5,850,343</td>
+<td align="left">63,809</td>
+<td align="left">1,090.7</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">5,459,643</td>
+<td align="left">66,670</td>
+<td align="left">1,221.1</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">2,078,932</td>
+<td align="left">20,324</td>
+<td align="left">977.6</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">652,858</td>
+<td align="left">668</td>
+<td align="left">102.3</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">15,893,219</td>
+<td align="left">0</td>
+<td align="left">0.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">59,308,690</td>
+<td align="left">10,282</td>
+<td align="left">17.3</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">11,193,729</td>
+<td align="left">91</td>
+<td align="left">0.8</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">46,754,783</td>
+<td align="left">127,039</td>
+<td align="left">271.7</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">21,413,250</td>
+<td align="left">2,910</td>
+<td align="left">13.6</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">43,849,269</td>
+<td align="left">114</td>
+<td align="left">0.3</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">-1.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">586,634</td>
+<td align="left">217</td>
+<td align="left">37.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">10,099,270</td>
+<td align="left">6,049</td>
+<td align="left">59.9</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">8,654,618</td>
+<td align="left">150,596</td>
+<td align="left">1,740.1</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">17,500,657</td>
+<td align="left">135</td>
+<td align="left">0.8</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">23,816,775</td>
+<td align="left">805</td>
+<td align="left">3.4</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">9,537,642</td>
+<td align="left">0</td>
+<td align="left">0.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">59,734,213</td>
+<td align="left">24</td>
+<td align="left">0.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">69,799,978</td>
+<td align="left">174,291</td>
+<td align="left">249.7</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">1,318,442</td>
+<td align="left">16</td>
+<td align="left">1.2</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">8,278,737</td>
+<td align="left">36</td>
+<td align="left">0.4</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">105,697</td>
+<td align="left">2,084</td>
+<td align="left">1,971.7</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">1,399,491</td>
+<td align="left">2,116</td>
+<td align="left">151.2</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">11,818,618</td>
+<td align="left">3,969</td>
+<td align="left">33.6</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">84,339,067</td>
+<td align="left">112,126</td>
+<td align="left">132.9</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">329,466,283</td>
+<td align="left">219,530</td>
+<td align="left">66.6</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">45,741,000</td>
+<td align="left">196</td>
+<td align="left">0.4</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">43,733,759</td>
+<td align="left">0</td>
+<td align="left">0.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">9,890,400</td>
+<td align="left">2,438</td>
+<td align="left">24.7</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">67,886,004</td>
+<td align="left">604,972</td>
+<td align="left">891.2</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">3,473,727</td>
+<td align="left">9,441</td>
+<td align="left">271.8</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">33,469,199</td>
+<td align="left">128</td>
+<td align="left">0.4</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">292,680</td>
+<td align="left">1,483</td>
+<td align="left">506.7</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">28,435,943</td>
+<td align="left">793</td>
+<td align="left">2.8</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">97,338,583</td>
+<td align="left">1,394,140</td>
+<td align="left">1,432.3</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">5,101,416</td>
+<td align="left">1,088</td>
+<td align="left">21.3</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">-1.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">29,825,968</td>
+<td align="left">6</td>
+<td align="left">0.0</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">18,383,956</td>
+<td align="left">799</td>
+<td align="left">4.3</td>
+<td align="left">False</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">14,862,927</td>
+<td align="left">1,633</td>
+<td align="left">11.0</td>
+<td align="left">False</td>
+</tr>
+</tbody>
+</table>
+<p>You can view our data sources <a href="./data-sources.html">here</a>.</p>
+  </div>
+
+
+
+        </div>
+
+          <div class="col-md-3">
+  <div class="well">
+
+    <p><abbr title="2022-03-26T07:20:00+01:00"><i class="fa fa-calendar"></i> Sat 26 March 2022</abbr></p>
+
+
+    <hr/>
+
+      <p>
+              <a href="./category-all.html" rel="tag"
+                  data-toggle="tooltip" class="label label-info"
+                  title="39 articles in this category">All</a>
+            <a href="/tag-data.html" data-toggle="tooltip"
+      class="label label-default"
+      title="22 articles with this tag">data</a>
+            <a href="/tag-plots.html" data-toggle="tooltip"
+      class="label label-default"
+      title="9 articles with this tag">plots</a>
+            <a href="/tag-tracking.html" data-toggle="tooltip"
+      class="label label-default"
+      title="7 articles with this tag">tracking</a>
+            <a href="/tag-incidence.html" data-toggle="tooltip"
+      class="label label-default"
+      title="4 articles with this tag">incidence</a>
+            <a href="/tag-countries.html" data-toggle="tooltip"
+      class="label label-default"
+      title="2 articles with this tag">countries</a>
+      </p>
+      <hr/>
+
+
+
+  </div>
+            
+          </div>
+
+      </div>
+
+    </div>
+
+    <!-- TODO: make footer sticky -->
+    <footer class="container-fluid">
+      <div class="container">
+        <div class="row">
+
+            <div class="col-md-2">
+                <h5>Social</h5>
+                <ul class="list-unstyled">
+                  <li>  <a href="https://twitter.com/OSCOVIDAproject">
+      <i class="fa fa-twitter"></i>
+    Open Science COVID Analysis
+  </a></li>
+                  <li>  <a href="https://twitter.com/Panosc_eu">
+      <i class="fa fa-twitter"></i>
+    PaNOSC
+  </a></li>
+                  <li>  <a href="https://twitter.com/ProfCompMod">
+      <i class="fa fa-twitter"></i>
+    ProfCompMod
+  </a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <h5>Links</h5>
+                <ul class="list-unstyled">
+                  <li>  <a href="http://oscovida.github.io">
+      <i class="fa fa-external-link"></i>
+    OSCOVIDA project
+  </a></li>
+                  <li>  <a href="http://www.panosc.eu">
+      <i class="fa fa-external-link"></i>
+    PaNOSC project
+  </a></li>
+                  <li>  <a href="mailto:oscovidaproject@gmail.com">
+      <i class="fa fa-envelope"></i>
+    OSCOVIDA
+  </a></li>
+                </ul>
+            </div>
+
+          <div class="col-md-2">
+            <h5>Browse content by</h5>
+            <ul class="list-unstyled">
+                <li><a href="./archives-index.html"><i class="fa fa-calendar"></i> Dates</a></li>
+                <li><a href="./tags-index.html"><i class="fa fa-tag"></i> Tags</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 text-muted">
+            <h5>Copyright notice</h5>
+            <p>© Copyright 2020-2022 OSCOVIDA team.</p>
+              <p>Unless contrary mentioned, the content of this site is published under a <a rel='license'
+href='https://creativecommons.org/licenses/by/4.0/'>Creative Commons
+Attribution 4.0 International license</a>. See <a href="http://oscovida.github.io/license.html">license</a> for details.</p>
+          </div>
+
+          <div class="col-md-2 text-muted">
+            <h5>Disclaimer</h5>
+              <p>Plots, data and software here are provided <a href="https://github.com/oscovida/oscovida/blob/master/LICENSE#L20">as-is without any warranties</a> by volunteers. Use the material at your own risk. See <a href="http://oscovida.github.io/license.html">license</a> for details.</p>
+          </div>
+
+          <div class="col-md-2">
+              <h5>Feeds</h5>
+              <ul class="list-unstyled">
+                  <li><small><a href="https://oscovida.github.io/feeds/all.atom.xml"><i class="fa fa-rss"></i> All posts (Atom)</a></small></li>
+              </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <h5 class="text-right"><a href="#"><i class="fa fa-arrow-up"></i> Back to top</a></h5>
+
+      <div class="container">
+        <div class="row col-md-12 text-muted text-center">
+          Site generated by <a href="https://getpelican.com"> Pelican</a>.<br/>
+          <a href="https://github.com/kdeldycke/plumage"> Plumage</a> theme by <a href="https://kevin.deldycke.com">Kevin Deldycke</a>.
+        </div>
+      </div>
+
+    </footer>
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-163845056-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
+    <script src="./theme/js/jquery.mglass.js"></script>
+    <script src="./theme/js/application.js"></script>
+
+    <script>
+      document.getElementsByTagName("table")[0].setAttribute("id", "data_table");
+    </script>
+
+  </body>
+</html>
