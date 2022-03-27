@@ -1,0 +1,4331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>  The 14-day incidence per 100000 with detailed calculation
+ | OSCOVIDA: Open Science COVID Analysis</title>
+
+    <meta name="author" content="OSCOVIDA team"/>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="./theme/css/jquery.mglass.css"/>
+    <link rel="stylesheet" href="./theme/css/pygment-solarized-dark.css"/>
+    <!-- <link rel="stylesheet" href="./theme/css/style.css"/> -->
+    <link rel="stylesheet" href="./theme/css/minimalist-style.css"/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript" class="init">
+      $(document).ready(function() {
+          $('#data_table').DataTable( {
+              "rowCallback": function( row, data, index ) {
+                  if ( data[4] == "True" ) // 4th column is a flag to set the colour red
+                  {
+                      $('td', row).css('background-color', 'LightPink');
+                  }
+              },
+              "order": [[ 3, "desc" ]],
+              "lengthMenu": [[10, 25, 50, 500, -1], [10, 25, 50, 500, "All"]],
+              "pageLength": -1,
+              "columnDefs": [
+                { "type": "string", "targets": 0 },
+                { "type": "num-fmt", "targets": "_all" },
+                { "visible": false,  "targets": [ 4 ] } // hide flag column
+              ]
+          } );
+      } );
+    </script>
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+    <link href='https://fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css'/>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'/>
+
+
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+
+    <!-- Feeds -->
+      <link href="https://oscovida.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="OSCOVIDA: Open Science COVID Analysis - All posts - Atom Feed"/>
+
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1><a href=".">OSCOVIDA: Open Science COVID Analysis</a> <small></small></h1>
+      </div>
+
+      <nav class="navbar navbar-default">
+
+        <!-- Hamburger menu for mobile -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#plumage-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="." title="">OSCOVIDA: Open Science COVID Analysis</a>
+        </div>
+
+        <!-- Menus and search forms -->
+        <div class="collapse navbar-collapse" id="plumage-navbar-collapse-1">
+
+          <ul class="nav navbar-nav">
+<li >
+                <a href="index.html">Home</a>
+              </li>
+<li >
+                <a href="all-regions.html">All regions</a>
+              </li>
+<li >
+                <a href="countries.html">Countries</a>
+              </li>
+<li >
+                <a href="germany.html">Germany</a>
+              </li>
+<li >
+                <a href="us.html">US</a>
+              </li>
+<li >
+                <a href="hungary.html">Hungary</a>
+              </li>
+<li >
+                <a href="category-all.html">Articles</a>
+              </li>
+<li >
+                <a href="tag-analysis">Analysis</a>
+              </li>
+<li >
+                <a href="tag-about.html">About</a>
+              </li>
+          </ul>
+
+
+
+        </div>
+
+      </nav>
+
+    </div>
+
+
+    <div class="container main">
+
+
+      <div class="row">
+        <div class=" col-md-9  ">
+  <h1>
+    <a href="./14-day-incidence-rate.html" rel="bookmark" title="Permalink to The 14-day incidence per 100000 with detailed calculation">The 14-day incidence per 100000 with detailed calculation</a>
+  </h1>
+        </div>
+      </div>
+
+      <div class="row">
+
+
+        <div class=" col-md-9 " id="content" role="main">
+  
+
+  <div>
+    <style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
+.ansibold {
+  font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
+  border-color: #ababab;
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
+}
+@media print {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell > div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area > div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area > div.highlight > pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the <head> if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
+  border: 0;
+  border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+div.output_area .mglyph > img {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 1px 0 1px 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+
+
+
+.rendered_html pre,
+
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell > div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+</style>
+<style type="text/css">pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+ .highlight pre  .hll { background-color: #ffffcc }
+ .highlight pre  { background: #f8f8f8; }
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
+ .highlight pre  .o { color: #666666 } /* Operator */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
+ .highlight pre  .ge { font-style: italic } /* Generic.Emph */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
+ .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
+ .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+ .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
+ .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+ .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+ .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+ .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+ .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
+ .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+ .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
+ .highlight pre  .m { color: #666666 } /* Literal.Number */
+ .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
+ .highlight pre  .nb { color: #008000 } /* Name.Builtin */
+ .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .no { color: #880000 } /* Name.Constant */
+ .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
+ .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
+ .highlight pre  .nv { color: #19177C } /* Name.Variable */
+ .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
+ .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
+ .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
+ .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
+ .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
+ .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
+ .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
+ .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
+ .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
+ .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
+ .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
+ .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
+ .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="14-day-cumulative-number-of-COVID-19-cases-per-100-000">14-day cumulative number of COVID-19 cases per 100 000<a class="anchor-link" href="#14-day-cumulative-number-of-COVID-19-cases-per-100-000">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>At the end of the page, we provide a detailed description of how the numbers are calculated.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Compute-data">Compute data<a class="anchor-link" href="#Compute-data">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;display.max_rows&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">oscovida</span> <span class="kn">import</span> <span class="n">get_incidence_rates_countries</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Table-for-all-countries">Table for all countries<a class="anchor-link" href="#Table-for-all-countries">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cases_incidence</span><span class="p">,</span> <span class="n">deaths_incidence</span> <span class="o">=</span> <span class="n">get_incidence_rates_countries</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Downloaded data: last data point 3/26/22 from https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv
+Downloaded data: last data point 3/26/22 from https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cases_incidence</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>14-day-sum</th>
+      <th>population</th>
+      <th>14-day-incidence-rate</th>
+    </tr>
+    <tr>
+      <th>Country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Afghanistan</th>
+      <td>1282</td>
+      <td>38928341</td>
+      <td>3.3</td>
+    </tr>
+    <tr>
+      <th>Albania</th>
+      <td>766</td>
+      <td>2877800</td>
+      <td>26.6</td>
+    </tr>
+    <tr>
+      <th>Algeria</th>
+      <td>211</td>
+      <td>43851043</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>Andorra</th>
+      <td>919</td>
+      <td>77265</td>
+      <td>1189.4</td>
+    </tr>
+    <tr>
+      <th>Angola</th>
+      <td>197</td>
+      <td>32866268</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <th>Antarctica</th>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Antigua and Barbuda</th>
+      <td>16</td>
+      <td>97928</td>
+      <td>16.3</td>
+    </tr>
+    <tr>
+      <th>Argentina</th>
+      <td>55061</td>
+      <td>45195777</td>
+      <td>121.8</td>
+    </tr>
+    <tr>
+      <th>Armenia</th>
+      <td>491</td>
+      <td>2963234</td>
+      <td>16.6</td>
+    </tr>
+    <tr>
+      <th>Australia</th>
+      <td>678744</td>
+      <td>25459700</td>
+      <td>2666.0</td>
+    </tr>
+    <tr>
+      <th>Austria</th>
+      <td>582644</td>
+      <td>9006400</td>
+      <td>6469.2</td>
+    </tr>
+    <tr>
+      <th>Azerbaijan</th>
+      <td>1120</td>
+      <td>10139175</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>Bahamas</th>
+      <td>55</td>
+      <td>393248</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>Bahrain</th>
+      <td>14121</td>
+      <td>1701583</td>
+      <td>829.9</td>
+    </tr>
+    <tr>
+      <th>Bangladesh</th>
+      <td>1986</td>
+      <td>164689383</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>Barbados</th>
+      <td>1348</td>
+      <td>287371</td>
+      <td>469.1</td>
+    </tr>
+    <tr>
+      <th>Belarus</th>
+      <td>18978</td>
+      <td>9449321</td>
+      <td>200.8</td>
+    </tr>
+    <tr>
+      <th>Belgium</th>
+      <td>142033</td>
+      <td>11492641</td>
+      <td>1235.9</td>
+    </tr>
+    <tr>
+      <th>Belize</th>
+      <td>197</td>
+      <td>397621</td>
+      <td>49.5</td>
+    </tr>
+    <tr>
+      <th>Benin</th>
+      <td>377</td>
+      <td>12123198</td>
+      <td>3.1</td>
+    </tr>
+    <tr>
+      <th>Bhutan</th>
+      <td>7611</td>
+      <td>771612</td>
+      <td>986.4</td>
+    </tr>
+    <tr>
+      <th>Bolivia</th>
+      <td>3757</td>
+      <td>11673029</td>
+      <td>32.2</td>
+    </tr>
+    <tr>
+      <th>Bosnia and Herzegovina</th>
+      <td>1705</td>
+      <td>3280815</td>
+      <td>52.0</td>
+    </tr>
+    <tr>
+      <th>Botswana</th>
+      <td>0</td>
+      <td>2351625</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Brazil</th>
+      <td>478079</td>
+      <td>212559409</td>
+      <td>224.9</td>
+    </tr>
+    <tr>
+      <th>Brunei</th>
+      <td>21073</td>
+      <td>437483</td>
+      <td>4816.9</td>
+    </tr>
+    <tr>
+      <th>Bulgaria</th>
+      <td>20926</td>
+      <td>6948445</td>
+      <td>301.2</td>
+    </tr>
+    <tr>
+      <th>Burkina Faso</th>
+      <td>71</td>
+      <td>20903278</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <th>Burma</th>
+      <td>5868</td>
+      <td>54409794</td>
+      <td>10.8</td>
+    </tr>
+    <tr>
+      <th>Burundi</th>
+      <td>192</td>
+      <td>11890781</td>
+      <td>1.6</td>
+    </tr>
+    <tr>
+      <th>Cabo Verde</th>
+      <td>41</td>
+      <td>555988</td>
+      <td>7.4</td>
+    </tr>
+    <tr>
+      <th>Cambodia</th>
+      <td>1459</td>
+      <td>16718971</td>
+      <td>8.7</td>
+    </tr>
+    <tr>
+      <th>Cameroon</th>
+      <td>222</td>
+      <td>26545864</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <th>Canada</th>
+      <td>77849</td>
+      <td>38246108</td>
+      <td>203.5</td>
+    </tr>
+    <tr>
+      <th>Central African Republic</th>
+      <td>329</td>
+      <td>4829764</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>Chad</th>
+      <td>28</td>
+      <td>16425859</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>Chile</th>
+      <td>156542</td>
+      <td>19116209</td>
+      <td>818.9</td>
+    </tr>
+    <tr>
+      <th>China</th>
+      <td>291007</td>
+      <td>1411778724</td>
+      <td>20.6</td>
+    </tr>
+    <tr>
+      <th>Colombia</th>
+      <td>6958</td>
+      <td>50882884</td>
+      <td>13.7</td>
+    </tr>
+    <tr>
+      <th>Comoros</th>
+      <td>21</td>
+      <td>869595</td>
+      <td>2.4</td>
+    </tr>
+    <tr>
+      <th>Congo (Brazzaville)</th>
+      <td>13</td>
+      <td>5518092</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>Congo (Kinshasa)</th>
+      <td>296</td>
+      <td>89561404</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <th>Costa Rica</th>
+      <td>11791</td>
+      <td>5094114</td>
+      <td>231.5</td>
+    </tr>
+    <tr>
+      <th>Cote d'Ivoire</th>
+      <td>103</td>
+      <td>26378275</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <th>Croatia</th>
+      <td>20668</td>
+      <td>4105268</td>
+      <td>503.5</td>
+    </tr>
+    <tr>
+      <th>Cuba</th>
+      <td>10132</td>
+      <td>11326616</td>
+      <td>89.5</td>
+    </tr>
+    <tr>
+      <th>Cyprus</th>
+      <td>55018</td>
+      <td>1207361</td>
+      <td>4556.9</td>
+    </tr>
+    <tr>
+      <th>Czechia</th>
+      <td>105761</td>
+      <td>10708982</td>
+      <td>987.6</td>
+    </tr>
+    <tr>
+      <th>Denmark</th>
+      <td>95372</td>
+      <td>5837213</td>
+      <td>1633.9</td>
+    </tr>
+    <tr>
+      <th>Diamond Princess</th>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Djibouti</th>
+      <td>16</td>
+      <td>988002</td>
+      <td>1.6</td>
+    </tr>
+    <tr>
+      <th>Dominica</th>
+      <td>285</td>
+      <td>71991</td>
+      <td>395.9</td>
+    </tr>
+    <tr>
+      <th>Dominican Republic</th>
+      <td>1474</td>
+      <td>10847904</td>
+      <td>13.6</td>
+    </tr>
+    <tr>
+      <th>Ecuador</th>
+      <td>13539</td>
+      <td>17643060</td>
+      <td>76.7</td>
+    </tr>
+    <tr>
+      <th>Egypt</th>
+      <td>5516</td>
+      <td>102334403</td>
+      <td>5.4</td>
+    </tr>
+    <tr>
+      <th>El Salvador</th>
+      <td>4688</td>
+      <td>6486201</td>
+      <td>72.3</td>
+    </tr>
+    <tr>
+      <th>Equatorial Guinea</th>
+      <td>104</td>
+      <td>1402985</td>
+      <td>7.4</td>
+    </tr>
+    <tr>
+      <th>Eritrea</th>
+      <td>3</td>
+      <td>3546427</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Estonia</th>
+      <td>21274</td>
+      <td>1326539</td>
+      <td>1603.7</td>
+    </tr>
+    <tr>
+      <th>Eswatini</th>
+      <td>234</td>
+      <td>1160164</td>
+      <td>20.2</td>
+    </tr>
+    <tr>
+      <th>Ethiopia</th>
+      <td>441</td>
+      <td>114963583</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <th>Fiji</th>
+      <td>309</td>
+      <td>896444</td>
+      <td>34.5</td>
+    </tr>
+    <tr>
+      <th>Finland</th>
+      <td>110451</td>
+      <td>5540718</td>
+      <td>1993.4</td>
+    </tr>
+    <tr>
+      <th>France</th>
+      <td>1470941</td>
+      <td>65249843</td>
+      <td>2254.3</td>
+    </tr>
+    <tr>
+      <th>Gabon</th>
+      <td>20</td>
+      <td>2225728</td>
+      <td>0.9</td>
+    </tr>
+    <tr>
+      <th>Gambia</th>
+      <td>23</td>
+      <td>2416664</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>Georgia</th>
+      <td>11273</td>
+      <td>3989175</td>
+      <td>282.6</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>2294307</td>
+      <td>83155031</td>
+      <td>2759.1</td>
+    </tr>
+    <tr>
+      <th>Ghana</th>
+      <td>232</td>
+      <td>31072945</td>
+      <td>0.7</td>
+    </tr>
+    <tr>
+      <th>Greece</th>
+      <td>293264</td>
+      <td>10423056</td>
+      <td>2813.6</td>
+    </tr>
+    <tr>
+      <th>Grenada</th>
+      <td>292</td>
+      <td>112519</td>
+      <td>259.5</td>
+    </tr>
+    <tr>
+      <th>Guatemala</th>
+      <td>19450</td>
+      <td>17915567</td>
+      <td>108.6</td>
+    </tr>
+    <tr>
+      <th>Guinea</th>
+      <td>32</td>
+      <td>13132792</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>Guinea-Bissau</th>
+      <td>81</td>
+      <td>1967998</td>
+      <td>4.1</td>
+    </tr>
+    <tr>
+      <th>Guyana</th>
+      <td>105</td>
+      <td>786559</td>
+      <td>13.3</td>
+    </tr>
+    <tr>
+      <th>Haiti</th>
+      <td>65</td>
+      <td>11402533</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <th>Holy See</th>
+      <td>0</td>
+      <td>809</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Honduras</th>
+      <td>3892</td>
+      <td>9904608</td>
+      <td>39.3</td>
+    </tr>
+    <tr>
+      <th>Hungary</th>
+      <td>24996</td>
+      <td>9660350</td>
+      <td>258.7</td>
+    </tr>
+    <tr>
+      <th>Iceland</th>
+      <td>19852</td>
+      <td>341250</td>
+      <td>5817.4</td>
+    </tr>
+    <tr>
+      <th>India</th>
+      <td>28462</td>
+      <td>1380004385</td>
+      <td>2.1</td>
+    </tr>
+    <tr>
+      <th>Indonesia</th>
+      <td>107920</td>
+      <td>273523621</td>
+      <td>39.5</td>
+    </tr>
+    <tr>
+      <th>Iran</th>
+      <td>29026</td>
+      <td>83992953</td>
+      <td>34.6</td>
+    </tr>
+    <tr>
+      <th>Iraq</th>
+      <td>5455</td>
+      <td>40222503</td>
+      <td>13.6</td>
+    </tr>
+    <tr>
+      <th>Ireland</th>
+      <td>81119</td>
+      <td>4937796</td>
+      <td>1642.8</td>
+    </tr>
+    <tr>
+      <th>Israel</th>
+      <td>135134</td>
+      <td>8655541</td>
+      <td>1561.2</td>
+    </tr>
+    <tr>
+      <th>Italy</th>
+      <td>980932</td>
+      <td>60461828</td>
+      <td>1622.4</td>
+    </tr>
+    <tr>
+      <th>Jamaica</th>
+      <td>274</td>
+      <td>2961161</td>
+      <td>9.3</td>
+    </tr>
+    <tr>
+      <th>Japan</th>
+      <td>611262</td>
+      <td>126476458</td>
+      <td>483.3</td>
+    </tr>
+    <tr>
+      <th>Jordan</th>
+      <td>34637</td>
+      <td>10203140</td>
+      <td>339.5</td>
+    </tr>
+    <tr>
+      <th>Kazakhstan</th>
+      <td>786</td>
+      <td>18776707</td>
+      <td>4.2</td>
+    </tr>
+    <tr>
+      <th>Kenya</th>
+      <td>194</td>
+      <td>53771300</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <th>Kiribati</th>
+      <td>43</td>
+      <td>117606</td>
+      <td>36.6</td>
+    </tr>
+    <tr>
+      <th>Korea, South</th>
+      <td>5259388</td>
+      <td>51269183</td>
+      <td>10258.4</td>
+    </tr>
+    <tr>
+      <th>Kosovo</th>
+      <td>479</td>
+      <td>1810366</td>
+      <td>26.5</td>
+    </tr>
+    <tr>
+      <th>Kuwait</th>
+      <td>2669</td>
+      <td>4270563</td>
+      <td>62.5</td>
+    </tr>
+    <tr>
+      <th>Kyrgyzstan</th>
+      <td>148</td>
+      <td>6524191</td>
+      <td>2.3</td>
+    </tr>
+    <tr>
+      <th>Laos</th>
+      <td>18144</td>
+      <td>7275556</td>
+      <td>249.4</td>
+    </tr>
+    <tr>
+      <th>Latvia</th>
+      <td>49874</td>
+      <td>1886202</td>
+      <td>2644.1</td>
+    </tr>
+    <tr>
+      <th>Lebanon</th>
+      <td>6384</td>
+      <td>6825442</td>
+      <td>93.5</td>
+    </tr>
+    <tr>
+      <th>Lesotho</th>
+      <td>164</td>
+      <td>2142252</td>
+      <td>7.7</td>
+    </tr>
+    <tr>
+      <th>Liberia</th>
+      <td>5</td>
+      <td>5057677</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Libya</th>
+      <td>1653</td>
+      <td>6871287</td>
+      <td>24.1</td>
+    </tr>
+    <tr>
+      <th>Liechtenstein</th>
+      <td>1992</td>
+      <td>38137</td>
+      <td>5223.3</td>
+    </tr>
+    <tr>
+      <th>Lithuania</th>
+      <td>53703</td>
+      <td>2722291</td>
+      <td>1972.7</td>
+    </tr>
+    <tr>
+      <th>Luxembourg</th>
+      <td>16259</td>
+      <td>625976</td>
+      <td>2597.4</td>
+    </tr>
+    <tr>
+      <th>MS Zaandam</th>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Madagascar</th>
+      <td>139</td>
+      <td>27691019</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>Malawi</th>
+      <td>113</td>
+      <td>19129955</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <th>Malaysia</th>
+      <td>320968</td>
+      <td>32365998</td>
+      <td>991.7</td>
+    </tr>
+    <tr>
+      <th>Maldives</th>
+      <td>291</td>
+      <td>540542</td>
+      <td>53.8</td>
+    </tr>
+    <tr>
+      <th>Mali</th>
+      <td>56</td>
+      <td>20250834</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <th>Malta</th>
+      <td>4062</td>
+      <td>441539</td>
+      <td>920.0</td>
+    </tr>
+    <tr>
+      <th>Marshall Islands</th>
+      <td>0</td>
+      <td>58413</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Mauritania</th>
+      <td>9</td>
+      <td>4649660</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>Mauritius</th>
+      <td>22838</td>
+      <td>1271767</td>
+      <td>1795.8</td>
+    </tr>
+    <tr>
+      <th>Mexico</th>
+      <td>41405</td>
+      <td>127792286</td>
+      <td>32.4</td>
+    </tr>
+    <tr>
+      <th>Micronesia</th>
+      <td>0</td>
+      <td>113815</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Moldova</th>
+      <td>4787</td>
+      <td>4033963</td>
+      <td>118.7</td>
+    </tr>
+    <tr>
+      <th>Monaco</th>
+      <td>753</td>
+      <td>39244</td>
+      <td>1918.8</td>
+    </tr>
+    <tr>
+      <th>Mongolia</th>
+      <td>3196</td>
+      <td>3278292</td>
+      <td>97.5</td>
+    </tr>
+    <tr>
+      <th>Montenegro</th>
+      <td>1239</td>
+      <td>628062</td>
+      <td>197.3</td>
+    </tr>
+    <tr>
+      <th>Morocco</th>
+      <td>883</td>
+      <td>36910558</td>
+      <td>2.4</td>
+    </tr>
+    <tr>
+      <th>Mozambique</th>
+      <td>64</td>
+      <td>31255435</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>Namibia</th>
+      <td>193</td>
+      <td>2540916</td>
+      <td>7.6</td>
+    </tr>
+    <tr>
+      <th>Nepal</th>
+      <td>439</td>
+      <td>29136808</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <th>Netherlands</th>
+      <td>614473</td>
+      <td>17134873</td>
+      <td>3586.1</td>
+    </tr>
+    <tr>
+      <th>New Zealand</th>
+      <td>236646</td>
+      <td>4822233</td>
+      <td>4907.4</td>
+    </tr>
+    <tr>
+      <th>Nicaragua</th>
+      <td>162</td>
+      <td>6624554</td>
+      <td>2.4</td>
+    </tr>
+    <tr>
+      <th>Niger</th>
+      <td>20</td>
+      <td>24206636</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Nigeria</th>
+      <td>343</td>
+      <td>206139587</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>North Macedonia</th>
+      <td>3585</td>
+      <td>2083380</td>
+      <td>172.1</td>
+    </tr>
+    <tr>
+      <th>Norway</th>
+      <td>46940</td>
+      <td>5421242</td>
+      <td>865.9</td>
+    </tr>
+    <tr>
+      <th>Oman</th>
+      <td>1919</td>
+      <td>5106622</td>
+      <td>37.6</td>
+    </tr>
+    <tr>
+      <th>Pakistan</th>
+      <td>5208</td>
+      <td>220892331</td>
+      <td>2.4</td>
+    </tr>
+    <tr>
+      <th>Palau</th>
+      <td>88</td>
+      <td>18008</td>
+      <td>488.7</td>
+    </tr>
+    <tr>
+      <th>Panama</th>
+      <td>4056</td>
+      <td>4314768</td>
+      <td>94.0</td>
+    </tr>
+    <tr>
+      <th>Papua New Guinea</th>
+      <td>1543</td>
+      <td>8947027</td>
+      <td>17.2</td>
+    </tr>
+    <tr>
+      <th>Paraguay</th>
+      <td>2068</td>
+      <td>7132530</td>
+      <td>29.0</td>
+    </tr>
+    <tr>
+      <th>Peru</th>
+      <td>9136</td>
+      <td>32971846</td>
+      <td>27.7</td>
+    </tr>
+    <tr>
+      <th>Philippines</th>
+      <td>6488</td>
+      <td>109581085</td>
+      <td>5.9</td>
+    </tr>
+    <tr>
+      <th>Poland</th>
+      <td>128626</td>
+      <td>37846605</td>
+      <td>339.9</td>
+    </tr>
+    <tr>
+      <th>Portugal</th>
+      <td>153740</td>
+      <td>10196707</td>
+      <td>1507.7</td>
+    </tr>
+    <tr>
+      <th>Qatar</th>
+      <td>1676</td>
+      <td>2881060</td>
+      <td>58.2</td>
+    </tr>
+    <tr>
+      <th>Romania</th>
+      <td>48481</td>
+      <td>19237682</td>
+      <td>252.0</td>
+    </tr>
+    <tr>
+      <th>Russia</th>
+      <td>441078</td>
+      <td>145934460</td>
+      <td>302.2</td>
+    </tr>
+    <tr>
+      <th>Rwanda</th>
+      <td>112</td>
+      <td>12952209</td>
+      <td>0.9</td>
+    </tr>
+    <tr>
+      <th>Saint Kitts and Nevis</th>
+      <td>8</td>
+      <td>53192</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <th>Saint Lucia</th>
+      <td>86</td>
+      <td>183629</td>
+      <td>46.8</td>
+    </tr>
+    <tr>
+      <th>Saint Vincent and the Grenadines</th>
+      <td>9</td>
+      <td>110947</td>
+      <td>8.1</td>
+    </tr>
+    <tr>
+      <th>Samoa</th>
+      <td>841</td>
+      <td>196130</td>
+      <td>428.8</td>
+    </tr>
+    <tr>
+      <th>San Marino</th>
+      <td>434</td>
+      <td>33938</td>
+      <td>1278.8</td>
+    </tr>
+    <tr>
+      <th>Sao Tome and Principe</th>
+      <td>6</td>
+      <td>219161</td>
+      <td>2.7</td>
+    </tr>
+    <tr>
+      <th>Saudi Arabia</th>
+      <td>1634</td>
+      <td>34813867</td>
+      <td>4.7</td>
+    </tr>
+    <tr>
+      <th>Senegal</th>
+      <td>75</td>
+      <td>16743930</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <th>Serbia</th>
+      <td>28621</td>
+      <td>8737370</td>
+      <td>327.6</td>
+    </tr>
+    <tr>
+      <th>Seychelles</th>
+      <td>439</td>
+      <td>98340</td>
+      <td>446.4</td>
+    </tr>
+    <tr>
+      <th>Sierra Leone</th>
+      <td>7</td>
+      <td>7976985</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Singapore</th>
+      <td>137422</td>
+      <td>5850343</td>
+      <td>2349.0</td>
+    </tr>
+    <tr>
+      <th>Slovakia</th>
+      <td>138961</td>
+      <td>5459643</td>
+      <td>2545.2</td>
+    </tr>
+    <tr>
+      <th>Slovenia</th>
+      <td>38761</td>
+      <td>2078932</td>
+      <td>1864.5</td>
+    </tr>
+    <tr>
+      <th>Solomon Islands</th>
+      <td>1935</td>
+      <td>652858</td>
+      <td>296.4</td>
+    </tr>
+    <tr>
+      <th>Somalia</th>
+      <td>10</td>
+      <td>15893219</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>South Africa</th>
+      <td>18731</td>
+      <td>59308690</td>
+      <td>31.6</td>
+    </tr>
+    <tr>
+      <th>South Sudan</th>
+      <td>133</td>
+      <td>11193729</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>Spain</th>
+      <td>227702</td>
+      <td>46754783</td>
+      <td>487.0</td>
+    </tr>
+    <tr>
+      <th>Sri Lanka</th>
+      <td>5067</td>
+      <td>21413250</td>
+      <td>23.7</td>
+    </tr>
+    <tr>
+      <th>Sudan</th>
+      <td>234</td>
+      <td>43849269</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>Summer Olympics 2020</th>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Suriname</th>
+      <td>396</td>
+      <td>586634</td>
+      <td>67.5</td>
+    </tr>
+    <tr>
+      <th>Sweden</th>
+      <td>15159</td>
+      <td>10099270</td>
+      <td>150.1</td>
+    </tr>
+    <tr>
+      <th>Switzerland</th>
+      <td>346791</td>
+      <td>8654618</td>
+      <td>4007.0</td>
+    </tr>
+    <tr>
+      <th>Syria</th>
+      <td>305</td>
+      <td>17500657</td>
+      <td>1.7</td>
+    </tr>
+    <tr>
+      <th>Taiwan*</th>
+      <td>1341</td>
+      <td>23816775</td>
+      <td>5.6</td>
+    </tr>
+    <tr>
+      <th>Tajikistan</th>
+      <td>0</td>
+      <td>9537642</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Tanzania</th>
+      <td>71</td>
+      <td>59734213</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Thailand</th>
+      <td>367844</td>
+      <td>69799978</td>
+      <td>527.0</td>
+    </tr>
+    <tr>
+      <th>Timor-Leste</th>
+      <td>32</td>
+      <td>1318442</td>
+      <td>2.4</td>
+    </tr>
+    <tr>
+      <th>Togo</th>
+      <td>61</td>
+      <td>8278737</td>
+      <td>0.7</td>
+    </tr>
+    <tr>
+      <th>Tonga</th>
+      <td>3819</td>
+      <td>105697</td>
+      <td>3613.2</td>
+    </tr>
+    <tr>
+      <th>Trinidad and Tobago</th>
+      <td>3853</td>
+      <td>1399491</td>
+      <td>275.3</td>
+    </tr>
+    <tr>
+      <th>Tunisia</th>
+      <td>5014</td>
+      <td>11818618</td>
+      <td>42.4</td>
+    </tr>
+    <tr>
+      <th>Turkey</th>
+      <td>255244</td>
+      <td>84339067</td>
+      <td>302.6</td>
+    </tr>
+    <tr>
+      <th>US</th>
+      <td>431379</td>
+      <td>329466283</td>
+      <td>130.9</td>
+    </tr>
+    <tr>
+      <th>Uganda</th>
+      <td>314</td>
+      <td>45741000</td>
+      <td>0.7</td>
+    </tr>
+    <tr>
+      <th>Ukraine</th>
+      <td>0</td>
+      <td>43733759</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>United Arab Emirates</th>
+      <td>4708</td>
+      <td>9890400</td>
+      <td>47.6</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>1175566</td>
+      <td>67886004</td>
+      <td>1731.7</td>
+    </tr>
+    <tr>
+      <th>Uruguay</th>
+      <td>19989</td>
+      <td>3473727</td>
+      <td>575.4</td>
+    </tr>
+    <tr>
+      <th>Uzbekistan</th>
+      <td>420</td>
+      <td>33469199</td>
+      <td>1.3</td>
+    </tr>
+    <tr>
+      <th>Vanuatu</th>
+      <td>1997</td>
+      <td>292680</td>
+      <td>682.3</td>
+    </tr>
+    <tr>
+      <th>Venezuela</th>
+      <td>2078</td>
+      <td>28435943</td>
+      <td>7.3</td>
+    </tr>
+    <tr>
+      <th>Vietnam</th>
+      <td>3016410</td>
+      <td>97338583</td>
+      <td>3098.9</td>
+    </tr>
+    <tr>
+      <th>West Bank and Gaza</th>
+      <td>2175</td>
+      <td>5101416</td>
+      <td>42.6</td>
+    </tr>
+    <tr>
+      <th>Winter Olympics 2022</th>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Yemen</th>
+      <td>19</td>
+      <td>29825968</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Zambia</th>
+      <td>1353</td>
+      <td>18383956</td>
+      <td>7.4</td>
+    </tr>
+    <tr>
+      <th>Zimbabwe</th>
+      <td>3576</td>
+      <td>14862927</td>
+      <td>24.1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Table-sorted-by-14-day-incidence">Table sorted by 14-day-incidence<a class="anchor-link" href="#Table-sorted-by-14-day-incidence">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cases_incidence</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;14-day-incidence-rate&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>14-day-sum</th>
+      <th>population</th>
+      <th>14-day-incidence-rate</th>
+    </tr>
+    <tr>
+      <th>Country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Korea, South</th>
+      <td>5259388</td>
+      <td>51269183</td>
+      <td>10258.4</td>
+    </tr>
+    <tr>
+      <th>Austria</th>
+      <td>582644</td>
+      <td>9006400</td>
+      <td>6469.2</td>
+    </tr>
+    <tr>
+      <th>Iceland</th>
+      <td>19852</td>
+      <td>341250</td>
+      <td>5817.4</td>
+    </tr>
+    <tr>
+      <th>Liechtenstein</th>
+      <td>1992</td>
+      <td>38137</td>
+      <td>5223.3</td>
+    </tr>
+    <tr>
+      <th>New Zealand</th>
+      <td>236646</td>
+      <td>4822233</td>
+      <td>4907.4</td>
+    </tr>
+    <tr>
+      <th>Brunei</th>
+      <td>21073</td>
+      <td>437483</td>
+      <td>4816.9</td>
+    </tr>
+    <tr>
+      <th>Cyprus</th>
+      <td>55018</td>
+      <td>1207361</td>
+      <td>4556.9</td>
+    </tr>
+    <tr>
+      <th>Switzerland</th>
+      <td>346791</td>
+      <td>8654618</td>
+      <td>4007.0</td>
+    </tr>
+    <tr>
+      <th>Tonga</th>
+      <td>3819</td>
+      <td>105697</td>
+      <td>3613.2</td>
+    </tr>
+    <tr>
+      <th>Netherlands</th>
+      <td>614473</td>
+      <td>17134873</td>
+      <td>3586.1</td>
+    </tr>
+    <tr>
+      <th>Vietnam</th>
+      <td>3016410</td>
+      <td>97338583</td>
+      <td>3098.9</td>
+    </tr>
+    <tr>
+      <th>Greece</th>
+      <td>293264</td>
+      <td>10423056</td>
+      <td>2813.6</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>2294307</td>
+      <td>83155031</td>
+      <td>2759.1</td>
+    </tr>
+    <tr>
+      <th>Australia</th>
+      <td>678744</td>
+      <td>25459700</td>
+      <td>2666.0</td>
+    </tr>
+    <tr>
+      <th>Latvia</th>
+      <td>49874</td>
+      <td>1886202</td>
+      <td>2644.1</td>
+    </tr>
+    <tr>
+      <th>Luxembourg</th>
+      <td>16259</td>
+      <td>625976</td>
+      <td>2597.4</td>
+    </tr>
+    <tr>
+      <th>Slovakia</th>
+      <td>138961</td>
+      <td>5459643</td>
+      <td>2545.2</td>
+    </tr>
+    <tr>
+      <th>Singapore</th>
+      <td>137422</td>
+      <td>5850343</td>
+      <td>2349.0</td>
+    </tr>
+    <tr>
+      <th>France</th>
+      <td>1470941</td>
+      <td>65249843</td>
+      <td>2254.3</td>
+    </tr>
+    <tr>
+      <th>Finland</th>
+      <td>110451</td>
+      <td>5540718</td>
+      <td>1993.4</td>
+    </tr>
+    <tr>
+      <th>Lithuania</th>
+      <td>53703</td>
+      <td>2722291</td>
+      <td>1972.7</td>
+    </tr>
+    <tr>
+      <th>Monaco</th>
+      <td>753</td>
+      <td>39244</td>
+      <td>1918.8</td>
+    </tr>
+    <tr>
+      <th>Slovenia</th>
+      <td>38761</td>
+      <td>2078932</td>
+      <td>1864.5</td>
+    </tr>
+    <tr>
+      <th>Mauritius</th>
+      <td>22838</td>
+      <td>1271767</td>
+      <td>1795.8</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>1175566</td>
+      <td>67886004</td>
+      <td>1731.7</td>
+    </tr>
+    <tr>
+      <th>Ireland</th>
+      <td>81119</td>
+      <td>4937796</td>
+      <td>1642.8</td>
+    </tr>
+    <tr>
+      <th>Denmark</th>
+      <td>95372</td>
+      <td>5837213</td>
+      <td>1633.9</td>
+    </tr>
+    <tr>
+      <th>Italy</th>
+      <td>980932</td>
+      <td>60461828</td>
+      <td>1622.4</td>
+    </tr>
+    <tr>
+      <th>Estonia</th>
+      <td>21274</td>
+      <td>1326539</td>
+      <td>1603.7</td>
+    </tr>
+    <tr>
+      <th>Israel</th>
+      <td>135134</td>
+      <td>8655541</td>
+      <td>1561.2</td>
+    </tr>
+    <tr>
+      <th>Portugal</th>
+      <td>153740</td>
+      <td>10196707</td>
+      <td>1507.7</td>
+    </tr>
+    <tr>
+      <th>San Marino</th>
+      <td>434</td>
+      <td>33938</td>
+      <td>1278.8</td>
+    </tr>
+    <tr>
+      <th>Belgium</th>
+      <td>142033</td>
+      <td>11492641</td>
+      <td>1235.9</td>
+    </tr>
+    <tr>
+      <th>Andorra</th>
+      <td>919</td>
+      <td>77265</td>
+      <td>1189.4</td>
+    </tr>
+    <tr>
+      <th>Malaysia</th>
+      <td>320968</td>
+      <td>32365998</td>
+      <td>991.7</td>
+    </tr>
+    <tr>
+      <th>Czechia</th>
+      <td>105761</td>
+      <td>10708982</td>
+      <td>987.6</td>
+    </tr>
+    <tr>
+      <th>Bhutan</th>
+      <td>7611</td>
+      <td>771612</td>
+      <td>986.4</td>
+    </tr>
+    <tr>
+      <th>Malta</th>
+      <td>4062</td>
+      <td>441539</td>
+      <td>920.0</td>
+    </tr>
+    <tr>
+      <th>Norway</th>
+      <td>46940</td>
+      <td>5421242</td>
+      <td>865.9</td>
+    </tr>
+    <tr>
+      <th>Bahrain</th>
+      <td>14121</td>
+      <td>1701583</td>
+      <td>829.9</td>
+    </tr>
+    <tr>
+      <th>Chile</th>
+      <td>156542</td>
+      <td>19116209</td>
+      <td>818.9</td>
+    </tr>
+    <tr>
+      <th>Vanuatu</th>
+      <td>1997</td>
+      <td>292680</td>
+      <td>682.3</td>
+    </tr>
+    <tr>
+      <th>Uruguay</th>
+      <td>19989</td>
+      <td>3473727</td>
+      <td>575.4</td>
+    </tr>
+    <tr>
+      <th>Thailand</th>
+      <td>367844</td>
+      <td>69799978</td>
+      <td>527.0</td>
+    </tr>
+    <tr>
+      <th>Croatia</th>
+      <td>20668</td>
+      <td>4105268</td>
+      <td>503.5</td>
+    </tr>
+    <tr>
+      <th>Palau</th>
+      <td>88</td>
+      <td>18008</td>
+      <td>488.7</td>
+    </tr>
+    <tr>
+      <th>Spain</th>
+      <td>227702</td>
+      <td>46754783</td>
+      <td>487.0</td>
+    </tr>
+    <tr>
+      <th>Japan</th>
+      <td>611262</td>
+      <td>126476458</td>
+      <td>483.3</td>
+    </tr>
+    <tr>
+      <th>Barbados</th>
+      <td>1348</td>
+      <td>287371</td>
+      <td>469.1</td>
+    </tr>
+    <tr>
+      <th>Seychelles</th>
+      <td>439</td>
+      <td>98340</td>
+      <td>446.4</td>
+    </tr>
+    <tr>
+      <th>Samoa</th>
+      <td>841</td>
+      <td>196130</td>
+      <td>428.8</td>
+    </tr>
+    <tr>
+      <th>Dominica</th>
+      <td>285</td>
+      <td>71991</td>
+      <td>395.9</td>
+    </tr>
+    <tr>
+      <th>Poland</th>
+      <td>128626</td>
+      <td>37846605</td>
+      <td>339.9</td>
+    </tr>
+    <tr>
+      <th>Jordan</th>
+      <td>34637</td>
+      <td>10203140</td>
+      <td>339.5</td>
+    </tr>
+    <tr>
+      <th>Serbia</th>
+      <td>28621</td>
+      <td>8737370</td>
+      <td>327.6</td>
+    </tr>
+    <tr>
+      <th>Turkey</th>
+      <td>255244</td>
+      <td>84339067</td>
+      <td>302.6</td>
+    </tr>
+    <tr>
+      <th>Russia</th>
+      <td>441078</td>
+      <td>145934460</td>
+      <td>302.2</td>
+    </tr>
+    <tr>
+      <th>Bulgaria</th>
+      <td>20926</td>
+      <td>6948445</td>
+      <td>301.2</td>
+    </tr>
+    <tr>
+      <th>Solomon Islands</th>
+      <td>1935</td>
+      <td>652858</td>
+      <td>296.4</td>
+    </tr>
+    <tr>
+      <th>Georgia</th>
+      <td>11273</td>
+      <td>3989175</td>
+      <td>282.6</td>
+    </tr>
+    <tr>
+      <th>Trinidad and Tobago</th>
+      <td>3853</td>
+      <td>1399491</td>
+      <td>275.3</td>
+    </tr>
+    <tr>
+      <th>Grenada</th>
+      <td>292</td>
+      <td>112519</td>
+      <td>259.5</td>
+    </tr>
+    <tr>
+      <th>Hungary</th>
+      <td>24996</td>
+      <td>9660350</td>
+      <td>258.7</td>
+    </tr>
+    <tr>
+      <th>Romania</th>
+      <td>48481</td>
+      <td>19237682</td>
+      <td>252.0</td>
+    </tr>
+    <tr>
+      <th>Laos</th>
+      <td>18144</td>
+      <td>7275556</td>
+      <td>249.4</td>
+    </tr>
+    <tr>
+      <th>Costa Rica</th>
+      <td>11791</td>
+      <td>5094114</td>
+      <td>231.5</td>
+    </tr>
+    <tr>
+      <th>Brazil</th>
+      <td>478079</td>
+      <td>212559409</td>
+      <td>224.9</td>
+    </tr>
+    <tr>
+      <th>Canada</th>
+      <td>77849</td>
+      <td>38246108</td>
+      <td>203.5</td>
+    </tr>
+    <tr>
+      <th>Belarus</th>
+      <td>18978</td>
+      <td>9449321</td>
+      <td>200.8</td>
+    </tr>
+    <tr>
+      <th>Montenegro</th>
+      <td>1239</td>
+      <td>628062</td>
+      <td>197.3</td>
+    </tr>
+    <tr>
+      <th>North Macedonia</th>
+      <td>3585</td>
+      <td>2083380</td>
+      <td>172.1</td>
+    </tr>
+    <tr>
+      <th>Sweden</th>
+      <td>15159</td>
+      <td>10099270</td>
+      <td>150.1</td>
+    </tr>
+    <tr>
+      <th>US</th>
+      <td>431379</td>
+      <td>329466283</td>
+      <td>130.9</td>
+    </tr>
+    <tr>
+      <th>Argentina</th>
+      <td>55061</td>
+      <td>45195777</td>
+      <td>121.8</td>
+    </tr>
+    <tr>
+      <th>Moldova</th>
+      <td>4787</td>
+      <td>4033963</td>
+      <td>118.7</td>
+    </tr>
+    <tr>
+      <th>Guatemala</th>
+      <td>19450</td>
+      <td>17915567</td>
+      <td>108.6</td>
+    </tr>
+    <tr>
+      <th>Mongolia</th>
+      <td>3196</td>
+      <td>3278292</td>
+      <td>97.5</td>
+    </tr>
+    <tr>
+      <th>Panama</th>
+      <td>4056</td>
+      <td>4314768</td>
+      <td>94.0</td>
+    </tr>
+    <tr>
+      <th>Lebanon</th>
+      <td>6384</td>
+      <td>6825442</td>
+      <td>93.5</td>
+    </tr>
+    <tr>
+      <th>Cuba</th>
+      <td>10132</td>
+      <td>11326616</td>
+      <td>89.5</td>
+    </tr>
+    <tr>
+      <th>Ecuador</th>
+      <td>13539</td>
+      <td>17643060</td>
+      <td>76.7</td>
+    </tr>
+    <tr>
+      <th>El Salvador</th>
+      <td>4688</td>
+      <td>6486201</td>
+      <td>72.3</td>
+    </tr>
+    <tr>
+      <th>Suriname</th>
+      <td>396</td>
+      <td>586634</td>
+      <td>67.5</td>
+    </tr>
+    <tr>
+      <th>Kuwait</th>
+      <td>2669</td>
+      <td>4270563</td>
+      <td>62.5</td>
+    </tr>
+    <tr>
+      <th>Qatar</th>
+      <td>1676</td>
+      <td>2881060</td>
+      <td>58.2</td>
+    </tr>
+    <tr>
+      <th>Maldives</th>
+      <td>291</td>
+      <td>540542</td>
+      <td>53.8</td>
+    </tr>
+    <tr>
+      <th>Bosnia and Herzegovina</th>
+      <td>1705</td>
+      <td>3280815</td>
+      <td>52.0</td>
+    </tr>
+    <tr>
+      <th>Belize</th>
+      <td>197</td>
+      <td>397621</td>
+      <td>49.5</td>
+    </tr>
+    <tr>
+      <th>United Arab Emirates</th>
+      <td>4708</td>
+      <td>9890400</td>
+      <td>47.6</td>
+    </tr>
+    <tr>
+      <th>Saint Lucia</th>
+      <td>86</td>
+      <td>183629</td>
+      <td>46.8</td>
+    </tr>
+    <tr>
+      <th>West Bank and Gaza</th>
+      <td>2175</td>
+      <td>5101416</td>
+      <td>42.6</td>
+    </tr>
+    <tr>
+      <th>Tunisia</th>
+      <td>5014</td>
+      <td>11818618</td>
+      <td>42.4</td>
+    </tr>
+    <tr>
+      <th>Indonesia</th>
+      <td>107920</td>
+      <td>273523621</td>
+      <td>39.5</td>
+    </tr>
+    <tr>
+      <th>Honduras</th>
+      <td>3892</td>
+      <td>9904608</td>
+      <td>39.3</td>
+    </tr>
+    <tr>
+      <th>Oman</th>
+      <td>1919</td>
+      <td>5106622</td>
+      <td>37.6</td>
+    </tr>
+    <tr>
+      <th>Kiribati</th>
+      <td>43</td>
+      <td>117606</td>
+      <td>36.6</td>
+    </tr>
+    <tr>
+      <th>Iran</th>
+      <td>29026</td>
+      <td>83992953</td>
+      <td>34.6</td>
+    </tr>
+    <tr>
+      <th>Fiji</th>
+      <td>309</td>
+      <td>896444</td>
+      <td>34.5</td>
+    </tr>
+    <tr>
+      <th>Mexico</th>
+      <td>41405</td>
+      <td>127792286</td>
+      <td>32.4</td>
+    </tr>
+    <tr>
+      <th>Bolivia</th>
+      <td>3757</td>
+      <td>11673029</td>
+      <td>32.2</td>
+    </tr>
+    <tr>
+      <th>South Africa</th>
+      <td>18731</td>
+      <td>59308690</td>
+      <td>31.6</td>
+    </tr>
+    <tr>
+      <th>Paraguay</th>
+      <td>2068</td>
+      <td>7132530</td>
+      <td>29.0</td>
+    </tr>
+    <tr>
+      <th>Peru</th>
+      <td>9136</td>
+      <td>32971846</td>
+      <td>27.7</td>
+    </tr>
+    <tr>
+      <th>Albania</th>
+      <td>766</td>
+      <td>2877800</td>
+      <td>26.6</td>
+    </tr>
+    <tr>
+      <th>Kosovo</th>
+      <td>479</td>
+      <td>1810366</td>
+      <td>26.5</td>
+    </tr>
+    <tr>
+      <th>Zimbabwe</th>
+      <td>3576</td>
+      <td>14862927</td>
+      <td>24.1</td>
+    </tr>
+    <tr>
+      <th>Libya</th>
+      <td>1653</td>
+      <td>6871287</td>
+      <td>24.1</td>
+    </tr>
+    <tr>
+      <th>Sri Lanka</th>
+      <td>5067</td>
+      <td>21413250</td>
+      <td>23.7</td>
+    </tr>
+    <tr>
+      <th>China</th>
+      <td>291007</td>
+      <td>1411778724</td>
+      <td>20.6</td>
+    </tr>
+    <tr>
+      <th>Eswatini</th>
+      <td>234</td>
+      <td>1160164</td>
+      <td>20.2</td>
+    </tr>
+    <tr>
+      <th>Papua New Guinea</th>
+      <td>1543</td>
+      <td>8947027</td>
+      <td>17.2</td>
+    </tr>
+    <tr>
+      <th>Armenia</th>
+      <td>491</td>
+      <td>2963234</td>
+      <td>16.6</td>
+    </tr>
+    <tr>
+      <th>Antigua and Barbuda</th>
+      <td>16</td>
+      <td>97928</td>
+      <td>16.3</td>
+    </tr>
+    <tr>
+      <th>Saint Kitts and Nevis</th>
+      <td>8</td>
+      <td>53192</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <th>Bahamas</th>
+      <td>55</td>
+      <td>393248</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>Colombia</th>
+      <td>6958</td>
+      <td>50882884</td>
+      <td>13.7</td>
+    </tr>
+    <tr>
+      <th>Iraq</th>
+      <td>5455</td>
+      <td>40222503</td>
+      <td>13.6</td>
+    </tr>
+    <tr>
+      <th>Dominican Republic</th>
+      <td>1474</td>
+      <td>10847904</td>
+      <td>13.6</td>
+    </tr>
+    <tr>
+      <th>Guyana</th>
+      <td>105</td>
+      <td>786559</td>
+      <td>13.3</td>
+    </tr>
+    <tr>
+      <th>Azerbaijan</th>
+      <td>1120</td>
+      <td>10139175</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>Burma</th>
+      <td>5868</td>
+      <td>54409794</td>
+      <td>10.8</td>
+    </tr>
+    <tr>
+      <th>Jamaica</th>
+      <td>274</td>
+      <td>2961161</td>
+      <td>9.3</td>
+    </tr>
+    <tr>
+      <th>Cambodia</th>
+      <td>1459</td>
+      <td>16718971</td>
+      <td>8.7</td>
+    </tr>
+    <tr>
+      <th>Saint Vincent and the Grenadines</th>
+      <td>9</td>
+      <td>110947</td>
+      <td>8.1</td>
+    </tr>
+    <tr>
+      <th>Lesotho</th>
+      <td>164</td>
+      <td>2142252</td>
+      <td>7.7</td>
+    </tr>
+    <tr>
+      <th>Namibia</th>
+      <td>193</td>
+      <td>2540916</td>
+      <td>7.6</td>
+    </tr>
+    <tr>
+      <th>Cabo Verde</th>
+      <td>41</td>
+      <td>555988</td>
+      <td>7.4</td>
+    </tr>
+    <tr>
+      <th>Equatorial Guinea</th>
+      <td>104</td>
+      <td>1402985</td>
+      <td>7.4</td>
+    </tr>
+    <tr>
+      <th>Zambia</th>
+      <td>1353</td>
+      <td>18383956</td>
+      <td>7.4</td>
+    </tr>
+    <tr>
+      <th>Venezuela</th>
+      <td>2078</td>
+      <td>28435943</td>
+      <td>7.3</td>
+    </tr>
+    <tr>
+      <th>Central African Republic</th>
+      <td>329</td>
+      <td>4829764</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>Philippines</th>
+      <td>6488</td>
+      <td>109581085</td>
+      <td>5.9</td>
+    </tr>
+    <tr>
+      <th>Taiwan*</th>
+      <td>1341</td>
+      <td>23816775</td>
+      <td>5.6</td>
+    </tr>
+    <tr>
+      <th>Egypt</th>
+      <td>5516</td>
+      <td>102334403</td>
+      <td>5.4</td>
+    </tr>
+    <tr>
+      <th>Saudi Arabia</th>
+      <td>1634</td>
+      <td>34813867</td>
+      <td>4.7</td>
+    </tr>
+    <tr>
+      <th>Kazakhstan</th>
+      <td>786</td>
+      <td>18776707</td>
+      <td>4.2</td>
+    </tr>
+    <tr>
+      <th>Guinea-Bissau</th>
+      <td>81</td>
+      <td>1967998</td>
+      <td>4.1</td>
+    </tr>
+    <tr>
+      <th>Afghanistan</th>
+      <td>1282</td>
+      <td>38928341</td>
+      <td>3.3</td>
+    </tr>
+    <tr>
+      <th>Benin</th>
+      <td>377</td>
+      <td>12123198</td>
+      <td>3.1</td>
+    </tr>
+    <tr>
+      <th>Sao Tome and Principe</th>
+      <td>6</td>
+      <td>219161</td>
+      <td>2.7</td>
+    </tr>
+    <tr>
+      <th>Morocco</th>
+      <td>883</td>
+      <td>36910558</td>
+      <td>2.4</td>
+    </tr>
+    <tr>
+      <th>Comoros</th>
+      <td>21</td>
+      <td>869595</td>
+      <td>2.4</td>
+    </tr>
+    <tr>
+      <th>Timor-Leste</th>
+      <td>32</td>
+      <td>1318442</td>
+      <td>2.4</td>
+    </tr>
+    <tr>
+      <th>Pakistan</th>
+      <td>5208</td>
+      <td>220892331</td>
+      <td>2.4</td>
+    </tr>
+    <tr>
+      <th>Nicaragua</th>
+      <td>162</td>
+      <td>6624554</td>
+      <td>2.4</td>
+    </tr>
+    <tr>
+      <th>Kyrgyzstan</th>
+      <td>148</td>
+      <td>6524191</td>
+      <td>2.3</td>
+    </tr>
+    <tr>
+      <th>India</th>
+      <td>28462</td>
+      <td>1380004385</td>
+      <td>2.1</td>
+    </tr>
+    <tr>
+      <th>Syria</th>
+      <td>305</td>
+      <td>17500657</td>
+      <td>1.7</td>
+    </tr>
+    <tr>
+      <th>Burundi</th>
+      <td>192</td>
+      <td>11890781</td>
+      <td>1.6</td>
+    </tr>
+    <tr>
+      <th>Djibouti</th>
+      <td>16</td>
+      <td>988002</td>
+      <td>1.6</td>
+    </tr>
+    <tr>
+      <th>Nepal</th>
+      <td>439</td>
+      <td>29136808</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <th>Uzbekistan</th>
+      <td>420</td>
+      <td>33469199</td>
+      <td>1.3</td>
+    </tr>
+    <tr>
+      <th>South Sudan</th>
+      <td>133</td>
+      <td>11193729</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>Bangladesh</th>
+      <td>1986</td>
+      <td>164689383</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>Gambia</th>
+      <td>23</td>
+      <td>2416664</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>Rwanda</th>
+      <td>112</td>
+      <td>12952209</td>
+      <td>0.9</td>
+    </tr>
+    <tr>
+      <th>Gabon</th>
+      <td>20</td>
+      <td>2225728</td>
+      <td>0.9</td>
+    </tr>
+    <tr>
+      <th>Cameroon</th>
+      <td>222</td>
+      <td>26545864</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <th>Togo</th>
+      <td>61</td>
+      <td>8278737</td>
+      <td>0.7</td>
+    </tr>
+    <tr>
+      <th>Ghana</th>
+      <td>232</td>
+      <td>31072945</td>
+      <td>0.7</td>
+    </tr>
+    <tr>
+      <th>Uganda</th>
+      <td>314</td>
+      <td>45741000</td>
+      <td>0.7</td>
+    </tr>
+    <tr>
+      <th>Angola</th>
+      <td>197</td>
+      <td>32866268</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <th>Malawi</th>
+      <td>113</td>
+      <td>19129955</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <th>Haiti</th>
+      <td>65</td>
+      <td>11402533</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <th>Sudan</th>
+      <td>234</td>
+      <td>43849269</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>Algeria</th>
+      <td>211</td>
+      <td>43851043</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>Madagascar</th>
+      <td>139</td>
+      <td>27691019</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <th>Kenya</th>
+      <td>194</td>
+      <td>53771300</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <th>Senegal</th>
+      <td>75</td>
+      <td>16743930</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <th>Cote d'Ivoire</th>
+      <td>103</td>
+      <td>26378275</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <th>Ethiopia</th>
+      <td>441</td>
+      <td>114963583</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <th>Mali</th>
+      <td>56</td>
+      <td>20250834</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <th>Congo (Kinshasa)</th>
+      <td>296</td>
+      <td>89561404</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <th>Burkina Faso</th>
+      <td>71</td>
+      <td>20903278</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <th>Congo (Brazzaville)</th>
+      <td>13</td>
+      <td>5518092</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>Chad</th>
+      <td>28</td>
+      <td>16425859</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>Mozambique</th>
+      <td>64</td>
+      <td>31255435</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>Nigeria</th>
+      <td>343</td>
+      <td>206139587</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>Guinea</th>
+      <td>32</td>
+      <td>13132792</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>Mauritania</th>
+      <td>9</td>
+      <td>4649660</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>Tanzania</th>
+      <td>71</td>
+      <td>59734213</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Liberia</th>
+      <td>5</td>
+      <td>5057677</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Yemen</th>
+      <td>19</td>
+      <td>29825968</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Eritrea</th>
+      <td>3</td>
+      <td>3546427</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Somalia</th>
+      <td>10</td>
+      <td>15893219</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Sierra Leone</th>
+      <td>7</td>
+      <td>7976985</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Niger</th>
+      <td>20</td>
+      <td>24206636</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <th>Micronesia</th>
+      <td>0</td>
+      <td>113815</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Holy See</th>
+      <td>0</td>
+      <td>809</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Marshall Islands</th>
+      <td>0</td>
+      <td>58413</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Ukraine</th>
+      <td>0</td>
+      <td>43733759</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Tajikistan</th>
+      <td>0</td>
+      <td>9537642</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Botswana</th>
+      <td>0</td>
+      <td>2351625</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Antarctica</th>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Diamond Princess</th>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>MS Zaandam</th>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Summer Olympics 2020</th>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Winter Olympics 2022</th>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Tutorial:-Detailed-calculation-for-one-country">Tutorial: Detailed calculation for one country<a class="anchor-link" href="#Tutorial:-Detailed-calculation-for-one-country">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">oscovida</span> <span class="kn">import</span> <span class="n">fetch_cases</span><span class="p">,</span> <span class="n">get_population</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">period</span> <span class="o">=</span> <span class="mi">14</span> <span class="c1"># Days we compute the incidence rate over</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cases</span> <span class="o">=</span> <span class="n">fetch_cases</span><span class="p">()</span> <span class="c1"># Get a DataFrame where each row is the country, and columns cumulative case numbers</span>
+<span class="n">cases</span> <span class="o">=</span> <span class="n">cases</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">cases</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="c1"># Merge the rows for different regions as we want the numbers for an entire country</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cases_germany</span> <span class="o">=</span> <span class="n">cases</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Germany&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">:]</span> <span class="c1"># First 2 entries are lat/lon so we only take the subsequent ones</span>
+<span class="n">cases_germany</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3/22/22    19058757.0
+3/23/22    19217142.0
+3/24/22    19365628.0
+3/25/22    19487710.0
+3/26/22    19492672.0
+Name: Germany, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">yesterday</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">x_days_ago</span> <span class="o">=</span> <span class="n">yesterday</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="n">period</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">period_mask</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="n">yesterday</span> <span class="o">&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">cases_germany</span><span class="o">.</span><span class="n">index</span><span class="p">))</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">cases_germany</span><span class="o">.</span><span class="n">index</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">x_days_ago</span><span class="p">)</span>
+<span class="p">)</span> <span class="c1"># Mask for dates between today and x days ago</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cases_in_period_per_day_germany</span> <span class="o">=</span> <span class="n">cases_germany</span><span class="p">[</span><span class="n">period_mask</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span> <span class="c1"># Apply the period mask and get the diff to get the daily new cases</span>
+<span class="n">cases_in_period_per_day_germany</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3/13/22         NaN
+3/14/22    198955.0
+3/15/22    262283.0
+3/16/22    294924.0
+3/17/22    297850.0
+3/18/22    260237.0
+3/19/22    131725.0
+3/20/22     92316.0
+3/21/22        37.0
+3/22/22    248722.0
+3/23/22    158385.0
+3/24/22    148486.0
+3/25/22    122082.0
+3/26/22      4962.0
+Name: Germany, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cases_in_period_per_day_germany</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span> <span class="c1"># We can easily look at new cases per day</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;AxesSubplot:&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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1NToZ555Rufl5VmSR0Nz+eqrr3RpaanWWusdO3bouXPn1h6/d+9effDgQf3www//4Ny+lMuljm3I8Q6HQx88eFBrrXVFRYWePXu2/u677yzJRWvv+rlvKrmSaCClFO3btwfA6XTidDpRSqG15siRI/Tp0welFKGhoezYsaNR5969ezdTpkwhMDCwdltUVBRVVVVUV1fTrl07rrzySsD1rNw+ffqc98Q+q3LZvXs3kZGRdO7c2ZJcmpNHbm4u/fr1o127dgBcccUVfPHFF9x4440ez6MxuZzVv3//89obNGgQBQUFFz23L+VS17FAg44PCwsjLCwMgA4dOtCjRw8cDgc9e/b0eC718fT70lRSJBrBNE0effRR8vPzue666+jfvz+HDh2id+/e531Q6jJ//nwArr322topcSdPniQgIOC8DwrAF198QXR0NG3atDlve3l5Odu3b2/WJXRL5AKuy+2RI0fWfm9FLk3NIyoqirVr11JaWkrbtm3ZuXMnffv2tSyPxuaSlpZGXFxcvef0xVwudizA4cOHG/VaFBQUcPjwYfr162dZLuBdP/dNIUWiEQzD4IUXXqC8vJxFixbx7bffkpmZSWxsbL3HPvvss9jtdkpKSnjuuefo3r07gwYNIisri5iYmPP2/e6771izZg1PPPHEedudTicvvvgiEydOpGvXrpblAlBTU8P27du54447ardZkUtT8+jZsyc33ngjzz33HO3bt+eyyy7DMAzL8mhMLnv27OGTTz7hmWeeqfecvpjLxY7t1atXo16LU6dOsXjxYu6+++4f/CL2ZC7e9nPfFDK7qQmCgoIYPHgwmZmZZGVlcdVVV9V7jN1uByA0NJTExEQOHDgAwM6dO8/7sBUVFbFo0SIeeOABIiMjzzvHK6+8QmRk5HkDrFbkcjbuPn360KlTp/O2WZVLU/IYN24czz//PL/97W8JCgqiW7duludRXy5HjhzhlVde4ZFHHiEkJKTec/lyLuceCzT4+JqaGhYvXsw111zDsGHDLM3FW3/uG0OKRAOdPHmS8vJywDXjISsri27duuF0Ouv9YT116hSVlZW1X2dlZdGrVy+01nz77be1MyHKy8tZuHAhd9xxBwMHDjzvHGvXrqWiooK7777b0lzOurCryYpcmptHSUkJAIWFhWzdupVRo0Z59XtSWFjIokWL+MUvfkH37t3rPacv5nKxY3v06EFFRUWDjtda8/LLL9OjRw+mTJliaS7e9nPfVNLd1EDFxcWsXLkS0zTRWjNixAicTidDhgyp3efEiRM89thjVFZWopTi/fffZ8mSJZSWlrJo0SLAdek4atQoYmNjOXjwIJdddlltv+aHH35Ifn4+69atY926dQA8+eST1NTU8M4779CjRw8effRRAK6//nrGjx/v8VwCAwNrP/AzZsyo3f/QoUMez6W5eSxevJjS0lICAgK49957CQoK8ur3ZN26dZSVlfHaa68BnDelctmyZezbt4/S0lLuv/9+pk6dSu/evX0ul4sdGx8fz5YtWxp0/Ndff016ejq9evXikUceAeD2229n6NChHs+lpKTEq37um8yzk6n8yx/+8Ifzpuc11rp16/Rnn33WghE1nb/k4i95aC25tOTxLcmf3peGkLWbhBBC1EnGJIQQQtRJioQQQog6SZEQQghRJykSQggh6iRFQgghRJ2kSAghhKjT/wdAiiz2KPgqIQAAAABJRU5ErkJggg==
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">population</span> <span class="o">=</span> <span class="n">get_population</span><span class="p">()</span><span class="o">.</span><span class="n">population</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">population_germany</span> <span class="o">=</span> <span class="n">population</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Germany&#39;</span><span class="p">]</span> <span class="c1"># Get the population of Germany</span>
+<span class="n">population_germany</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>83155031.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">incidence_rate_germany</span> <span class="o">=</span> <span class="n">cases_in_period_per_day_germany</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">population_germany</span> <span class="o">*</span> <span class="mi">100_000</span>
+<span class="n">incidence_rate_germany</span> <span class="c1"># By convention this is total cases over period / population * 100_000</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2670.8714713845757</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+ 
+
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+  </div>
+
+
+
+        </div>
+
+          <div class="col-md-3">
+  <div class="well">
+
+    <p><abbr title="2020-08-15T00:00:00+02:00"><i class="fa fa-calendar"></i> Sat 15 August 2020</abbr></p>
+
+
+    <hr/>
+
+      <p>
+              <a href="./category-all.html" rel="tag"
+                  data-toggle="tooltip" class="label label-info"
+                  title="40 articles in this category">All</a>
+            <a href="/tag-data.html" data-toggle="tooltip"
+      class="label label-default"
+      title="23 articles with this tag">data</a>
+            <a href="/tag-analysis.html" data-toggle="tooltip"
+      class="label label-default"
+      title="22 articles with this tag">analysis</a>
+            <a href="/tag-notebook.html" data-toggle="tooltip"
+      class="label label-default"
+      title="21 articles with this tag">notebook</a>
+            <a href="/tag-incidence.html" data-toggle="tooltip"
+      class="label label-default"
+      title="4 articles with this tag">incidence</a>
+      </p>
+      <hr/>
+
+
+
+  </div>
+            
+          </div>
+
+      </div>
+
+    </div>
+
+    <!-- TODO: make footer sticky -->
+    <footer class="container-fluid">
+      <div class="container">
+        <div class="row">
+
+            <div class="col-md-2">
+                <h5>Social</h5>
+                <ul class="list-unstyled">
+                  <li>  <a href="https://twitter.com/OSCOVIDAproject">
+      <i class="fa fa-twitter"></i>
+    Open Science COVID Analysis
+  </a></li>
+                  <li>  <a href="https://twitter.com/Panosc_eu">
+      <i class="fa fa-twitter"></i>
+    PaNOSC
+  </a></li>
+                  <li>  <a href="https://twitter.com/ProfCompMod">
+      <i class="fa fa-twitter"></i>
+    ProfCompMod
+  </a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <h5>Links</h5>
+                <ul class="list-unstyled">
+                  <li>  <a href="http://oscovida.github.io">
+      <i class="fa fa-external-link"></i>
+    OSCOVIDA project
+  </a></li>
+                  <li>  <a href="http://www.panosc.eu">
+      <i class="fa fa-external-link"></i>
+    PaNOSC project
+  </a></li>
+                  <li>  <a href="mailto:oscovidaproject@gmail.com">
+      <i class="fa fa-envelope"></i>
+    OSCOVIDA
+  </a></li>
+                </ul>
+            </div>
+
+          <div class="col-md-2">
+            <h5>Browse content by</h5>
+            <ul class="list-unstyled">
+                <li><a href="./archives-index.html"><i class="fa fa-calendar"></i> Dates</a></li>
+                <li><a href="./tags-index.html"><i class="fa fa-tag"></i> Tags</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 text-muted">
+            <h5>Copyright notice</h5>
+            <p>© Copyright 2020-2022 OSCOVIDA team.</p>
+              <p>Unless contrary mentioned, the content of this site is published under a <a rel='license'
+href='https://creativecommons.org/licenses/by/4.0/'>Creative Commons
+Attribution 4.0 International license</a>. See <a href="http://oscovida.github.io/license.html">license</a> for details.</p>
+          </div>
+
+          <div class="col-md-2 text-muted">
+            <h5>Disclaimer</h5>
+              <p>Plots, data and software here are provided <a href="https://github.com/oscovida/oscovida/blob/master/LICENSE#L20">as-is without any warranties</a> by volunteers. Use the material at your own risk. See <a href="http://oscovida.github.io/license.html">license</a> for details.</p>
+          </div>
+
+          <div class="col-md-2">
+              <h5>Feeds</h5>
+              <ul class="list-unstyled">
+                  <li><small><a href="https://oscovida.github.io/feeds/all.atom.xml"><i class="fa fa-rss"></i> All posts (Atom)</a></small></li>
+              </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <h5 class="text-right"><a href="#"><i class="fa fa-arrow-up"></i> Back to top</a></h5>
+
+      <div class="container">
+        <div class="row col-md-12 text-muted text-center">
+          Site generated by <a href="https://getpelican.com"> Pelican</a>.<br/>
+          <a href="https://github.com/kdeldycke/plumage"> Plumage</a> theme by <a href="https://kevin.deldycke.com">Kevin Deldycke</a>.
+        </div>
+      </div>
+
+    </footer>
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-163845056-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
+    <script src="./theme/js/jquery.mglass.js"></script>
+    <script src="./theme/js/application.js"></script>
+
+    <script>
+      document.getElementsByTagName("table")[0].setAttribute("id", "data_table");
+    </script>
+
+  </body>
+</html>
